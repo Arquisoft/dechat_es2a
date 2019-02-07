@@ -1,0 +1,43 @@
+= Lista de tareas
+
+En este documento añadiremos las tareas que tenemos que realizar con la fecha límite estimada y las marcaremos como finalizadas con la fecha de finalización.
+
+
+
+== Adán
+
+- [ ] Tarea A | Límite (25/2/2019)
+- [x] Tarea B | Realizada (4/2/2019)
+
+== Diego T
+
+- [ ] Tarea A | Límite (25/2/2019)
+- [x] Tarea B | Realizada (4/2/2019)
+
+== Diego M
+
+- [ ] Tarea A | Límite (25/2/2019)
+- [x] Tarea B | Realizada (4/2/2019)
+
+== Gaspar
+
+- [ ] Tarea A | Límite (25/2/2019)
+- [x] Tarea B | Realizada (4/2/2019)
+
+== María
+
+- [ ] Tarea A | Límite (25/2/2019)
+- [x] Tarea B | Realizada (4/2/2019)
+
+== Raul
+
+- [ ] Tarea A | Límite (25/2/2019)
+- [x] Tarea B | Realizada (4/2/2019)
+
+
+
+
+
+
+
+
