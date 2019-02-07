@@ -73,7 +73,6 @@ y sus resultados
 .Forma
 Tabla con nombres de los roles, personas, y sus expectativas con respecto a la arquitectura y su 
 documentación
-****
 
 [options="header",cols="1,2,2"]
 |===
