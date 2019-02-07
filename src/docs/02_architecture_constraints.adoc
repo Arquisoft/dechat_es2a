@@ -1,19 +1,20 @@
 [[section-architecture-constraints]]
-== Architecture Constraints
+== Restricciones de la Arquitectura
 
 
 [role="arc42help"]
 ****
-.Contents
-Any requirement that constrains software architects in their freedom of design and implementation decisions or decision about the development process. These constraints sometimes go beyond individual systems and are valid for whole organizations and companies.
+.Contenido
+Cualquier requerimiento que restrinja a los arquitectos de software en la libertad de diseño y la toma de decisiones
+sobre la implementación o el proceso de desarrollo. Estas restricciones a veces van más allá de sistemas individuales
+y son validos para organizaciones y compañías enteras.
 
-.Motivation
-Architects should know exactly where they are free in their design decisions and where they must adhere to constraints.
-Constraints must always be dealt with; they may be negotiable, though.
+.Motivación
+Los arquitectos deben saber exactamente sus libertades respecto a las decisiones de diseño y en donde deben apegarse
+a restricciones. Las restricciones siempre deben ser acatadas, aunque en algunos casos pueden ser negociables.
 
-.Form
-Simple tables of constraints with explanations.
-If needed you can subdivide them into
-technical constraints, organizational and political constraints and
-conventions (e.g. programming or versioning guidelines, documentation or naming conventions)
+.Forma
+Tablas de restricciones con sus explicaciones.
+Si se requiere, se pueden subdividir en restricciones técnicas, organizacionales y/o políticas y convenciones
+(por ejemplo, guías de versionado o programación, convenciones de documentación o nombrado)
 ****
