@@ -1,26 +1,27 @@
 [[section-design-decisions]]
-== Design Decisions
+== Decisiones de Diseño
 
 
 [role="arc42help"]
 ****
-.Contents
-Important, expensive, large scale or risky architecture decisions including rationals.
-With "decisions" we mean selecting one alternative based on given criteria.
+.Contenido
+Decisiones arquitectónicas importantes, costosas, a larga escala o riesgosas incluyendo sus razonamientos.
+Con "Decisiones" nos referimos a la elección de una alternativa basada en cierto criterio.
 
-Please use your judgement to decide whether an architectural decision should be documented
-here in this central section or whether you better document it locally
-(e.g. within the white box template of one building block).
+Se debe usar el juicio para decidir si una decisión arquitectónica debe ser documentada en esta sección
+central o si sería preferible documentarla localmente (Por ejemplo, dentro de una plantilla de caja blanca
+de un bloque de construcción).
 
-Avoid redundancy. Refer to section 4, where you already captured the most important decisions of your architecture.
+Evite la redundancia. Tomar de referencia la sección 4, donde ya se capturaron las decisiones más importantes 
+para la arquitectura.
 
-.Motivation
-Stakeholders of your system should be able to comprehend and retrace your decisions.
+.Motivación
+Las partes relacionadas del sistema deben comprender y trazar las decisiones.
 
-.Form
-Various options:
+.Forma
+Varias opciones:
 
-* List or table, ordered by importance and consequences or:
-* more detailed in form of separate sections per decision
-* ADR (architecture decision record) for every important decision
+* Lista o tabla, ordenada por importancia y consecuencias o:
+* Mayor detalle en secciones separadas por cada sección.
+* Registro de Decisiones de Arquitectura (ADR por sus siglas en inglés) para cada decisión importante.
 ****
