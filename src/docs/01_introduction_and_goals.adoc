@@ -9,6 +9,9 @@ deben considerar. Entre estas se incluyen:
 * Objetivos empresariales subyacentes, características esenciales y requerimientos funcionales para el sistema
 * Metas de calidad para la arquitectura
 * Las partes interesadas pertinentes y sus expectativas
+
+
+
 ****
 
 === Vista de Requerimientos
@@ -31,6 +34,17 @@ Si existen documentos de requerimientos esta vista debe referir a dichos requeri
 Mantenga estos extractos tan cortos como sea posible. Encuentre el balance entre la legibilidad y 
 la redundancia de este documento respecto a los documentos de requerimientos que se encuentren 
 relacionados.
+
+
+.Pretexto
+A día de hoy, grandes compañías como Facebook, Google, Microsoft se han hecho con el control de los datos de sus usuarios. Los servicios de mensajería (WhatsApp, Skype, WeChat...) son las aplicaciones más usadas de todas, por ejemplo WhatsApp gestiona unos 30.000.000.000 de mensajes, ¡cada día!, y todos ellos pasan por sus propios servidores.
+
+.Objetivo
+Este proyecto intenta darle el control de sus datos al usuario,mejorando así la privacidad de todos.
+
+.Descripción
+La aplicación consta de un servicío de mensajería basado en la tecnología SOLID. Con las principales funcionalidades de los principales servicios usados a día de hoy y un rendimiento similar.
+
 ****
 
 === Metas de Calidad
@@ -49,6 +63,16 @@ Si como arquitecto no conoce la calidad de su trabajo, será juzgado...
 
 .Forma
 Una tabla con metas de calidad y escenarios concretos, ordenados por prioridades
+
+.Requisitos de calidad
+[frame="topbot",options="header"]
+|======================
+|Objetivo |Explicación
+|Seguridad |Los datos del usuario deben ser accesibles sólo por aquellos que este crea oportuno.
+|Rendimiento | El intercambio de información entre usuarios debe ser fluido en todo momento.
+|Usabilidad | La aplicación debe ser fácil de aprender e intuitiva.
+|======================
+
 ****
 
 === Partes interesadas (Stakeholders)
@@ -74,9 +98,13 @@ y sus resultados
 Tabla con nombres de los roles, personas, y sus expectativas con respecto a la arquitectura y su 
 documentación
 
-[options="header",cols="1,2,2"]
+[frame="topbot",options="header"]
 |===
-|Rol/Nombre|Contacto|Expectativas
-| _<Role-1>_ | _<Contact-1>_ | _<Expectation-1>_
-| _<Role-2>_ | _<Contact-2>_ | _<Expectation-2>_
+|Rol/Nombre|Expectativas
+| Labra | Para él lo más importante es que sus alumnos aprendan
+| Miembros del equipo | Necesitan aprobar
 |===
+
+****
+
+
