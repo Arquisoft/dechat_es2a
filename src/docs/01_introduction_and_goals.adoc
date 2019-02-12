@@ -9,6 +9,20 @@ Describes the relevant requirements and the driving forces that software archite
 * quality goals for the architecture
 * relevant stakeholders and their expectations
 ****
+Nos hemos propuesto desarrollar un chat descentralizado, siguiendo las caracteristicas de SOLID.
+Buscaremos desarrollar el proyecto para que tenga un sistema con una arquitectura descentralizada, que separe el amacenamiento de datos de la aplicación que estamos desarrollando. También, tenemos como objetivo que los usuarios puedan almacenar los datos de sus chats en sus pods.
+Los usuarios de la aplicación, pueden enviarse fotos, vídeos u otros archivos para comunicarse con sus amigos, u otras personas a través del chat. Estas conversaciones, van a poder ser realizadas de manera individual, o de manera grupal, en la que estén incluidos varios participantes.
+Un usuario de la aplicación, recibirá las notificaciones de la aplicación, cuando otro usuario o usuarios quieran comunicarse con él.
+
+La aplicación, está pensada para todas aquellas personas que quieran mantener conversaciones sin que esa información quede almacenada en los servidores de la empresa proveedora de la aplicación.
+
+Se buscan conseguir varios aspectos, que se enunciarán a continuación:
+  -Cierta facilidad de uso por todos los usuarios, ya tengan suficiente dominio de la misma, o sean novatos.
+  -Respuesta al uso por usuarios.
+  -No poseer de una base central de datos, que comprometa la información de los usuarios que la usen.
+  -Buscar la seguridad, sin tener puntos vulnerables, para que no haya robo de informaciones confidenciales.
+  -Originalidad y una estética, no comunes en las aplicaciones actuales, y tenga aspectos donde destaque, y pueda sorprender al usuario.
+  
 
 === Requirements Overview
 
