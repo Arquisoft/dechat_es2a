@@ -1,6 +1,47 @@
 [[section-solution-strategy]]
 == Solution Strategy
 
+=== Tecnologia
+
+==== Backend
+
+* NodeJS
+
+Dado que la aplicación a desarrollar empleará Solid para funcionar, es necesario realizar la instalación de un servidor
+que de soporte a dicha tecnología. El servidor de referencia para esta tecnología esta implementado sobre Nodo, con lo
+que necesitaremos emplear esta tecnología.
+
+* npm
+
+Npm es un gestor de paquetes para node, que permite instalar software y librerías que deban funcionar sobre esta
+tecnología. El uso de esta herramienta nos simplificará la instalación del servidor Solid.
+
+==== Persistencia
+
+* MongoDB
+
+Si es necesario persistir información centralizada en algún momento en la aplicación desarrollada, se empleará MongoDB
+como sistema de base de datos. Se trata de una base de datos no SQL orientada a Documentos. Por esta razón nos permite
+una gran flexibilidad a la hora de almacenar distintos tipos de información, al no obligar a ceñirse a un esquema
+rigido, esto permitirá a la base de datos ir adaptandose a medida que la aplicación va añadiendo nuevas funcionalidades.
+
+==== Frontend
+
+* Angular
+
+Dado que la aplicación a desarrollar deberá ser distribuida, y deberá ser ejecutada en un entorno web, necesitamos un
+framework de desarrollo que permita crear aplicaciones para ser ejecutadas sobre navegadores web. De las distintas
+opciones disponibles para esta tarea, angular es una de las más utilizadas. Cuenta con una buena documentación, una base
+importante de desarrolladores y nos permite programar en TypeScript, que al ser un lenguaje con tipado estatico
+consideramos que facilitará la escritura del código al eliminar errores de ejecución.
+
+==== Herramientas de desarrollo
+
+* WebStorm
+
+Se trata de un Entorno de Desarrollo Integrado completo, que da soporte para todas las tecnologías con las que se
+trabajará en el desarrollo del proyecto y para el que ya contamos con licencia.
+
 
 [role="arc42help"]
 ****
