@@ -16,6 +16,12 @@ que necesitaremos emplear esta tecnología.
 Npm es un gestor de paquetes para node, que permite instalar software y librerías que deban funcionar sobre esta
 tecnología. El uso de esta herramienta nos simplificará la instalación del servidor Solid.
 
+* SPARQL
+
+Sparql se trata de un lenguaje estandarizado de grafos RDF normalizado por el  World Wide Web Consortium, con ello 
+una tecnologia clave para el desarrolo de web semantica, por lo que sera la semántica que usemos con el fin de manejar
+la recuperacion de sentencias y el mantenimiento de datos.
+
 ==== Persistencia
 
 * MongoDB
@@ -42,6 +48,25 @@ consideramos que facilitará la escritura del código al eliminar errores de eje
 Se trata de un Entorno de Desarrollo Integrado completo, que da soporte para todas las tecnologías con las que se
 trabajará en el desarrollo del proyecto y para el que ya contamos con licencia.
 
+=== Obtencion de objetivos de calidad
+
+==== Seguridad
+* Inyeccion SQL
+
+Al trabajar desde SPARQL no hay una forma 100% efectiva de evitarla, sin embargo seguiremos pautas de limitar el uso de 
+metacaracteres permitiendo a los usuarios solo el uso de estos valores en variables de las propias querys.
+
+* Fuga de Informacion
+
+Aunque no se haya decidido una tecnologia o protocolo concreto a este punto, las prácticas más adecuadas para prevenir este
+fallo que se usaran son el uso de logs para observar el trafico de la aplicacion y lozalizar estos abusos, el control de la
+información a la que lo usuarios tienen acceso y el cifrado de informacion importante.
+
+* Man in the Middle
+
+ Con el fin de evitar esta brecha de seguridad los criterios mas aceptados son el uso de claves publicas, secretas o las 
+ anteriormente mencionadas contraseñas con el fin de evitar el filtraje de datos entre usuarios, no obstante no descartamos el 
+ uso de otros criterios de validacion para evitar el error.
 
 [role="arc42help"]
 ****
