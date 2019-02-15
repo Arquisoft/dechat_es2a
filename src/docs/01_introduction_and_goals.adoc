@@ -65,3 +65,18 @@ La aplicación, está pensada para todas aquellas personas que quieran mantener 
 * *Modular*: diseño de una aplicación mediante subdivisiones de esta, independientes unas de otras.
 * *Trazable*: capacidad de la aplicación a seguir el rastro a las actividades realizadas en ella en todas las etapas de su ciclo de vida.
 ****
+
+=== Stakeholders
+
+[role="arc42help"]
+****
+
+
+[options="header",cols="2*"]
+|===
+|Role/Name|Expectations
+| Profesorado de la asignatura | Seguir un proceso de desarrollo de la aplicación de acuerdo a lo visto en la asignatura, así como un correcto diseño y arquitectura del producto final.
+| SOLID | Realizar un chat descentralizado de acuerdo a la tecnología SOLID.
+| Equipo de desarrollo | Realizar el trabajo asignado siguiendo los requisitos establecidos en la documentación siguiendo una metodología ágil de acuerdo a lo aprendido en la asignatura.
+|===
+****
