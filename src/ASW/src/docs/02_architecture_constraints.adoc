@@ -4,17 +4,25 @@
 
 [role="arc42help"]
 ****
-.Contenido
-Cualquier requerimiento que restrinja a los arquitectos de software en la libertad de diseño y la toma de decisiones
-sobre la implementación o el proceso de desarrollo. Estas restricciones a veces van más allá de sistemas individuales
-y son validos para organizaciones y compañías enteras.
+.Restricciones técnicas
+[frame="topbot",options="header"]
+|===
+|Restriccion|Descripción
+| SOLID | Toda la información intercambiada en la aplicación se almacenará en PODs personales mediante un proceso descentralizado.
+| Angular JS/ Typescript | Se acopla muy bien a un proyecto SOLID. Además, se trata de un framework consolidado que nos ofrece múltiples funcionalidades respaldadas por una gran comunidad.
+| MongoDB | Se trata de una solución profesional y gratuita que nos permitirá escalar el proyecto con facilidad.
+| Arc42 | Se nos ha impuesto utilizar esta plantilla para documentar el proyecto. Es un estándar muy utilizado, principalmente en Europa. Este documento ha de mantenerse claro y simple en todo momento.
+|===
+.Restricciones organizativas
+[frame="topbot",options="header"]
+|===
+|Restriccion|Descripción
+| Periodo de desarrollo | El proyecto se llevará a cabo entre los meses de enero y mayo.
+| Github | Debemos usar este conocido controlador de versiones. Nos facilita en gran medida el trabajo en equipo y la organización del proyecto.
+|===
 
-.Motivación
-Los arquitectos deben saber exactamente sus libertades respecto a las decisiones de diseño y en donde deben apegarse
-a restricciones. Las restricciones siempre deben ser acatadas, aunque en algunos casos pueden ser negociables.
 
-.Forma
-Tablas de restricciones con sus explicaciones.
-Si se requiere, se pueden subdividir en restricciones técnicas, organizacionales y/o políticas y convenciones
-(por ejemplo, guías de versionado o programación, convenciones de documentación o nombrado)
+
 ****
+
+
