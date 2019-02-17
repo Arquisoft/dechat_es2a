@@ -1,19 +1,28 @@
 [[section-architecture-constraints]]
-== Architecture Constraints
+== Restricciones de la Arquitectura
 
 
 [role="arc42help"]
 ****
-.Contents
-Any requirement that constrains software architects in their freedom of design and implementation decisions or decision about the development process. These constraints sometimes go beyond individual systems and are valid for whole organizations and companies.
+.Restricciones técnicas
+[frame="topbot",options="header"]
+|===
+|Restriccion|Descripción
+| SOLID | Toda la información intercambiada en la aplicación se almacenará en PODs personales mediante un proceso descentralizado.
+| Angular JS/ Typescript | Se acopla muy bien a un proyecto SOLID. Además, se trata de un framework consolidado que nos ofrece múltiples funcionalidades respaldadas por una gran comunidad.
+| MongoDB | Se trata de una solución profesional y gratuita que nos permitirá escalar el proyecto con facilidad.
+| Arc42 | Se nos ha impuesto utilizar esta plantilla para documentar el proyecto. Es un estándar muy utilizado, principalmente en Europa. Este documento ha de mantenerse claro y simple en todo momento.
+|===
+.Restricciones organizativas
+[frame="topbot",options="header"]
+|===
+|Restriccion|Descripción
+| Periodo de desarrollo | El proyecto se llevará a cabo entre los meses de enero y mayo.
+| Github | Debemos usar este conocido controlador de versiones. Nos facilita en gran medida el trabajo en equipo y la organización del proyecto.
+|===
 
-.Motivation
-Architects should know exactly where they are free in their design decisions and where they must adhere to constraints.
-Constraints must always be dealt with; they may be negotiable, though.
 
-.Form
-Simple tables of constraints with explanations.
-If needed you can subdivide them into
-technical constraints, organizational and political constraints and
-conventions (e.g. programming or versioning guidelines, documentation or naming conventions)
+
 ****
+
+
