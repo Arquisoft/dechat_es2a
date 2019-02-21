@@ -1,16 +1,16 @@
 [[section-quality-scenarios]]
 = Quality Requirements
 
-== Árbol de calidad
+== A) Árbol de calidad
 
 A continuación se incluye el arbol con los criterios de calidad que deberán ser tenidos en cuenta en la realización del
 sistema. Las hojas de este árbol son los escenarios de calidad que deberán verificarse para asegurar el correcto
 cumplimiento de los criterios de calidad establecidos. Los nombres de estas hojas se corresponden por tanto con los de
 los escenarios de calidad del punto siguiente.
 
-image::images/10_MindMap_Calidad.png[Arbol de calidad]
+image::images/10_MindMap_Calidad_V2.jpg[Arbol de calidad]
 
-== Escenarios de calidad
+== B) Escenarios de calidad
 
 En este punto describimos los distintos escenarios de calidad que se deberán comprobar durante el desarrollo del sistema
 parar asegurar la calidad del mismo.
