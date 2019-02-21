@@ -1,7 +1,7 @@
 [[section-quality-scenarios]]
-== Quality Requirements
+= Quality Requirements
 
-=== Arbol de calidad
+== Árbol de calidad
 
 A continuación se incluye el arbol con los criterios de calidad que deberán ser tenidos en cuenta en la realización del
 sistema. Las hojas de este árbol son los escenarios de calidad que deberán verificarse para asegurar el correcto
@@ -10,454 +10,455 @@ los escenarios de calidad del punto siguiente.
 
 image::images/10_MindMap_Calidad.png[Arbol de calidad]
 
-=== Escenarios de calidad
+== Escenarios de calidad
 
 En este punto describimos los distintos escenarios de calidad que se deberán comprobar durante el desarrollo del sistema
 parar asegurar la calidad del mismo.
 
-==== Escenario 1: Pruebas de accesibilidad con usuarios
+=== Escenario 1: Pruebas de accesibilidad con usuarios
 
-*Estimulo*
+==== 1) Estímulo
 
-Uso normal de la aplicación para verificar su accesibilidad.
+  Uso normal de la aplicación para verificar su accesibilidad.
 
-*Fuente del estímulo*
+==== 2) Fuente del estímulo
 
-10 usuarios distintos con discapacidad.
+  10 usuarios distintos con discapacidad.
 
-*Entorno*
+==== 3) Entorno
 
-Sistema funcionando en condiciones normales.
+  Sistema funcionando en condiciones normales.
 
-*Artefactos del sistema*
+==== 4) Artefactos del sistema
 
-Cliente Chat descentralizado
+  Cliente Chat descentralizado
 
-*Respuesta del sistema*
+==== 5) Respuesta del sistema
 
-El sistema debe permitir a los usuarios utilizar de manera satisfactoria todas sus funcionalidades.
+  El sistema debe permitir a los usuarios utilizar de manera satisfactoria todas sus funcionalidades.
 
-*Medida de la respuesta*
+==== 6) Medida de la respuesta
 
-Los usuarios evaluarán su experiencia asignando una nota de 0 a 10. Para validar correctamente el sistema deberá
-obtenerse una nota superior a 5.
+  Los usuarios evaluarán su experiencia asignando una nota de 0 a 10. 
+  Para validar correctamente el sistema deberá obtenerse una nota superior a 5.
 
-==== Escenario 2: Guía de accesibilidad (WAI)
+=== Escenario 2: Guía de accesibilidad (WAI)
 
-*Estímulo*
+==== 1) Estímulo
 
-Analisis de cumplimiento de las normas de accesibilidad definidas por la Web Accesibility Initiative del W3C.
+  Analisis de cumplimiento de las normas de accesibilidad definidas por la Web Accesibility Initiative del W3C.
 
-*Fuente del estímulo*
+==== 2) Fuente del estímulo
 
-Experto en accesibilidad.
+  Experto en accesibilidad.
 
-*Entorno*
+==== 3) Entorno
 
-Sistema funcionando en condiciones normales.
+  Sistema funcionando en condiciones normales.
 
-*Artefactos del sistema*
+==== 4) Artefactos del sistema
 
-Cliente Chat descentralizado
+  Cliente Chat descentralizado
 
-*Respuesta del sistema*
+==== 5) Respuesta del sistema
 
-Documento de conformidad de la accesibilidad definido en WCAG 2.1.
+  Documento de conformidad de la accesibilidad definido en WCAG 2.1.
 
-*Medida de la respuesta*
+==== 6) Medida de la respuesta
 
-El documento debe indicar el cumplimiento de todos puntos de accesibilidad requeridos.
+  El documento debe indicar el cumplimiento de todos puntos de accesibilidad requeridos.
 
-==== Escenario 3: Acceso con teclado
+=== Escenario 3: Acceso con teclado
 
-*Estímulo*
+==== 1) Estímulo
 
-Utilización normal del sistema utilizando solamente un teclado para la entrada de datos.
+  Utilización normal del sistema utilizando solamente un teclado para la entrada de datos.
 
-*Fuente del estímulo*
+==== 2) Fuente del estímulo
 
-Usuario normal del sistema.
+  Usuario normal del sistema.
 
-*Entorno*
+==== 3) Entorno
 
-Sistema funcionando en condiciones normales.
+  Sistema funcionando en condiciones normales.
 
-*Artefactos del sistema*
+==== 4) Artefactos del sistema
 
-Cliente Chat descentralizado
+  Cliente Chat descentralizado
 
-*Respuesta del sistema*
+==== 5) Respuesta del sistema
 
-El sistema debe permitir la realización de todas las tareas implementadas en el mismo.
+  El sistema debe permitir la realización de todas las tareas implementadas en el mismo.
 
-*Medida de la respuesta*
+==== 6) Medida de la respuesta
 
-Todas las tareas deben poder realizar satisfactoriamente.
+  Todas las tareas deben poder realizar satisfactoriamente.
 
-==== Escenario 4: Acceso con teclado
+=== Escenario 4: Acceso con teclado
 
-*Estímulo*
+==== 1) Estímulo
 
-Utilización normal del sistema utilizando solamente un teclado para la entrada de datos.
+  Utilización normal del sistema utilizando solamente un teclado para la entrada de datos.
 
-*Fuente del estímulo*
+==== 2) Fuente del estímulo
 
-Usuario normal del sistema.
+  Usuario normal del sistema.
 
-*Entorno*
+==== 3) Entorno
 
-Sistema funcionando en condiciones normales.
+  Sistema funcionando en condiciones normales.
 
-*Artefactos del sistema*
+==== 4) Artefactos del sistema
 
-Cliente Chat descentralizado
+  Cliente Chat descentralizado
 
-*Respuesta del sistema*
+==== 5) Respuesta del sistema
 
-El sistema debe permitir la realización de todas las tareas implementadas en el mismo.
+  El sistema debe permitir la realización de todas las tareas implementadas en el mismo.
 
-*Medida de la respuesta*
+==== 6) Medida de la respuesta
 
-Todas las tareas deben poder realizar satisfactoriamente.
+  Todas las tareas deben poder realizar satisfactoriamente.
 
-==== Escenario 5: Pruebas unitarias
+=== Escenario 5: Pruebas unitarias
 
-*Estímulo*
+==== 1) Estímulo
 
-Comprobación del funcionamiento de los componentes individuales que forman la aplicación.
+  Comprobación del funcionamiento de los componentes individuales que forman la aplicación.
 
-*Fuente del estímulo*
+==== 2) Fuente del estímulo
 
-Desarrollador.
+  Desarrollador.
 
-*Entorno*
+==== 3) Entorno
 
 Sistema en desarrollo.
 
-*Artefactos del sistema*
+==== 4) Artefactos del sistema
 
-Cliente Chat descentralizado y Servidor
+  Cliente Chat descentralizado y Servidor
 
-*Respuesta del sistema*
+==== 5) Respuesta del sistema
 
-El sistema generará un informe indicando si los test desarrollados se ejecutan correctamente.
+  El sistema generará un informe indicando si los test desarrollados se ejecutan correctamente.
 
-*Medida de la respuesta*
+==== 6) Medida de la respuesta
 
-Todos los test desarrollados deben ser correctos.
+  Todos los test desarrollados deben ser correctos.
 
-==== Escenario 6: Pruebas de integración
+=== Escenario 6: Pruebas de integración
 
-*Estímulo*
+==== 1) Estímulo
 
-Comprobación del funcionamiento del sistema completo.
+  Comprobación del funcionamiento del sistema completo.
 
-*Fuente del estímulo*
+==== 2) Fuente del estímulo
 
-Desarrollador.
+  Desarrollador.
 
-*Entorno*
+==== 3) Entorno
 
-Sistema en funcionamiento normal.
+  Sistema en funcionamiento normal.
 
-*Artefactos del sistema*
+==== 4) Artefactos del sistema
 
-Cliente Chat descentralizado y Servidor
+  Cliente Chat descentralizado y Servidor
 
-*Respuesta del sistema*
+==== 5) Respuesta del sistema
 
-El sistema generará un informe indicando si los test desarrollados se ejecutan correctamente.
+  El sistema generará un informe indicando si los test desarrollados se ejecutan correctamente.
 
-*Medida de la respuesta*
+==== 6) Medida de la respuesta
 
-Todos los test desarrollados deben ser correctos.
+  Todos los test desarrollados deben ser correctos.
+  
+=== Escenario 7: Prueba en navegadores
 
-==== Escenario 7: Prueba en navegadores
+==== 1) Estímulo
 
-*Estímulo*
+  Ejecución de la aplicación en los 3 navegadores más utilizados (Firefox, Chrome y Edge).
 
-Ejecución de la aplicación en los 3 navegadores más utilizados (Firefox, Chrome y Edge).
+==== 2) Fuente del estímulo
 
-*Fuente del estímulo*
+  Encargado de pruebas.
 
-Encargado de pruebas.
+==== 3) Entorno
 
-*Entorno*
+  Sistema en funcionamiento normal.
 
-Sistema en funcionamiento normal.
+==== 4) Artefactos del sistema
 
-*Artefactos del sistema*
+  Cliente Chat descentralizado
 
-Cliente Chat descentralizado
+==== 5) Respuesta del sistema
 
-*Respuesta del sistema*
+  El sistema se ejecutará normalmente en todos los navegadores.
 
-El sistema se ejecutará normalmente en todos los navegadores.
+==== 6) Medida de la respuesta
 
-*Medida de la respuesta*
+  Toda la funcionalidad implementada puede ejecutarse en todos los navegadores.
 
-Toda la funcionalidad implementada puede ejecutarse en todos los navegadores.
+=== Escenario 8: Prueba en sistemas operativos
 
-==== Escenario 8: Prueba en sistemas operativos
+==== 1) Estímulo
 
-*Estímulo*
+  Ejecución de la aplicación en Windows, MacOS, Linux, Android y IPhone.
 
-Ejecución de la aplicación en Windows, MacOS, Linux, Android y IPhone.
+==== 2) Fuente del estímulo
 
-*Fuente del estímulo*
+  Encargado de pruebas.
 
-Encargado de pruebas.
+==== 3) Entorno
 
-*Entorno*
+  Sistema en funcionamiento normal.
 
-Sistema en funcionamiento normal.
+==== 4) Artefactos del sistema
 
-*Artefactos del sistema*
+  Cliente Chat descentralizado
 
-Cliente Chat descentralizado
+==== 5) Respuesta del sistema
 
-*Respuesta del sistema*
+  El sistema se ejecutará normalmente en todos los sistemas operativos.
 
-El sistema se ejecutará normalmente en todos los sistemas operativos.
+==== 6) Medida de la respuesta
 
-*Medida de la respuesta*
+  Toda la funcionalidad implementada puede ejecutarse en todos los sistemas operativos.
 
-Toda la funcionalidad implementada puede ejecutarse en todos los sistemas operativos.
+=== Escenario 9: Prueba en entornos de red
 
-==== Escenario 9: Prueba en entornos de red
+==== 1) Estímulo
 
-*Estímulo*
+  Ejecución de la aplicación con distintas configuraciones de red: 
+  Conexión en red local, conexión a traves de internet y red móvil.
 
-Ejecución de la aplicación con distintas configuraciones de red: Conexión en red local, conexión a traves de internet y
-red móvil.
+==== 2) Fuente del estímulo
 
-*Fuente del estímulo*
+  Encargado de pruebas.
 
-Encargado de pruebas.
+==== 3) Entorno
+ 
+  Sistema en funcionamiento normal.
 
-*Entorno*
+==== 4) Artefactos del sistema
 
-Sistema en funcionamiento normal.
+  Cliente Chat descentralizado
 
-*Artefactos del sistema*
+==== 5) Respuesta del sistema
 
-Cliente Chat descentralizado
+  El sistema permitirá la comunicación en todos los sistemas de red analizados.
 
-*Respuesta del sistema*
+==== 6) Medida de la respuesta
 
-El sistema permitirá la comunicación en todos los sistemas de red analizados.
+  Hay comunicación en todos los sistemas de red analizados.
 
-*Medida de la respuesta*
 
-Hay comunicación en todos los sistemas de red analizados.
+=== Escenario 10: Añadir funcionalidad
 
+==== 1) Estímulo
 
-==== Escenario 10: Añadir funcionalidad
+  Se requiere la implementación de una nueva funcionalidad en la aplicación.
 
-*Estímulo*
+==== 2) Fuente del estímulo
 
-Se requiere la implementación de una nueva funcionalidad en la aplicación.
+  Desarrollador
 
-*Fuente del estímulo*
+==== 3) Entorno
 
-Desarrollador
+  Sistema en desarrollo.
 
-*Entorno*
+==== 4) Artefactos del sistema
 
-Sistema en desarrollo.
+  Cliente Chat descentralizado y Servidor
 
-*Artefactos del sistema*
+==== 5) Respuesta del sistema
 
-Cliente Chat descentralizado y Servidor
+  Se añadirá en el sistema una nueva funcionalidad en un tiempo determinado.
 
-*Respuesta del sistema*
+==== 6) Medida de la respuesta
 
-Se añadirá en el sistema una nueva funcionalidad en un tiempo determinado.
+  Tiempo empleado, que deberá ser inferior a 8 horas para una modificación de baja complejidad.
 
-*Medida de la respuesta*
+=== Escenario 11: Pruebas de usabilidad con usuarios
 
-Tiempo empleado, que deberá ser inferior a 8 horas para una modificación de baja complejidad.
+==== 1) Estímulo
 
-==== Escenario 11: Pruebas de usabilidad con usuarios
+  Uso normal de la aplicación para verificar su usabilidad.
 
-*Estimulo*
+==== 2) Fuente del estímulo
 
-Uso normal de la aplicación para verificar su usabilidad.
+  10 usuarios con distintos perfiles.
 
-*Fuente del estímulo*
+==== 3) Entorno
 
-10 usuarios con distintos perfiles.
+  Sistema funcionando en condiciones normales.
 
-*Entorno*
+==== 4) Artefactos del sistema
 
-Sistema funcionando en condiciones normales.
+  Cliente Chat descentralizado
 
-*Artefactos del sistema*
+==== 5) Respuesta del sistema
 
-Cliente Chat descentralizado
+  El sistema debe permitir a los usuarios utilizar de manera satisfactoria todas
+  sus funcionalidades sin que estos duden y en un tiempo bajo.
 
-*Respuesta del sistema*
+==== 6) Medida de la respuesta
 
-El sistema debe permitir a los usuarios utilizar de manera satisfactoria todas sus funcionalidades, sin que estos
-duden y en un tiempo bajo.
+  El tiempo empleado para la realización de cada tarea de la prueba será inferior a 1 minuto.
 
-*Medida de la respuesta*
+=== Escenario 12: Encuesta de usabilidad
 
-El tiempo empleado para la realización de cada tarea de la prueba será inferior a 1 minuto.
+==== 1) Estímulo
 
-==== Escenario 12: Encuesta de usabilidad
+  Los usuarios que realizan las pruebas de usabilidad se encuestan sobre la facilidad de uso de la misma.
 
-*Estimulo*
+==== 2) Fuente del estímulo
 
-Los usuarios que realizan las pruebas de usabilidad se encuestan sobre la facilidad de uso de la misma.
+  10 usuarios con distintos perfiles.
 
-*Fuente del estímulo*
+==== 3) Entorno
 
-10 usuarios con distintos perfiles.
+  Sistema funcionando en condiciones normales.
 
-*Entorno*
+==== 4) Artefactos del sistema
 
-Sistema funcionando en condiciones normales.
+  Cliente Chat descentralizado
 
-*Artefactos del sistema*
+==== 5) Respuesta del sistema
 
-Cliente Chat descentralizado
+  Puntuación numérica (entre 0 y 10) que indique el grado de aceptación de la interfaz 
+  de la aplicación por los usuarios que la prueban.
 
-*Respuesta del sistema*
+==== 6) Medida de la respuesta
 
-Puntuación numérica (entre 0 y 10) que indique el grado de aceptación de la interfaz de la aplicación por los usuarios
-que la prueban.
+  La puntuación obtenida deberá ser superior a 5.
 
-*Medida de la respuesta*
+=== Escenario 13: Cifrado de información
 
-La puntuación obtenida deberá ser superior a 5.
+==== 1) Estímulo
 
-==== Escenario 13: Cifrado de información
+  Durante un uso normal del sistema, el cliente y el servidor intercambian información.
 
-*Estimulo*
+==== 2) Fuente del estímulo
 
-Durante un uso normal del sistema, el cliente y el servidor intercambian información.
+  Encargado de pruebas.
 
-*Fuente del estímulo*
+==== 3) Entorno
 
-Encargado de pruebas.
+  Sistema funcionando en condiciones normales.
 
-*Entorno*
+==== 4) Artefactos del sistema
 
-Sistema funcionando en condiciones normales.
+  Servidor
 
-*Artefactos del sistema*
+==== 5) Respuesta del sistema
 
-Servidor
+  Los paquetes intercambiados deberán aparecer cifrados.
 
-*Respuesta del sistema*
+==== 6) Medida de la respuesta
 
-Los paquetes intercambiados deberán aparecer cifrados.
+  No debe aparecer ningún no cifrado.
 
-*Medida de la respuesta*
+=== Escenario 14: Autenticación de clientes
 
-No debe aparecer ningún no cifrado.
+==== 1) Estímulo
 
-==== Escenario 14: Autenticación de clientes
+  Conexión de un nuevo cliente al servidor.
 
-*Estimulo*
+==== 2) Fuente del estímulo
 
-Conexión de un nuevo cliente al servidor.
+  Encargado de pruebas.
 
-*Fuente del estímulo*
+==== 3) Entorno
 
-Encargado de pruebas.
+  Sistema funcionando en condiciones normales.
 
-*Entorno*
+==== 4) Artefactos del sistema
 
-Sistema funcionando en condiciones normales.
+  Servidor
 
-*Artefactos del sistema*
+==== 5) Respuesta del sistema
 
-Servidor
+  Se permite la conexión la aplicación cliente desarrollada solamente.
 
-*Respuesta del sistema*
+==== 6) Medida de la respuesta
 
-Se permite la conexión la aplicación cliente desarrollada solamente.
+  No se permite la conexión al servidor a otras aplicaciones.
 
-*Medida de la respuesta*
+=== Escenario 15: Autenticación de usuarios
 
-No se permite la conexión al servidor a otras aplicaciones.
+==== 1) Estímulo
 
-==== Escenario 15: Autenticación de usuarios
+  Un usuario accede al sistema.
 
-*Estimulo*
+==== 2) Fuente del estímulo
 
-Un usuario accede al sistema.
+  Encargado de pruebas.
 
-*Fuente del estímulo*
+==== 3) Entorno
 
-Encargado de pruebas.
+  Sistema funcionando en condiciones normales.
 
-*Entorno*
+==== 4) Artefactos del sistema
 
-Sistema funcionando en condiciones normales.
+  Servidor
 
-*Artefactos del sistema*
+==== 5) Respuesta del sistema
 
-Servidor
+  Se comprueban las credenciales del usuario que accede al sistema.
 
-*Respuesta del sistema*
+==== 6) Medida de la respuesta
 
-Se comprueban las credenciales del usuario que accede al sistema.
+  Se deniegan las conexiones de usuarios que no empleen credenciales válidas.
 
-*Medida de la respuesta*
+=== Escenario 16: Prueba con múltiples usuarios simultaneos
 
-Se deniegan las conexiones de usuarios que no empleen credenciales válidas.
+==== 1) Estímulo
 
-==== Escenario 16: Prueba con multiples usuarios simultaneos
+  Acceso concurrente al sistema de multiples usuarios.
 
-*Estimulo*
+==== 2) Fuente del estímulo
 
-Acceso concurrente al sistema de multiples usuarios.
+  10 usuarios acceden concurrentemente.
 
-*Fuente del estímulo*
+==== 3) Entorno
 
-10 usuarios acceden concurrentemente.
+  Sistema funcionando en condiciones normales.
 
-*Entorno*
+==== 4) Artefactos del sistema
 
-Sistema funcionando en condiciones normales.
+  Servidor
 
-*Artefactos del sistema*
+==== 5) Respuesta del sistema
 
-Servidor
+  El sistema atiende a las peticiones realizadas en un tiempo determinado.
 
-*Respuesta del sistema*
+==== 6) Medida de la respuesta
 
-El sistema atiende a las peticiones realizadas en un tiempo determinado.
+  El tiempo de respuesta para las peticiones será inferior a 10 segundos en todos los accesos.
 
-*Medida de la respuesta*
+=== Escenario 17: Uptime del servidor
 
-El tiempo de respuesta para las peticiones será inferior a 10 segundos en todos los accesos.
+==== 1) Estímulo
 
-==== Escenario 17: Uptime del servidor
+  Comprobación del uptime del servidor cuando este se encuentre en producción.
 
-*Estimulo*
+==== 2) Fuente del estímulo
 
-Comprobación del uptime del servidor cuando este se encuentre en producción.
+  Encargado de mantenimiento.
 
-*Fuente del estímulo*
+==== 3) Entorno
 
-Encargado de mantenimiento.
+  Sistema funcionando en condiciones normales y en un entorno de producción.
 
-*Entorno*
+==== 4) Artefactos del sistema
 
-Sistema funcionando en condiciones normales y en un entorno de producción.
+  Servidor
 
-*Artefactos del sistema*
+==== 5) Respuesta del sistema
 
-Servidor
+  Tiempo que el sistema no estará caido, y responderá a todas las peticiones enviadas
+  por las aplicaciones cliente.
 
-*Respuesta del sistema*
+==== 6) Medida de la respuesta
 
-Tiempo que el sistema no estará caido, y responderá a todas las peticiones enviadas por las aplicaciones cliente.
-
-*Medida de la respuesta*
-
-El tiempo que el servidor permanezca caido será inferior al 0.01% del total.
+  El tiempo que el servidor permanezca caido será inferior al 0.01% del total.
