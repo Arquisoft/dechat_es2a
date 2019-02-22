@@ -22,14 +22,6 @@ Sparql se trata de un lenguaje estandarizado de grafos RDF normalizado por el  W
 una tecnologia clave para el desarrolo de web semantica, por lo que sera la semántica que usemos con el fin de manejar
 la recuperacion de sentencias y el mantenimiento de datos.
 
-==== Persistencia
-
-* MongoDB
-
-Si es necesario persistir información centralizada en algún momento en la aplicación desarrollada, se empleará MongoDB
-como sistema de base de datos. Se trata de una base de datos no SQL orientada a Documentos. Por esta razón nos permite
-una gran flexibilidad a la hora de almacenar distintos tipos de información, al no obligar a ceñirse a un esquema
-rigido, esto permitirá a la base de datos ir adaptandose a medida que la aplicación va añadiendo nuevas funcionalidades.
 
 ==== Frontend
 
