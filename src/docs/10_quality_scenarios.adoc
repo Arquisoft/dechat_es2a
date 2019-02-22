@@ -94,33 +94,7 @@ parar asegurar la calidad del mismo.
 
   Todas las tareas deben poder realizar satisfactoriamente.
 
-=== Escenario 4: Acceso con teclado
-
-==== 1) Estímulo
-
-  Utilización normal del sistema utilizando solamente un teclado para la entrada de datos.
-
-==== 2) Fuente del estímulo
-
-  Usuario normal del sistema.
-
-==== 3) Entorno
-
-  Sistema funcionando en condiciones normales.
-
-==== 4) Artefactos del sistema
-
-  Cliente Chat descentralizado
-
-==== 5) Respuesta del sistema
-
-  El sistema debe permitir la realización de todas las tareas implementadas en el mismo.
-
-==== 6) Medida de la respuesta
-
-  Todas las tareas deben poder realizar satisfactoriamente.
-
-=== Escenario 5: Pruebas unitarias
+=== Escenario 4: Pruebas unitarias
 
 ==== 1) Estímulo
 
@@ -146,7 +120,7 @@ Sistema en desarrollo.
 
   Todos los test desarrollados deben ser correctos.
 
-=== Escenario 6: Pruebas de integración
+=== Escenario 5: Pruebas de integración
 
 ==== 1) Estímulo
 
@@ -172,7 +146,7 @@ Sistema en desarrollo.
 
   Todos los test desarrollados deben ser correctos.
   
-=== Escenario 7: Prueba en navegadores
+=== Escenario 6: Prueba en navegadores
 
 ==== 1) Estímulo
 
@@ -198,7 +172,7 @@ Sistema en desarrollo.
 
   Toda la funcionalidad implementada puede ejecutarse en todos los navegadores.
 
-=== Escenario 8: Prueba en sistemas operativos
+=== Escenario 7: Prueba en sistemas operativos
 
 ==== 1) Estímulo
 
@@ -224,7 +198,7 @@ Sistema en desarrollo.
 
   Toda la funcionalidad implementada puede ejecutarse en todos los sistemas operativos.
 
-=== Escenario 9: Prueba en entornos de red
+=== Escenario 8: Prueba en entornos de red
 
 ==== 1) Estímulo
 
@@ -252,7 +226,7 @@ Sistema en desarrollo.
   Hay comunicación en todos los sistemas de red analizados.
 
 
-=== Escenario 10: Añadir funcionalidad
+=== Escenario 9: Añadir funcionalidad
 
 ==== 1) Estímulo
 
@@ -278,7 +252,7 @@ Sistema en desarrollo.
 
   Tiempo empleado, que deberá ser inferior a 8 horas para una modificación de baja complejidad.
 
-=== Escenario 11: Pruebas de usabilidad con usuarios
+=== Escenario 10: Pruebas de usabilidad con usuarios
 
 ==== 1) Estímulo
 
@@ -305,7 +279,7 @@ Sistema en desarrollo.
 
   El tiempo empleado para la realización de cada tarea de la prueba será inferior a 1 minuto.
 
-=== Escenario 12: Encuesta de usabilidad
+=== Escenario 11: Encuesta de usabilidad
 
 ==== 1) Estímulo
 
@@ -332,7 +306,7 @@ Sistema en desarrollo.
 
   La puntuación obtenida deberá ser superior a 5.
 
-=== Escenario 13: Cifrado de información
+=== Escenario 12: Cifrado de información
 
 ==== 1) Estímulo
 
@@ -358,7 +332,7 @@ Sistema en desarrollo.
 
   No debe aparecer ningún no cifrado.
 
-=== Escenario 14: Autenticación de clientes
+=== Escenario 13: Autenticación de clientes
 
 ==== 1) Estímulo
 
@@ -384,7 +358,7 @@ Sistema en desarrollo.
 
   No se permite la conexión al servidor a otras aplicaciones.
 
-=== Escenario 15: Autenticación de usuarios
+=== Escenario 14: Autenticación de usuarios
 
 ==== 1) Estímulo
 
@@ -410,7 +384,7 @@ Sistema en desarrollo.
 
   Se deniegan las conexiones de usuarios que no empleen credenciales válidas.
 
-=== Escenario 16: Prueba con múltiples usuarios simultaneos
+=== Escenario 15: Prueba con múltiples usuarios simultaneos
 
 ==== 1) Estímulo
 
@@ -436,7 +410,7 @@ Sistema en desarrollo.
 
   El tiempo de respuesta para las peticiones será inferior a 10 segundos en todos los accesos.
 
-=== Escenario 17: Uptime del servidor
+=== Escenario 16: Uptime del servidor
 
 ==== 1) Estímulo
 
