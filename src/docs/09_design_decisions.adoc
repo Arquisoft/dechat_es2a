@@ -1,26 +1,30 @@
 [[section-design-decisions]]
-== Design Decisions
+== Decisiones de DIseño
+
+=== Tecnología
+* NodeJS y Angular
+
+El usar estas tecnologías fue una decisión muy difícil para el equipo ya que 
+nunca las habiamos usado previamente en la carrera y nos va a suponer una dificultad añadida
+el tener que familiarizarnos con estos frameworks.
+
+Los escogimos porque dentro de las opciones disponibles (Angular o React) para hacer aplicaciones con Solid, 
+Angular nos parecio la más adecuada para este proyecto en concreto. Además Angular tiene buena documentación y 
+varios proyectos de ejemplo con todos los pasos para aprender como funciona rapidamente.
 
 
-[role="arc42help"]
-****
-.Contents
-Important, expensive, large scale or risky architecture decisions including rationals.
-With "decisions" we mean selecting one alternative based on given criteria.
+* TypeScript
 
-Please use your judgement to decide whether an architectural decision should be documented
-here in this central section or whether you better document it locally
-(e.g. within the white box template of one building block).
+Este lenguaje es el más usado con Angular para el desarrollo de aplicaciones. Tenemos ligeros conocimientos
+de este lenguaje (basicamente, es un JavaScript con comprobación estática de tipos).
 
-Avoid redundancy. Refer to section 4, where you already captured the most important decisions of your architecture.
+Tenemos conocimientos de JavaScript ya que lo habiamos dado en una asignatura previamente pero aun así nos supondra
+más trabajo el aprender todo lo que puede ofrecer este lenguaje.
 
-.Motivation
-Stakeholders of your system should be able to comprehend and retrace your decisions.
 
-.Form
-Various options:
+* SPARQL
 
-* List or table, ordered by importance and consequences or:
-* more detailed in form of separate sections per decision
-* ADR (architecture decision record) for every important decision
-****
+Para obtener informacion de los PODS y enviar información a los mismos es necesario usar este lenguaje estandarizado para 
+consulta de grafos. La sintaxis es muy similar a otros lenguajes de bases de datos pero el no tener muchos conocimientos de
+como funciona internamente los PODS de Solid va a hacer que usar este lenguaje suponga otro reto más para el equipo.
+
