@@ -436,3 +436,86 @@ Sistema en desarrollo.
 ==== 6) Medida de la respuesta
 
   El tiempo que el servidor permanezca caido será inferior al 0.01% del total.
+  
+  
+=== Escenario 17: Pruebas Beta
+
+==== 1) Estímulo
+
+  Multiples usuarios utilizando la aplicacion con el fin de forzarla allá donde podrian darse errores.
+
+==== 2) Fuente del estímulo
+
+  Usuarios seleccionados para realizar las pruebas.
+
+==== 3) Entorno
+
+  Sistema funcionando en condiciones normales.
+
+==== 4) Artefactos del sistema
+
+  Servidor.
+
+==== 5) Respuesta del sistema
+
+  Los usuarios en esas condiciones de uso no deberian encontrar ningun error o
+  o retraso con el desarrollo de la prueba.
+
+==== 6) Medida de la respuesta
+
+  
+
+=== Escenario 18: Pruebas de Integración 
+
+==== 1) Estímulo
+
+  Probar una nueva pieza de código previamente a su integracion al
+  grueso y posterior a este.
+
+==== 2) Fuente del estímulo
+
+  Encargado de pruebas.
+
+==== 3) Entorno
+
+  Fragmento de Codigo del que se espera su integración.
+
+==== 4) Artefactos del sistema
+
+  Servidor.
+
+==== 5) Respuesta del sistema
+
+  El fragmento debe de responder correctamente a estas pruebas y posteriormente
+  la aplicación pasar las pruebas unitarias.
+
+==== 6) Medida de la respuesta
+
+  No debe ocurrir ningún error a la hora de implementarlo todo.
+
+=== Escenario 19: Prueba Multiples Usuarios atacando la base de datos
+
+==== 1) Estímulo
+
+  Multiples Usuarios modificando la informacion interna de la aplicacion.
+
+==== 2) Fuente del estímulo
+
+  Multiples usuarios modificando la informacion guardada por la base de datos.
+
+==== 3) Entorno
+
+   Sistema funcionando en condiciones normales.
+
+==== 4) Artefactos del sistema
+
+  Servidor.
+
+==== 5) Respuesta del sistema
+
+  Los cambios han de persistir en el sistema correctamente con los cambios
+  hechos en el orden adecuado y el resultado final sea el correcto.
+
+==== 6) Medida de la respuesta
+  
+  Datos esperados al acabar las transacciones.
