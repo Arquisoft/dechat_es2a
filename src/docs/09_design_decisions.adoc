@@ -1,5 +1,5 @@
 [[section-design-decisions]]
-== Decisiones de DIseño
+== Decisiones de Diseño
 
 === Tecnología
 * NodeJS y Angular
@@ -27,4 +27,23 @@ más trabajo el aprender todo lo que puede ofrecer este lenguaje.
 Para obtener informacion de los PODS y enviar información a los mismos es necesario usar este lenguaje estandarizado para 
 consulta de grafos. La sintaxis es muy similar a otros lenguajes de bases de datos pero el no tener muchos conocimientos de
 como funciona internamente los PODS de Solid va a hacer que usar este lenguaje suponga otro reto más para el equipo.
+
+=== Arquitectonicas
+* Patrones
+
+Aun estamos aprendiendo a utilizar las tecnologías mencionadas en el anterior apartado aun no sabemos con certeza los patrones 
+que vamos a emplear en el diseño del código para poder mejorar el rendimiento de nuestra aplicación y hacer que sea mantenible y
+ampliable.
+
+
+=== Prioridades
+* Funcionalidad
+
+Hemos decidido basar nuestros esfuerzos en la fase de código en hacer que la aplicación sea funcional aunque la misma sea muy básisca.
+Nuestro razonamiento para ello es que cuanto antes consigamos mandar información entre PODS (mensaje de texto entre dos usuarios)
+antes podemos ampliar la aplicación con funcionalidad más compleja (mandar imágenes, chats grupales, etc..).
+
+* Interfaz de usuarios
+
+Cuando completemos la anterior prioridad nos centraremos en hacer una interfaz de usuario amigable, fácil de usar y sencilla.
 
