@@ -10,7 +10,6 @@
 |Restricción|Descripción
 | SOLID | Toda la información intercambiada en la aplicación se almacenará en PODs personales mediante un proceso descentralizado.
 | Angular JS/ Typescript | Se acopla muy bien a un proyecto SOLID. Además, se trata de un framework consolidado que nos ofrece múltiples funcionalidades respaldadas por una gran comunidad.
-| MongoDB | Se trata de una solución profesional y gratuita que nos permitirá escalar el proyecto con facilidad.
 | Arc42 | Se nos ha impuesto utilizar esta plantilla para documentar el proyecto. Es un estándar muy utilizado, principalmente en Europa. Este documento ha de mantenerse claro y simple en todo momento.
 |===
 .Restricciones organizativas
