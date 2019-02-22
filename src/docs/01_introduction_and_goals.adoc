@@ -1,5 +1,5 @@
 [[section-introduction-and-goals]]
-== Introduction and Goals
+== Introducción y metas
 
 [role="arc42help"]
 ****
@@ -13,7 +13,7 @@ Un usuario de la aplicación, recibirá las notificaciones de la aplicación, cu
 La aplicación, está pensada para todas aquellas personas que quieran mantener conversaciones sin que esa información quede almacenada en los servidores de la empresa proveedora de la aplicación.  
 ****
 
-=== Requirements Overview
+=== Vista de requisitos
 
 [role="arc42help"]
 ****
@@ -39,7 +39,7 @@ La aplicación, está pensada para todas aquellas personas que quieran mantener 
 ****
 
 
-=== Quality Goals
+=== Atributos de calidad
 
 [role="arc42help"]
 ****
@@ -64,14 +64,36 @@ La aplicación, está pensada para todas aquellas personas que quieran mantener 
 * *Robustez*: capacidad de la aplicación para actuar y sobreponerse a errores no esperados en tiempo de ejecución.
 * *Modular*: diseño de una aplicación mediante subdivisiones de esta, independientes unas de otras.
 * *Trazable*: capacidad de la aplicación a seguir el rastro a las actividades realizadas en ella en todas las etapas de su ciclo de vida.
+
+[options="header",cols="2*"]
+.Prioridad de los atributos de calidad en el proyecto
+|===
+|Prioridad | Atributo
+| 1 | Disponibilidad
+| 2 | Seguridad
+| 3 | Consistencia
+| 4 | Robustez
+| 5 | Integridad
+| 6 | Modificabilidad
+| 7 | Accesibilidad
+| 8 | Usabilidad
+| 9 | Trazable
+| 10 | Rendimiento
+| 11 | Testeabilidad
+| 12 | Modular
+| 13 | Escalabilidad
+| 14 | Interoperabilidad
+| 15 | Portabilidad
+|===
+
+
 ****
 
 === Stakeholders
 
 [role="arc42help"]
 ****
-
-
+.Stakeholders
 [options="header",cols="2*"]
 |===
 |Role/Name|Expectations
