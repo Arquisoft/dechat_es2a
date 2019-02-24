@@ -1,7 +1,19 @@
 [[section-technical-risks]]
-== Risks and Technical Debts
-Riesgos y deuda técnica
+== Riesgos y deuda técnica
+
 
 
 [role="arc42help"]
 Esta es la primera vez que trabajamos con el lenguaje Angular, con RDF's y con una arquitectura como la de SOLID, la cual no está integrada de manera sencilla con los lenguajes de programación que hemos ido usando a lo largo del grado de manera más asidua, sin tener así mismo abundante documentación por la red.
+
+Por otro lado, el equipo no dispone de conocimiento en lo relacionado a la seguridad por la red ni acerca de la legislación relativa al almacenamiento de información sensible y de las precauciones que se deben de tomar en ese caso.
+
+|===
+| *Déficit de conocimiento*
+| Angular
+| RDF
+| SPARQL 
+| Solid
+| Seguridad en la red
+| Legislación para los datos sensibles
+|===
