@@ -26,6 +26,6 @@ Potentially more columns in case you need translations.
 [options="header"]
 |===
 | Term         | Definition
-| <Term-1>     | <definition-1>
+| POD    | Personal Online Data, es el espacio en el que se almacenan tus datos, imágenes, etc.
 | <Term-2>     | <definition-2>
 |===
