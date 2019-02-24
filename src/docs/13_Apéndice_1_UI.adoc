@@ -3,6 +3,6 @@
 [role="arc42help"]
 ****
 .Demo
-video::videos/User_Interface.mp4[Prototipo de la UI de la aplicación.]
+video::videos/User_Interface.wmv[Prototipo de la UI de la aplicación.]
 
 ****
