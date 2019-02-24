@@ -2,30 +2,16 @@
 == Glossary
 
 
-
-[role="arc42help"]
-****
-.Contents
-The most important domain and technical terms that your stakeholders use when discussing the system.
-
-You can also see the glossary as source for translations if you work in multi-language teams.
-
-.Motivation
-You should clearly define your terms, so that all stakeholders
-
-* have an identical understanding of these terms
-* do not use synonyms and homonyms
-
-.Form
-A table with columns <Term> and <Definition>.
-
-Potentially more columns in case you need translations.
-
-****
+//Mantener en orden alfabético
 
 [options="header"]
 |===
 | Term         | Definition
+| Cross-site request forgery     | Tipo de exploit malicioso de un sitio web en el que comandos no autorizados son transmitidos por un usuario en el cual el sitio web confía.
 | POD    | Personal Online Data, es el espacio en el que se almacenan tus datos, imágenes, etc.
-| <Term-2>     | <definition-2>
+| SOLID    | Deriva de Social Linked Data, es un conjunto de convenciones y herramientas para construir aplicaciones sociales descentralizadas.
+| WebID    | Método estándar de identificación para comunicaciones HTTP.
 |===
+
+
+
