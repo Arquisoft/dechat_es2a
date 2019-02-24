@@ -47,3 +47,21 @@ antes podemos ampliar la aplicación con funcionalidad más compleja (mandar im�
 
 Cuando completemos la anterior prioridad nos centraremos en hacer una interfaz de usuario amigable, fácil de usar y sencilla.
 
+* Disponibilidad
+
+Procuraremos ante fallos en el sistema notificar de la manera más adecuada a los usuarios para evitar que se alarmen ante estas situaciones,
+además de mostrar ayudas que faciliten la comprensión de la interfaz de usuario cuando se la encuentran por primera vez.
+
+* Rendimiento
+
+Una vez se consiga una aplicación bonita a ojos del usuario y sin errores graves en funcionamiento buscaremos la mayor velocidad posible en la ejecución
+de las distintas opciones que nuestra aplicación ofrezca. No estamos seguros si en el tiempo que disponemos para el 
+proyecto conseguiremos maximizar la optimización del mismo.
+
+* Seguridad
+
+La principal arma para la seguridad se basa en lo más principal de este proyecto que consiste en que cada usuario sea dueño de sus datos
+al estar contenidos en el POD personal de cada uno. Aún así existen riesgos de ataques como por ejemplo Man in the middle, que si nos sobra tiempo
+intentaremos encontrar la manera de solventar.
+
+
