@@ -1,0 +1,12 @@
+== Interfaz de usuario
+
+
+
+[role="arc42help"]
+****
+.Demo
+https://www.youtube.com/watch?v=gKar_up-E5g
+
+//video::videos\User_Interface.mp4["Prototipo UI"]
+
+****

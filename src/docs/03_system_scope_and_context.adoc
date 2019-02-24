@@ -7,7 +7,7 @@
 [role="arc42help"]
 ****
 .Diagrama
-image:03_Diagrama_Negocio_ES.png["Diagrama de negocio de la aplicación"]
+image:images/03_Diagrama_Negocio_ES.png["Diagrama de negocio de la aplicación"]
 
 .Explicación
 En la aplicación de chat descentralizado el usuario accedera a ella mediante su webID (preferiblemente SOLID).
@@ -20,7 +20,7 @@ El usuario podra intercambiar mensajes de texto e imágenes con otros usuarios q
 [role="arc42help"]
 ****
 .Diagrama
-image:03_Diagrama_Tecnico_ES.png["Diagrama técnico de la aplicación"]
+image:images/03_Diagrama_Tecnico_ES.png["Diagrama técnico de la aplicación"]
 
 .Explicación
 En este diagrama aparecen además del usuario, los profesores que corregiran el proyecto y los miembros de SOLID que valoraran la aplicación.
