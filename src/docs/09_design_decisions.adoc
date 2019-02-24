@@ -34,6 +34,11 @@ como funciona internamente los PODS de Solid va a hacer que usar este lenguaje s
 Aun estamos aprendiendo a utilizar las tecnologías mencionadas en el anterior apartado aun no sabemos con certeza los patrones 
 que vamos a emplear en el diseño del código para poder mejorar el rendimiento de nuestra aplicación y hacer que sea mantenible y
 ampliable.
+Probablemente separaremos nuestro código en tres capas diferentes para desacoplar las funcionalidades entre las diferentes clases
+de nuestro proyecto y que una sola clase no mezcle puntos de funcionamiento de más( será capa de presentación, de negocio y de datos).
+Para esta labor de separar en capas emplearemos el MVC(modelo-vista-controlador) además de buscar mejorar nuestra interfaz de usuario 
+gracias a este patrón, además de poder reutilizar el código lo cual nos hará ganar tiempo el cual escasea 
+para este proyecto. En función que avancen las semanas añadiremos más patrones a esta sección.
 
 
 === Prioridades
