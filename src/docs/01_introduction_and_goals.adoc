@@ -1,8 +1,6 @@
 [[section-introduction-and-goals]]
 == Introducción y metas
 
-[role="arc42help"]
-****
 
 
 Nos hemos propuesto desarrollar un chat descentralizado, siguiendo las caracteristicas de SOLID.
@@ -11,12 +9,10 @@ Los usuarios de la aplicación, pueden enviarse fotos, vídeos u otros archivos 
 Un usuario de la aplicación, recibirá las notificaciones de la aplicación, cuando otro usuario o usuarios quieran comunicarse con él.
 
 La aplicación, está pensada para todas aquellas personas que quieran mantener conversaciones sin que esa información quede almacenada en los servidores de la empresa proveedora de la aplicación.  
-****
+
 
 === Vista de requisitos
 
-[role="arc42help"]
-****
 .Funcionales
 * Los usuarios que utilicen la aplicación deberán de poseer un pod de SOLID.
 * El sistema deberá de notificar al usuario los mensajes que éste reciba.
@@ -36,13 +32,10 @@ La aplicación, está pensada para todas aquellas personas que quieran mantener 
 ** Cross-site request forgery.
 ** Mensajes encriptados utilizando el algoritmo de encriptación MD5/SHA1Sum.
 * Nivel de accesibilidad y usabilidad siguiendo las recomendaciones de w3c.
-****
 
 
 === Atributos de calidad
 
-[role="arc42help"]
-****
 * *Accesibilidad*: diseño de una aplicación accesible para personas con discapacidades 
 * *Disponibilidad*: diseño de una aplicación que asegure un cierto grado absoluto de continuidad operacional durante un periodo de duración dado.
 * *Modificabilidad*: diseño de una aplicación con un software mantenible en el tiempo.
@@ -87,12 +80,9 @@ La aplicación, está pensada para todas aquellas personas que quieran mantener 
 |===
 
 
-****
 
 === Stakeholders
 
-[role="arc42help"]
-****
 .Stakeholders
 [options="header",cols="2*"]
 |===
@@ -101,4 +91,3 @@ La aplicación, está pensada para todas aquellas personas que quieran mantener 
 | SOLID | Realizar un chat descentralizado de acuerdo a la tecnología SOLID.
 | Equipo de desarrollo | Realizar el trabajo asignado siguiendo los requisitos establecidos en la documentación siguiendo una metodología ágil de acuerdo a lo aprendido en la asignatura.
 |===
-****
