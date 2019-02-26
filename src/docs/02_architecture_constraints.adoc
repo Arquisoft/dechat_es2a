@@ -2,8 +2,7 @@
 == Restricciones de la Arquitectura
 
 
-[role="arc42help"]
-****
+
 .Restricciones técnicas
 [frame="topbot",options="header"]
 |===
@@ -22,6 +21,5 @@
 
 
 
-****
 
 

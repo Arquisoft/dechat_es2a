@@ -4,8 +4,7 @@
 
 === Contexto de Negocio
 
-[role="arc42help"]
-****
+
 .Diagrama
 image:images/03_Diagrama_Negocio_ES.png["Diagrama de negocio de la aplicación"]
 
@@ -14,13 +13,11 @@ En la aplicación de chat descentralizado el usuario accedera a ella mediante su
 en la comunidad de SOLID o similar supone un cambio respecto a otros autentificadores ya que se realiza mediante URL en este caso.
 El usuario podra intercambiar mensajes de texto e imágenes con otros usuarios que tengan registrados como amigos presentes en la comunidad. 
 Esos mensajes quedaran almacenados en el POD de cada usuario de modo que ellos sean los únicos propietarios de estos.
-****
 
 
 === Contexto Técnico
 
-[role="arc42help"]
-****
+
 .Diagrama
 image:images/03_Diagrama_Tecnico_ES.png["Diagrama técnico de la aplicación"]
 
@@ -31,6 +28,6 @@ El login mediante SOLID hara que se cree en el POD de cada usuario una carpeta d
 donde se va a guardar toda la información de la conversación e imágenes que el usuario reciba o desee compartir. Este es el 
 principal objetivo que se busca para competir contra grandes bases de datos centralizadas, las cuales en nuestro proyecto
 vamos a evitar con este alternativa.
-****
+
 
 

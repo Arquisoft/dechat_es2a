@@ -2,9 +2,8 @@
 == Conceptos transversales
 
 
-[role="arc42help"]
-****
+
 .Contenido
 
 Iremos desarrollando esta parte de la documentación a medida que se vaya desarrollando el proyecto del chat descentralizado.
-****
+
