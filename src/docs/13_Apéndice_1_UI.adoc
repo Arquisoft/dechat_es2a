@@ -1,12 +1,5 @@
 == Interfaz de usuario
 
+.Video User Interface
+video::video::gKar_up-E5g[youtube]
 
-
-[role="arc42help"]
-****
-.Demo
-https://www.youtube.com/watch?v=gKar_up-E5g
-
-//video::videos\User_Interface.mp4["Prototipo UI"]
-
-****

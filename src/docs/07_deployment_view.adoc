@@ -3,5 +3,5 @@
 
 == Deployment View
 
-[role="arc42help"]
+
 *Este apartado se completará a medida que avance el proyecto
