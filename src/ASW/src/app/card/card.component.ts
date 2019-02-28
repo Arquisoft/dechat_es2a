@@ -16,6 +16,7 @@ export class CardComponent implements OnInit  {
   profile: SolidProfile;
   profileImage: string;
   loadingProfile: Boolean;
+  amigos: Array<any>;
 
   @ViewChild('f') cardForm: NgForm;
 
@@ -46,7 +47,18 @@ export class CardComponent implements OnInit  {
     } catch (error) {
       console.log(`Error: ${error}`);
     }
+  }
 
+  async loadFriends() {
+    try {
+      const list_friends = await this.rdf.getFriends();
+      console.log(list_friends);
+      if (list_friends) {
+        this.amigos = list_friends;
+      }
+    } catch (error) {
+      console.log(`Error: ${error}`);
+    }
   }
 
   // Submits the form, and saves the profile data using the auth/rdf service
@@ -75,4 +87,7 @@ export class CardComponent implements OnInit  {
   logout() {
     this.auth.solidSignOut();
   }
+
+
+
 }
