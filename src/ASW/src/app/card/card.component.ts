@@ -52,7 +52,6 @@ export class CardComponent implements OnInit  {
   async loadFriends() {
     try {
       const list_friends = await this.rdf.getFriends();
-      console.log(list_friends);
       if (list_friends) {
         this.amigos = list_friends;
       }
