@@ -289,14 +289,16 @@ export class RdfService {
     getFriends = async () => {
     const user = this.session.webId;
     const amigos = this.store.each($rdf.sym(user), FOAF('knows'));
-    const lista_amigos = Array<String>();
+    const lista_amigos = [];
     try {
-      amigos.forEach(async (amigo) => {
-        await this.fetcher.load(amigo);
-        lista_amigos.push(amigo);
-      });
-      console.log(lista_amigos);
+
+      let i=0;
+      for (i=0; i<amigos.length; i++)
+      {
+        lista_amigos.push(amigos[i].value);
+      }
       return lista_amigos;
+
     } catch (error) {
       console.log(`Error fetching data: ${error}`);
     }
