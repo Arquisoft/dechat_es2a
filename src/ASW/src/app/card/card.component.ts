@@ -17,6 +17,7 @@ export class CardComponent implements OnInit  {
   profileImage: string;
   loadingProfile: Boolean;
   amigos: Array<any>;
+  fileClient: any;
 
   @ViewChild('f') cardForm: NgForm;
 
@@ -26,10 +27,11 @@ export class CardComponent implements OnInit  {
   ngOnInit() {
     this.loadingProfile = true;
     this.loadProfile();
-
+    this.fileClient = require('solid-file-client');
     // Clear cached profile data
     // TODO: Remove this code and find a better way to get the old data
     localStorage.removeItem('oldProfileData');
+
   }
 
   // Loads the profile from the rdf service and handles the response
@@ -88,9 +90,20 @@ export class CardComponent implements OnInit  {
   }
 
 
-  async createNewFolder(){
-    let store = this.rdf.store;
-    store.add(this.rdf.session.webId)
+  private createNewFolder(){
+
+    let solidId = this.rdf.session.webId;
+    let stringToChange = "/profile/card#me";
+    solidId = solidId.replace(stringToChange,"/public/pruebaASW")
+    
+    this.fileClient.popupLogin().then( webId => {
+       console.log( `Logged in as ${webId}.`)
+  }, err => console.log(err) );
+
+    this.fileClient.createFolder(solidId).then(success => {
+      console.log(`Created folder ${solidId}.`);
+    }, err => console.log(err) );
+
   }
 
 
