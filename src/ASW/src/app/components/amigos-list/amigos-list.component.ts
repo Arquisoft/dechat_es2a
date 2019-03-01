@@ -29,15 +29,30 @@ export class AmigosListComponent implements OnInit {
 
       const list_friends = await this.rdf.getFriends();
 
-
-      console.log(list_friends);
       if (list_friends) {
+        document.write("<h1> LISTA DE COLEGUIS PARA CHATEAR: </h1>");
+        this.amigos = list_friends;
+        console.log(list_friends);
 
-        document.write("<h1> LISTA DE COLEGUIS PARA CHATEAR: </h1>")
-        let i = 0;
-        console.log(list_friends.keys());
-        for (i = 0; i < list_friends.length; i++) {
+        let i=0;
+        for (i=0; i<list_friends.length; i++)
+        {
+          document.write("<h2> " + list_friends[i] + "</h2>");
         }
+
+
+
+
+
+        //var data = list_friends.map(t=>t.value);
+        //console.log(data);
+
+        //let i = 0;
+
+
+        //console.log(list_friends.);
+        //for (i = 0; i < list_friends.length; i++) {
+        //}
 
 
 
@@ -48,24 +63,4 @@ export class AmigosListComponent implements OnInit {
     }
   }
 
-
-
-
-
-  async llamada()
-  {
-    document.write("<h1> LISTA DE COLEGUIS PARA CHATEAR: </h1>")
-
-    let i = 0;
-      for (i = 0; i < this.tamano; i++) {
-        console.log(this.amigos[i]);
-    }
-
-
-    this.amigos.forEach(function(entry) {
-      document.write("<h2>");
-      document.write(entry);
-      document.write("</h2>");
-    });
-  }
 }
