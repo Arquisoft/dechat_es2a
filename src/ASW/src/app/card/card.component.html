@@ -60,9 +60,19 @@
         <div class="pure-u-1-1 pure-u-md-1-2 form-group">
           <i class="fas fa-map-marker-alt" style="width: 12px; margin-left: 2px;"></i><input type="text" class="field-text form-control" name="address" placeholder="ADDRESS" [(ngModel)]="profile.address.street" />
         </div>
-        <div>
+      </div>
+
+      <div class="fields pure-g">
+        <!-- CARGAR AMIGOS -->
+        <div class="pure-u-1-1 pure-u-md-1-2 form-group">
           <button (click)="loadFriends()" class="wide-button profile-save-button"> Mis colegas!!! </button>
         </div>
+
+        <!-- TEST PARA CREAR UNA NUEVA CARPETA    -->
+        <div class="pure-u-1-1 pure-u-md-1-2 form-group">
+          <button (click)="createNewFolder()" class="wide-button profile-save-button"> Test crear carpeta </button>
+        </div>
+
       </div>
 
       <div class="profile-save-button-container">
