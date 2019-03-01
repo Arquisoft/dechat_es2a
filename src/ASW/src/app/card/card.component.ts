@@ -88,5 +88,11 @@ export class CardComponent implements OnInit  {
   }
 
 
+  async createNewFolder(){
+    let store = this.rdf.store;
+    store.add(this.rdf.session.webId)
+  }
+
+
 
 }
