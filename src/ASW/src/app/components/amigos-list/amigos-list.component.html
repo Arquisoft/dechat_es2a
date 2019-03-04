@@ -1,4 +1,9 @@
 <h1>
   Lista de amigos
 </h1>
-<h2><script src="../components/amigos-list/amigos-list.component.ts"></script></h2>
+<table>
+  <div *ngFor="let item of amigos">
+    <a routerLink="../envio-chat" id=item> {{item}}</a>
+  </div>
+</table>
+

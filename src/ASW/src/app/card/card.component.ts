@@ -27,10 +27,6 @@ export class CardComponent implements OnInit  {
   ngOnInit() {
     this.loadingProfile = true;
     this.loadProfile();
-    this.fileClient = require('solid-file-client');
-    // Clear cached profile data
-    // TODO: Remove this code and find a better way to get the old data
-    localStorage.removeItem('oldProfileData');
 
   }
 

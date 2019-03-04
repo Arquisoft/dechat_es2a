@@ -8,6 +8,7 @@ import {LoginComponent} from './login/login.component';
 import { CardComponent } from './card/card.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AmigosListComponent } from './components/amigos-list/amigos-list.component';
+import { EnvioChatComponent } from './components/envio-chat/envio-chat.component';
 
 
 // Services
@@ -53,6 +54,20 @@ const routes: Routes = [
         path: 'components/amigos-list',
         component: AmigosListComponent,
     },
+    {
+      path: 'components/envio-chat',
+      component: EnvioChatComponent,
+      children: [
+
+        {
+
+          path: '../components/amigos-list',
+          component: AmigosListComponent,
+
+        }
+
+      ]
+    },
 ];
 
 @NgModule({
@@ -63,7 +78,8 @@ const routes: Routes = [
     DashboardComponent,
     CardComponent,
     RegisterComponent,
-    AmigosListComponent
+    AmigosListComponent,
+    EnvioChatComponent,
   ],
   imports: [
     BrowserModule,
