@@ -27,7 +27,7 @@ export class CardComponent implements OnInit  {
   ngOnInit() {
     this.loadingProfile = true;
     this.loadProfile();
-    this.fileClient= require('solid-file-client')
+    this.fileClient = require('solid-file-client');
 
   }
 
@@ -87,7 +87,7 @@ export class CardComponent implements OnInit  {
   }
 
   //Usando la libreria de https://github.com/jeff-zucker/solid-file-client puedo crear y eliminar archivos, ficheros, etc. Es recomendable leer su README
-  private createNewFolder(){
+  private createNewFolder() {
 
     //Para crear la carpeta necesito una ruta que incluya el nombre de la misma. 
     //Obtengo el ID del usuario y sustituyo  lo irrelevante por la ruta de public/NombreCarpeta
