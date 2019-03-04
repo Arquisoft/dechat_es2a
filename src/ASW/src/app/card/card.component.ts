@@ -27,6 +27,7 @@ export class CardComponent implements OnInit  {
   ngOnInit() {
     this.loadingProfile = true;
     this.loadProfile();
+    this.fileClient= require('solid-file-client')
 
   }
 
