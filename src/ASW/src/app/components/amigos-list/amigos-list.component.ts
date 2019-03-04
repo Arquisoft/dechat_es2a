@@ -25,11 +25,12 @@ export class AmigosListComponent implements OnInit {
   }
 
   loadFriends() {
-      const list_friends = this.rdf.getFriends();
+    const list_friends = this.rdf.getFriends();
 
-      if (list_friends) {
-        console.log(list_friends);
-        let i=0;
-        this.amigos = list_friends;
+    if (list_friends) {
+      console.log(list_friends);
+      let i = 0;
+      this.amigos = list_friends;
+    }
   }
 }

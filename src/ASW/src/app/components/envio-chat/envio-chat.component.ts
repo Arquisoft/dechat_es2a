@@ -10,5 +10,6 @@ export class EnvioChatComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    document.write("Falta por implementar el chat");
   }
 }
