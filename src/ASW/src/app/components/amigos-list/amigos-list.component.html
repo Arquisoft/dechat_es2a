@@ -3,7 +3,6 @@
 </h1>
 <table>
   <div *ngFor="let item of amigos">
-    <a routerLink="../envio-chat" id=item> {{item}}</a>
+    <a [routerLink] = "['/components/envio-chat', item.toString()]"> {{item}}</a>
   </div>
 </table>
-

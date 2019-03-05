@@ -55,18 +55,8 @@ const routes: Routes = [
         component: AmigosListComponent,
     },
     {
-      path: 'components/envio-chat',
+      path: 'components/envio-chat/:parametro',
       component: EnvioChatComponent,
-      children: [
-
-        {
-
-          path: '../components/amigos-list',
-          component: AmigosListComponent,
-
-        }
-
-      ]
     },
 ];
 
