@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { RdfService } from '../../services/rdf.service';
 import { ActivatedRoute, Params } from '@angular/router';
-
+const Message = require('../../Modelo/Mensaje');
 
 @Component({
   selector: 'app-envio-chat',
@@ -56,52 +56,44 @@ export class EnvioChatComponent implements OnInit {
         }, err => console.log(err));
 
 
-        await this.fileClient.updateFile(solidId, "mensaje.txt").then(success => {
-            200
-        }, err => this.fileClient.createFile(solidId, "mensaje.txt").then(200));
 
-        await this.crearPermisos(solidId, user);
+        console.log("SolidID: " + solidId);
+        console.log("Emisor: " + this.rdf.session.webId);
+        console.log("Receptor: " + this.ruta_seleccionada);
+
+        var mensaje = new Message(this.rdf.session.webId, this.ruta_seleccionada, 'probando');
+        const mensajes = [];
+        mensajes.push(mensaje);
+
+        const messagesJSON = this.buildJSONmessages(this.rdf.session.webId.replace('https://', '').replace('/profile/card#me', ''), this.ruta_seleccionada.replace('https://', '').replace('/profile/card#me', ''), mensajes);
+
+        // var messagesJSON = txtFileBuilder.buildJSONmessages(userID, partnerID, messages);
+
+        this.fileClient.createFile(solidId, messagesJSON).then(200);
+
+
 
     }
 
+    buildJSONmessages(emisor, receptor, messages)
+    {
 
-    /**
-     * Grant the necessary permissions to read a file
-     * @param {String} route of the file
-     * @param {String} webID of the partner
-     */
-    async crearPermisos(fileRoute, partnerID) {
-        var aclRoute = fileRoute + '.acl';
-        var aclContents = this.generarPermisos(partnerID, "mensaje.txt");
+        var actualizacion = new Date().getTime();
 
-        await this.fileClient.updateFile(aclRoute, aclContents).then(success => {
-            200
-        }, err => this.fileClient.createFile(aclRoute, aclContents).then(200));
-    }
-
-    /**
-     *Generate an ACL text string that grants owner all permissions and Read only to partnerID
-     *@param {String} partnerID
-     *@param {String} filename
-     *@return {String} ACL string content
-     */
-    generarPermisos(partnerID, filename) {
-        partnerID = partnerID.replace("#me", "#");
-        var ACL = "@prefix : <#>. \n"
-            +"@prefix n0: <http://www.w3.org/ns/auth/acl#>. \n"
-            +"@prefix c: </profile/card#>. \n"
-            +"@prefix c0: <"+ partnerID + ">. \n\n"
-
-            +":ControlReadWrite \n"
-            +"\ta n0:Authorization; \n"
-            +"\tn0:accessTo <"+ filename +">; \n"
-            +"\tn0:agent c:me; \n"
-            +"\tn0:mode n0:Control, n0:Read, n0:Write. \n"
-            +":Read \n"
-            +"\ta n0:Authorization; \n"
-            +"\tn0:accessTo <"+ filename +">; \n"
-            +"\tn0:agent c0:me; \n"
-            +"\tn0:mode n0:Read.";
-        return ACL;
+        var tostr = JSON.stringify({'webid_sender': emisor, 'webid_receiver': receptor, 'lastupdate': actualizacion, 'messages': '__'});
+        var sepsa = tostr.split('"__"');
+        var ret = '////' + sepsa[0] + '[';
+        var i;
+        for (i = 0; i < messages.length; i++) {
+            ret = ret + messages[i].serialize();
+            if (i != messages.length - 1) {
+                ret = ret + ',';
+            }
+            else {
+                ret = ret + ']' + sepsa[1] + '////';
+            }
+        }
+        console.log(ret);
+        return ret;
     }
 }

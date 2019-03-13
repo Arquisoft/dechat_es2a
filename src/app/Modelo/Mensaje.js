@@ -9,6 +9,12 @@ class Mensaje
     }
 
 
+    serialize(){
+        return JSON.stringify({
+            "date": this.fecha,
+            "messages":this.texto
+        })
+    }
 }
 
 
