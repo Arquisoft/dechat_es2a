@@ -1,17 +1,20 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { RdfService } from '../../services/rdf.service';
 import { ActivatedRoute, Params } from '@angular/router';
+import {message} from '../../Modelo/message.model';
+import {Friend} from '../../Modelo/friend.model';
 
 @Component({
-  selector: 'app-envio-chat',
-  templateUrl: './envio-chat.component.html',
-  styleUrls: ['./envio-chat.component.css']
+    selector: 'app-envio-chat',
+    templateUrl: './envio-chat.component.html',
+    styleUrls: ['./envio-chat.component.css']
 })
 export class EnvioChatComponent implements OnInit {
 
     fileClient: any;
     ruta_seleccionada: string;
-    contenido: any;
+    messages: message[] = [];
+    ruta: string;
 
     constructor(private rdf: RdfService, private rutaActiva: ActivatedRoute) {
         this.rutaActiva.params.subscribe(data => {
@@ -23,10 +26,15 @@ export class EnvioChatComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.fileClient = require('solid-file-client');
+        /*this.fileClient = require('solid-file-client');
         const name = this.getUserByUrl(this.ruta_seleccionada);
         this.createNewFolder('dechat', '/public/');
         this.createNewFolder(name, '/public/dechat/');
+        */
+        this.fileClient = require('solid-file-client');
+        const name = this.getUserByUrl(this.ruta_seleccionada);
+        this.createNewFolder('dechat2a', '/public/');
+        this.createNewFolder(name, '/public/dechat2a/');
     }
 
     private getUserByUrl(ruta: string): string {
@@ -36,6 +44,11 @@ export class EnvioChatComponent implements OnInit {
         return user;
     }
 
+    /**
+     * Crear carpeta
+     * @param name
+     * @param ruta
+     */
     private createNewFolder(name: string, ruta: string) {
         //Para crear la carpeta necesito una ruta que incluya el nombre de la misma.
         //Obtengo el ID del usuario y sustituyo  lo irrelevante por la ruta de public/NombreCarpeta
@@ -48,7 +61,7 @@ export class EnvioChatComponent implements OnInit {
         //crear la carpeta. Como ya estoy en sesion no abre nada pero si se abre la consola se ve
         // que se ejecuta correctamente.
 
-        console.log("SOLID ID: " + solidId);
+        console.log('SOLID ID: ' + solidId);
         this.buildFolder(solidId);
 
     }
@@ -66,25 +79,85 @@ export class EnvioChatComponent implements OnInit {
         });
     }
 
+
+    async probando() {
+
+        let myUser = this.getUserByUrl(this.rdf.session.webId);
+        let user = this.getUserByUrl(this.ruta_seleccionada);
+        var messageContent = (<HTMLInputElement>document.getElementById("usermsg")).value;
+        (document.getElementById("usermsg") as HTMLInputElement).value = "";
+        console.log(messageContent);
+        //Sender WebID
+        let senderId = this.rdf.session.webId;
+        let senderPerson: Friend = {webid: senderId};
+
+        //Receiver WebId
+        let recipientPerson: Friend = {webid: this.ruta_seleccionada}
+
+        let messageToSend: message = {content: messageContent, date: new Date(Date.now()), sender: senderPerson, recipient: recipientPerson}
+        let stringToChange = '/profile/card#me';
+        let path = '/public/dechat2a/' + user + '/Conversation.txt';
+
+        senderId = senderId.replace(stringToChange, path);
+
+        let message = await this.readMessage(senderId);
+
+        //For TXTPrinter
+        if (message != null) {
+            this.updateTTL(senderId, message + "\n" + new TXTPrinter().getTXTDataFromMessage(messageToSend));
+        } else {
+            this.updateTTL(senderId, new TXTPrinter().getTXTDataFromMessage(messageToSend));
+        }
+
+        if (this.messages.indexOf(messageToSend) !== -1) {
+            this.messages.push(message);
+            console.log("MENSAJE message: " + message);
+        }
+    }
+
     private async readMessage(url) {
-        var message = await this.searchMessage(url);
+        this.ruta = url;
+        var message = await this.searchMessage(url)
         console.log(message);
         return message;
     }
 
     //method that search for a message in a pod
-    private searchMessage(url) {
-        console.log("MENSAJE PARA BUSCAR: " + url);
-        return this.fileClient.readFile(url).then(body => {
-            console.log(`File	content is : ${body}.`);
-            document.write(body);
+    private async searchMessage(url) {
+        return await this.fileClient.readFile(url).then(body => {
+            //console.log(`File	content is : ${body}.`);
             return body;
         }, err => console.log(err));
 
     }
 
-    private ver_mensajes() {
-        let url = 'https://adanvetusta.solid.community/public/dechat/adanfernandezsanchez/Conversation2.txt';
-        let messageContent = this.searchMessage(url);
+    private updateTTL(url, newContent, contentType?) {
+        if (contentType) {
+            this.fileClient.updateFile(url, newContent, contentType).then(success => {
+                console.log(`Updated ${url}.`)
+            }, err => console.log(err));
+        }
+        else {
+            this.fileClient.updateFile(url, newContent).then(success => {
+                console.log(`Updated ${url}.`)
+            }, err => console.log(err));
+        }
+    }
+
+    async actualizar(url)
+    {
+        var message = await this.searchMessage(url)
+        console.log(message);
+        return message;
+    }
+
+}
+
+class TXTPrinter {
+    public getTXTDataFromMessage(message) {
+        return message.sender.webid + "###" +
+            message.recipient.webid + "###" +
+            message.content + "###" +
+            message.date + "\n";
     }
 }
