@@ -18,10 +18,7 @@ export class EnvioChatComponent implements OnInit {
 
     constructor(private rdf: RdfService, private rutaActiva: ActivatedRoute) {
         this.rutaActiva.params.subscribe(data => {
-            console.log(data['parametro']);
             this.ruta_seleccionada = data['parametro'];
-            console.log(this.ruta_seleccionada);
-            console.log(typeof this.ruta_seleccionada);
         });
     }
 
@@ -35,6 +32,7 @@ export class EnvioChatComponent implements OnInit {
         const name = this.getUserByUrl(this.ruta_seleccionada);
         this.createNewFolder('dechat2a', '/public/');
         this.createNewFolder(name, '/public/dechat2a/');
+
     }
 
     private getUserByUrl(ruta: string): string {
@@ -61,7 +59,6 @@ export class EnvioChatComponent implements OnInit {
         //crear la carpeta. Como ya estoy en sesion no abre nada pero si se abre la consola se ve
         // que se ejecuta correctamente.
 
-        console.log('SOLID ID: ' + solidId);
         this.buildFolder(solidId);
 
     }
@@ -85,7 +82,7 @@ export class EnvioChatComponent implements OnInit {
         let myUser = this.getUserByUrl(this.rdf.session.webId);
         let user = this.getUserByUrl(this.ruta_seleccionada);
         var messageContent = (<HTMLInputElement>document.getElementById("usermsg")).value;
-        (document.getElementById("usermsg") as HTMLInputElement).value = "";
+        //(document.getElementById("usermsg") as HTMLInputElement).value = "";
         console.log(messageContent);
         //Sender WebID
         let senderId = this.rdf.session.webId;
@@ -102,30 +99,34 @@ export class EnvioChatComponent implements OnInit {
 
         let message = await this.readMessage(senderId);
 
+        this.ruta = senderId;
+
         //For TXTPrinter
         if (message != null) {
             this.updateTTL(senderId, message + "\n" + new TXTPrinter().getTXTDataFromMessage(messageToSend));
+            if (this.messages.indexOf(message) !== -1) {
+                this.messages.push(message);
+                console.log("MESSAGES: " + this.messages);
+            }
         } else {
             this.updateTTL(senderId, new TXTPrinter().getTXTDataFromMessage(messageToSend));
         }
 
-        if (this.messages.indexOf(messageToSend) !== -1) {
-            this.messages.push(message);
-            console.log("MENSAJE message: " + message);
-        }
+
+
     }
 
     private async readMessage(url) {
         this.ruta = url;
         var message = await this.searchMessage(url)
-        console.log(message);
         return message;
     }
 
     //method that search for a message in a pod
     private async searchMessage(url) {
+        console.log("URL: " + url);
         return await this.fileClient.readFile(url).then(body => {
-            //console.log(`File	content is : ${body}.`);
+            console.log(`File	content is : ${body}.`);
             return body;
         }, err => console.log(err));
 
@@ -144,11 +145,31 @@ export class EnvioChatComponent implements OnInit {
         }
     }
 
-    async actualizar(url)
+
+    async actualizar()
     {
-        var message = await this.searchMessage(url)
-        console.log(message);
-        return message;
+        this.messages = [];
+        let user = this.getUserByUrl(this.ruta_seleccionada);
+        let senderId = this.rdf.session.webId;
+        let stringToChange = '/profile/card#me';
+        let path = '/public/dechat2a/' + user + '/Conversation.txt';
+        senderId = senderId.replace(stringToChange, path);
+        this.ruta = senderId;
+
+        var content = await this.readMessage(senderId);
+
+        var messageArray = content.split('\n');
+        messageArray.forEach(element => {
+            console.log(element.content);
+            if (element[0])
+            {
+                const messageArrayContent = element.split('###');
+                const messageToAdd: message = { content: messageArrayContent[2], date: messageArrayContent[3], sender: messageArrayContent[0], recipient: messageArrayContent[1]};
+                console.log(messageToAdd);
+                this.messages.push(messageToAdd);
+            }
+
+        });
     }
 
 }

@@ -1,13 +1,15 @@
 <div id="writemessage">
   <form name="message" action="" >
     <input name="usermsg" type="text" id="usermsg" size="120"  placeholder="Write your message..." />
-    <button (click)="probando()" id="submitmsg"><i class="fa fa-paper-plane" aria-hidden="true"  style="font-size: 25px; "></i></button>
+    <button (click)="probando()" id="submitmsg"><i class="fa fa-paper-plane" aria-hidden="true"  style="font-size: 25px; ">ESCRITURA</i></button>
+    <button (click)="actualizar()" id="submitmsg"><i class="fa fa-paper-plane" aria-hidden="true"  style="font-size: 25px; ">ACTUALIZAR</i></button>
   </form>
 </div>
 <ul >
   <div  *ngFor="let message of messages">
 
-    <p> <i class="fas fa-user-circle" style="font-size: 30px; color: blueviolet">  </i>
+    <p>
+      <i class="fas fa-user-circle" style="font-size: 30px; color: blueviolet">  </i>
       {{message.content}}
     </p>
 
