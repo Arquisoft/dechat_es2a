@@ -77,7 +77,7 @@ export class EnvioChatComponent implements OnInit {
     }
 
 
-    async probando() {
+    async escribir() {
 
         let myUser = this.getUserByUrl(this.rdf.session.webId);
         let user = this.getUserByUrl(this.ruta_seleccionada);
@@ -145,7 +145,6 @@ export class EnvioChatComponent implements OnInit {
         }
     }
 
-
     async actualizar()
     {
         this.messages = [];
@@ -168,7 +167,31 @@ export class EnvioChatComponent implements OnInit {
                 console.log(messageToAdd);
                 this.messages.push(messageToAdd);
             }
+        });
 
+
+
+        var urlArray = this.ruta_seleccionada.split("/");
+        let url= "https://" + urlArray[2] + "/public/dechat2a/" +this.getUserByUrl(this.rdf.session.webId) + "/Conversation.txt";
+
+
+        console.log("URL: "  + url);
+
+        var content = await this.readMessage(url);
+
+
+        console.log(content);
+
+        var messageArray = content.split('\n');
+        messageArray.forEach(element => {
+            console.log(element.content);
+            if (element[0])
+            {
+                const messageArrayContent = element.split('###');
+                const messageToAdd: message = { content: messageArrayContent[2], date: messageArrayContent[3], sender: messageArrayContent[0], recipient: messageArrayContent[1]};
+                console.log(messageToAdd);
+                this.messages.push(messageToAdd);
+            }
         });
     }
 
