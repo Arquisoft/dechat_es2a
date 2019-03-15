@@ -6,14 +6,25 @@
   </form>
 </div>
 <ul >
-  <div  *ngFor="let message of messages">
+  <div>
 
-    <p>
-      <i class="fas fa-user-circle" style="font-size: 30px; color: blueviolet">  </i>
-      {{message.content}}
-    </p>
 
+    <thead>
+    <tr>
+      <th>Envía</th>
+      <th>                              </th>
+      <th>                              </th>
+      <th>Mensaje</th>
+    </tr>
+
+    <tr *ngFor="let message of messages">
+      <td>{{message.sender}}</td>
+      <td>______________________________</td>
+      <td>______________________________</td>
+      <td>                   {{message.content}}</td>
+    </tr>
+
+    </thead>
   </div>
 
 </ul>
-

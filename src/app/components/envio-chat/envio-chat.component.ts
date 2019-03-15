@@ -3,6 +3,7 @@ import { RdfService } from '../../services/rdf.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import {message} from '../../Modelo/message.model';
 import {Friend} from '../../Modelo/friend.model';
+import {SolidProfile} from '../../models/solid-profile.model';
 
 @Component({
     selector: 'app-envio-chat',
@@ -91,6 +92,7 @@ export class EnvioChatComponent implements OnInit {
         //Receiver WebId
         let recipientPerson: Friend = {webid: this.ruta_seleccionada}
 
+
         let messageToSend: message = {content: messageContent, date: new Date(Date.now()), sender: senderPerson, recipient: recipientPerson}
         let stringToChange = '/profile/card#me';
         let path = '/public/dechat2a/' + user + '/Conversation.txt';
@@ -112,8 +114,8 @@ export class EnvioChatComponent implements OnInit {
             this.updateTTL(senderId, new TXTPrinter().getTXTDataFromMessage(messageToSend));
         }
 
-
-
+        (<HTMLInputElement>document.getElementById('usermsg')).value = '';
+        this.actualizar();
     }
 
     private async readMessage(url) {
@@ -137,16 +139,14 @@ export class EnvioChatComponent implements OnInit {
             this.fileClient.updateFile(url, newContent, contentType).then(success => {
                 console.log(`Updated ${url}.`)
             }, err => console.log(err));
-        }
-        else {
+        } else {
             this.fileClient.updateFile(url, newContent).then(success => {
                 console.log(`Updated ${url}.`)
             }, err => console.log(err));
         }
     }
 
-    async actualizar()
-    {
+    async actualizar() {
         this.messages = [];
         let user = this.getUserByUrl(this.ruta_seleccionada);
         let senderId = this.rdf.session.webId;
@@ -160,22 +160,25 @@ export class EnvioChatComponent implements OnInit {
         var messageArray = content.split('\n');
         messageArray.forEach(element => {
             console.log(element.content);
-            if (element[0])
-            {
+            if (element[0]) {
                 const messageArrayContent = element.split('###');
-                const messageToAdd: message = { content: messageArrayContent[2], date: messageArrayContent[3], sender: messageArrayContent[0], recipient: messageArrayContent[1]};
+                const messageToAdd: message = {
+                    content: messageArrayContent[2],
+                    date: messageArrayContent[3],
+                    sender: messageArrayContent[0],
+                    recipient: messageArrayContent[1]
+                };
                 console.log(messageToAdd);
                 this.messages.push(messageToAdd);
             }
         });
 
 
-
         var urlArray = this.ruta_seleccionada.split("/");
-        let url= "https://" + urlArray[2] + "/public/dechat2a/" +this.getUserByUrl(this.rdf.session.webId) + "/Conversation.txt";
+        let url = "https://" + urlArray[2] + "/public/dechat2a/" + this.getUserByUrl(this.rdf.session.webId) + "/Conversation.txt";
 
 
-        console.log("URL: "  + url);
+        console.log("URL: " + url);
 
         var content = await this.readMessage(url);
 
@@ -185,16 +188,45 @@ export class EnvioChatComponent implements OnInit {
         var messageArray = content.split('\n');
         messageArray.forEach(element => {
             console.log(element.content);
-            if (element[0])
-            {
+            if (element[0]) {
                 const messageArrayContent = element.split('###');
-                const messageToAdd: message = { content: messageArrayContent[2], date: messageArrayContent[3], sender: messageArrayContent[0], recipient: messageArrayContent[1]};
+                const messageToAdd: message = {
+                    content: messageArrayContent[2],
+                    date: messageArrayContent[3],
+                    sender: messageArrayContent[0],
+                    recipient: messageArrayContent[1]
+                };
                 console.log(messageToAdd);
                 this.messages.push(messageToAdd);
             }
         });
+
+        this.messages = this.order(this.messages);
     }
 
+
+    private order(mess: message[]) {
+        let ordenado: message[] = [];
+        let aux = mess;
+        while (mess.length > 0) {
+            let idx = this.menor(aux);
+            ordenado.push(aux[idx]);
+            aux.splice(idx, 1);
+        }
+        return ordenado;
+    }
+
+    private menor(aux: message[]) {
+        var idx = 0;
+        var minor: message = aux[idx];
+        for (let i = 0; i < aux.length; i++) {
+            if (aux[i].date < minor.date) {
+                idx = i;
+                minor = aux[idx];
+            }
+        }
+        return idx;
+    }
 }
 
 class TXTPrinter {
