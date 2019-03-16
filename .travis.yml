@@ -1,7 +1,21 @@
-language: java
-sudo: false # faster builds
-jdk:
-- oraclejdk8
-script: "mvn test"
+dist: trusty
+sudo: false
+language: node_js
+node_js:
+  - "10.15"
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+cache:
+  directories:
+    $HOME/.npm
+install:
+  - npm ci
+script: 
+  - Falta por completar.
 after_success:
+  - npm run coverage
   - bash <(curl -s https://codecov.io/bash)
