@@ -1,0 +1,25 @@
+import {file} from '@babel/types';
+
+const assert = import('assert');
+const fileClient = import('solid-file-client');
+const newVar = import('../src/app/component/*');
+
+const usuario = {
+        'idp'     : 'https://solid.community',
+        'username' : '',
+        'password' : '',
+        'base'     : '',
+        'test'     : '/public/test/asw'
+};
+
+let login = fileClient.login(usuario);
+
+
+
+//crear una carpeta
+createNewFolder(usuario.username, usuario.base);
+
+
+
+
+
