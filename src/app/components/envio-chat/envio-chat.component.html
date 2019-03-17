@@ -1,11 +1,30 @@
-<!-- TEST PARA CREAR UNA NUEVA CARPETA    -->
-<div class="pure-u-1-1 pure-u-md-1-2 form-group">
-  <button (click)="createNewFolder()" class="wide-button profile-save-button"> Test crear carpeta </button>
-
-    <p>mensaje</p>
-    <input type="text" name="mensaje"><br>
-
-  <button (click)="createNewFolder()" class="wide-button profile-save-button"> Enviar mensaje </button>
-
-
+<div id="writemessage">
+  <form name="message" action="" >
+    <input name="usermsg" type="text" id="usermsg" size="200"  placeholder="Mensaje" />
+    <button (click)="escribir()" id="submitmsg">ESCRIBIR</button>
+    <button (click)="actualizar()" id="submitmsg">ACTUALIZAR</button>
+  </form>
 </div>
+<ul >
+  <div>
+
+
+    <thead>
+    <tr>
+      <th>Envía</th>
+      <th>                              </th>
+      <th>                              </th>
+      <th>Mensaje</th>
+    </tr>
+
+    <tr *ngFor="let message of messages">
+      <td>{{message.sender}}</td>
+      <td>______________________________</td>
+      <td>______________________________</td>
+      <td>                   {{message.content}}</td>
+    </tr>
+
+    </thead>
+  </div>
+
+</ul>
