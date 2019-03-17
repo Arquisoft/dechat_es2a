@@ -2,14 +2,16 @@ import {file} from '@babel/types';
 
 const assert = import('assert');
 const fileClient = import('solid-file-client');
-const newVar = import('../src/app/component/*');
+// @ts-ignore
+import {EnvioChatComponent} from '../src/app/component/envio-chat';
+
 
 const usuario = {
         'idp'     : 'https://solid.community',
         'username' : '',
         'password' : '',
-        'base'     : '',
-        'test'     : '/public/test/asw'
+        'test'     : '/public/test/asw',
+        'ruta'     : ''
 };
 
 let login = fileClient.login(usuario);
@@ -17,7 +19,7 @@ let login = fileClient.login(usuario);
 
 
 //crear una carpeta
-createNewFolder(usuario.username, usuario.base);
+createNewFolder(usuario.username, usuario.ruta);
 
 
 
