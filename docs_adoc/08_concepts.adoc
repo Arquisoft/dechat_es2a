@@ -5,5 +5,22 @@
 
 .Contenido
 
-Iremos desarrollando esta parte de la documentación a medida que se vaya desarrollando el proyecto del chat descentralizado.
+* Modelo de dominio : Es un modelo conceptual de todos los temas relacionados con un problema específico. En nuestro caso, nuestro modelo de dominio abarca tres cosas :
+
+** Mensajes
+** Emisor del mensaje
+** Receptor del mensaje
+
+* Patrones : Es un esquema de organización estructural esencial para un sistema de software, que consta de subsistemas, sus responsabilidades e interrelaciones. Nosotros usamos:
+
+** MVVM(modelo-vista-vista-modelo)
+
+* Logging : Es necesario tener una cuenta de Solid para poder loguearte.
+
+* Persistencia : Al utilizar ACL y WebRTC la persistencia de los datos es automatizada por Solid.
+
+* Interfaz :
+
+
+
 

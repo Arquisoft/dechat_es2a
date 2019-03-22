@@ -56,6 +56,6 @@ información a la que lo usuarios tienen acceso y el cifrado de informacion impo
 
 * Man in the Middle
 
- Con el fin de evitar esta brecha de seguridad los criterios mas aceptados son el uso de claves publicas, secretas o las 
- anteriormente mencionadas contraseñas con el fin de evitar el filtraje de datos entre usuarios, no obstante no descartamos el 
- uso de otros criterios de validacion para evitar el error.
+Con el fin de evitar esta brecha de seguridad los criterios mas aceptados son el uso de claves publicas, secretas o las 
+anteriormente mencionadas contraseñas con el fin de evitar el filtraje de datos entre usuarios, no obstante no descartamos el 
+uso de otros criterios de validacion para evitar el error.
