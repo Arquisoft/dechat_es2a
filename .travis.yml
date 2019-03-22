@@ -1,20 +1,5 @@
-dist: trusty
-sudo: false
 language: node_js
 node_js:
-  - "10.15"
   - "stable"
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
-cache:
-  directories:
-    $HOME/.npm
-install:
-  - npm ci
-
 after_success:
   - npm run coverage
