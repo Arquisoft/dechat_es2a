@@ -5,56 +5,43 @@ image:https://codecov.io/gh/Arquisoft/dechat_es2a/branch/master/graph/badge.svg[
 image:https://api.codacy.com/project/badge/Grade/fc7dc1da60ee4e9fb67ccff782625794["Codacy code quality", link="https://www.codacy.com/app/jelabra/dechat_es2a?utm_source=github.com&utm_medium=referral&utm_content=Arquisoft/dechat_es2a&utm_campaign=Badge_Grade"]
 
 
-== Build documentation
+# SolidApp
 
-The documentation is done in http://asciidoc.org/[AsciiDoc]
-using the https://arc42.org/[arc42] templates.
-The source documents are located at
- https://github.com/Arquisoft/dechat_es2a/tree/master/src/docs[src/docs].
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-Using https://maven.apache.org/[Maven] and the
-https://asciidoctor.org/[AsciiDoctor plugin] it is possible to generate
-the documentation running:
+## Development server
 
-----
-mvn generate-resources
-----
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-== Compile and run
+## Code scaffolding
 
-The skeleton project is a simple
- https://spring.io/projects/spring-boot[Spring-boot] application which can be run as:
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-----
- mvn spring-boot:run
-----
+## Build
 
-Once executed, the application should be available at: http://localhost:8080
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-== Testing
+## Running unit tests
 
-There are some simple Unit tests at:
- https://github.com/Arquisoft/dechat_es2a/tree/master/src/test[src/test].
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-There are also some
- https://cucumber.io/[Cucumber based tests]
- with a simple user story defined at:
- https://github.com/Arquisoft/dechat_es2a/tree/master/src/test/resources/features[src/test/resources/features].
+## Running end-to-end tests
 
-To run tests execute:
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-----
-mvn test
-----
+## Further help
 
-== Site documentation
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-The https://github.com/Arquisoft/dechat_es2a/tree/master/pom.xml[pom.xml] file
- has also been configured to generate site project documentation running:
+## Extra steps
 
-----
-mvn site
-----
+Go to tsconfig.app.json into paths add the following data : "paths": {
+      "zlib": ["node_modules/browserify-zlib/lib/index.js"],
+      "http": ["node_modules/@angular/http"],
+      "https": ["node_modules/@angular/http"],
+      "stream": ["node_modules/jszip/dist/jszip.min.js"]
+    }
+
 
 
 
