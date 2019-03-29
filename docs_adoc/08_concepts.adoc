@@ -19,7 +19,24 @@
 
 * Persistencia : Al utilizar ACL y WebRTC la persistencia de los datos es automatizada por Solid.
 
-* Interfaz :
+* Experiencia del usuario : Conocimientos que tenga el usuario de haber interaccionado previamente con el sistema o similiar, que tuviera unas características parecidas.
+** Interfaz de usuario
+** Ergonómicos
+** Internacionalización
+
+* Seguridad : La aplicación debe ser segura para no tener robos de información ni daños al sistema.
+
+* Conceptos de desarrollo : Conjunto de actividades que se van a desarrollar a lo largo del proyecto:
+** Contruir, testear, desarrollar
+** Implementar
+** Portabilidad
+** Configurabilidad
+
+
+ Se incluye una imagen para hacer referencia a todo lo que estamos explicando.
+ 
+ image::images/08-Crosscutting-Concepts-Structure-EN[Estructura]
+
 
 
 
