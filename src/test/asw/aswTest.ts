@@ -3,21 +3,20 @@ import {file} from '@babel/types';
 const assert = import('assert');
 const fileClient = import('solid-file-client');
 // @ts-ignore
-import {EnvioChatComponent} from '../src/app/component/envio-chat';
+import { EnvioChatComponent } from '../../components/envio-chat';
 
 
-const usuario = {
-        'idp'     : 'https://solid.community',
-        'username' : '',
-        'password' : '',
-        'test'     : '/public/test/asw',
-        'ruta'     : ''
-};
 
+const name = this.getUserByUrl(this.ruta_seleccionada);
 
 
 //crear una carpeta
-this.createNewFolder(name, '/public/dechat/');
+this.createNewFolder('dechat2a', '/public/');
+
+//name -> nombre del usuario
+this.createNewFolder(name, '/public/');
+
+
 
 
 
