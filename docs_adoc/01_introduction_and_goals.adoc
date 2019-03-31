@@ -4,7 +4,7 @@
 
 
 Nos hemos propuesto desarrollar un chat descentralizado, siguiendo las caracteristicas de SOLID.
-Buscaremos desarrollar el proyecto para que tenga un sistema con una arquitectura descentralizada, que separe el amacenamiento de datos de la aplicación que estamos desarrollando. También, tenemos como objetivo que los usuarios puedan almacenar los datos de sus chats en sus pods.
+Buscaremos desarrollar el proyecto para que tenga un sistema con una arquitectura descentralizada, que separe el almacenamiento de datos de la aplicación que estamos desarrollando. También, tenemos como objetivo que los usuarios puedan almacenar los datos de sus chats en sus pods.
 Los usuarios de la aplicación, pueden enviarse fotos, vídeos u otros archivos para comunicarse con sus amigos, u otras personas a través del chat. Estas conversaciones, van a poder ser realizadas de manera individual, o de manera grupal, en la que estén incluidos varios participantes.
 Un usuario de la aplicación, recibirá las notificaciones de la aplicación, cuando otro usuario o usuarios quieran comunicarse con él.
 

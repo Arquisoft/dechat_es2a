@@ -35,9 +35,4 @@
 
  Se incluye una imagen para hacer referencia a todo lo que estamos explicando.
  
- image::images/08-Crosscutting-Concepts-Structure-EN[Estructura]
-
-
-
-
-
+ image::images/08-Crosscutting-Concepts-Structure-EN.png[Estructura]
