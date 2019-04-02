@@ -22,14 +22,20 @@ mvn generate-resources
 
 == Compile and run
 
-The skeleton project is a simple
- https://spring.io/projects/spring-boot[Spring-boot] application which can be run as:
+We use node.js for our application, if you can use, need install node.js
 
+Install node.js, then you have npm.
+
+You need install angular 
 ----
- mvn spring-boot:run
+npm install -g @angular/cli
+
+For run the aplication
+----
+ ng serve -o
 ----
 
-Once executed, the application should be available at: http://localhost:8080
+Once executed, the application should be available at: http://localhost:4200
 
 == Testing
 
@@ -49,13 +55,9 @@ mvn test
 
 == Site documentation
 
-The https://github.com/Arquisoft/dechat_es2a/tree/master/pom.xml[pom.xml] file
- has also been configured to generate site project documentation running:
+We have used arc42, the link is:
 
-----
-mvn site
-----
-
+https://arquisoft.github.io/dechat_es2a/
 
 
 
