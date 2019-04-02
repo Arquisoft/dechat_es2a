@@ -1,0 +1,10 @@
+Feature : Iniciar sesion Solid Community
+    Scenario : Iniciar sesion en tu pod de Solid
+    When  Estoy en la pagina inicial de logueo "http://localhost:4200"
+    And Selecciono para registrarme como Solid Community y pincho en Go
+
+//Ejemplos:
+// usuario | contrasena | registro |
+// uo257275 | xxxxxxx | ok
+// prueba | prueba | nope
+// ejemplo | contrasena | nope
