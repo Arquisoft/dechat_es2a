@@ -29,6 +29,7 @@ Install node.js, then you have npm.
 You need install angular 
 ----
 npm install -g @angular/cli
+----
 
 For run the aplication
 ----
