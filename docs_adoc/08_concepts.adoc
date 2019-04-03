@@ -1,0 +1,36 @@
+[[section-concepts]]
+== Conceptos transversales
+
+
+.Contenido
+
+Se incluye una imagen para hacer referencia a todo lo que se va a explicar.
+ 
+image::images/08-Crosscutting-Concepts-Structure-EN.png[Estructura]
+
+* Modelo de dominio : Es un modelo conceptual de todos los temas relacionados con un problema específico. En nuestro caso, nuestro modelo de dominio abarca tres cosas :
+
+** Mensajes
+** Emisor del mensaje
+** Receptor del mensaje
+
+* Patrones : Es un esquema de organización estructural esencial para un sistema de software, que consta de subsistemas, sus responsabilidades e interrelaciones. Nosotros usamos:
+
+** MVVM(modelo-vista-vista-modelo)
+
+* Logging : Es necesario tener una cuenta de Solid para poder loguearte.
+
+* Persistencia : Al utilizar ACL y WebRTC la persistencia de los datos es automatizada por Solid.
+
+* Experiencia del usuario : Conocimientos que tenga el usuario de haber interaccionado previamente con el sistema o similiar, que tuviera unas características parecidas.
+** Interfaz de usuario
+** Ergonómicos
+** Internacionalización
+
+* Seguridad : La aplicación debe ser segura para no tener robos de información ni daños al sistema.
+
+* Conceptos de desarrollo : Conjunto de actividades que se van a desarrollar a lo largo del proyecto:
+** Contruir, testear, desarrollar
+** Implementar
+** Portabilidad
+** Configurabilidad

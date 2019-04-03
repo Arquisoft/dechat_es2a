@@ -1,0 +1,10 @@
+[[section-runtime-view]]
+== Runtime View
+
+
+
+Estos diagramas muestran como se realizará el logueo con inicio de sesión y el envío de mensajes.
+
+image::images/InicioSesion.PNG[Inicio de Sesion]
+
+image::images/EnviarMensaje.PNG[Enviar Mensaje]

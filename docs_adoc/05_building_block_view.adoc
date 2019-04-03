@@ -1,0 +1,7 @@
+[[section-building-block-view]]
+
+
+== Building Block View
+
+
+image::images/05_building_blocks-EN.png[Modulos del sistema]

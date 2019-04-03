@@ -1104,8 +1104,10 @@ uso de otros criterios de validacion para evitar el error.</pre>
 <div class="sect1">
 <h2 id="section-building-block-view"><a class="anchor" href="#section-building-block-view"></a>5. Building Block View</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>*Este apartado se completará a medida que avance el proyecto</p>
+<div class="imageblock">
+<div class="content">
+<img src="./images/src/images/05_building_blocks-EN.png" alt="Modulos del sistema">
+</div>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -1114,7 +1116,17 @@ uso de otros criterios de validacion para evitar el error.</pre>
 <h2 id="section-runtime-view"><a class="anchor" href="#section-runtime-view"></a>6. Runtime View</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>*Este apartado se completará a medida que avance el proyecto</p>
+<p>Estos diagramas muestran como se realizará el logueo con inicio de sesión y el envío de mensajes.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/images/InicioSesion.PNG" alt="Inicio de Sesion">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/images/EnviarMensaje.PNG" alt="Enviar Mensaje">
+</div>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -1123,7 +1135,12 @@ uso de otros criterios de validacion para evitar el error.</pre>
 <h2 id="section-deployment-view"><a class="anchor" href="#section-deployment-view"></a>7. Deployment View</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>*Este apartado se completará a medida que avance el proyecto</p>
+<p>Se muestra un diagrama donde se explica el camino que recorre un mensaje por la infraestructura desde que lo envia un usuario hasta que llega a su amigo.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/images/07-diagrama.png" alt="Vista de la infraestructura">
+</div>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -1133,7 +1150,86 @@ uso de otros criterios de validacion para evitar el error.</pre>
 <div class="sectionbody">
 <div class="paragraph">
 <div class="title">Contenido</div>
-<p>Iremos desarrollando esta parte de la documentación a medida que se vaya desarrollando el proyecto del chat descentralizado.</p>
+<p>Se incluye una imagen para hacer referencia a todo lo que se va a explicar.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/images/08-Crosscutting-Concepts-Structure-EN.png" alt="Estructura">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Modelo de dominio : Es un modelo conceptual de todos los temas relacionados con un problema específico. En nuestro caso, nuestro modelo de dominio abarca tres cosas :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Mensajes</p>
+</li>
+<li>
+<p>Emisor del mensaje</p>
+</li>
+<li>
+<p>Receptor del mensaje</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Patrones : Es un esquema de organización estructural esencial para un sistema de software, que consta de subsistemas, sus responsabilidades e interrelaciones. Nosotros usamos:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>MVVM(modelo-vista-vista-modelo)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Logging : Es necesario tener una cuenta de Solid para poder loguearte.</p>
+</li>
+<li>
+<p>Persistencia : Al utilizar ACL y WebRTC la persistencia de los datos es automatizada por Solid.</p>
+</li>
+<li>
+<p>Experiencia del usuario : Conocimientos que tenga el usuario de haber interaccionado previamente con el sistema o similiar, que tuviera unas características parecidas.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Interfaz de usuario</p>
+</li>
+<li>
+<p>Ergonómicos</p>
+</li>
+<li>
+<p>Internacionalización</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Seguridad : La aplicación debe ser segura para no tener robos de información ni daños al sistema.</p>
+</li>
+<li>
+<p>Conceptos de desarrollo : Conjunto de actividades que se van a desarrollar a lo largo del proyecto:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Contruir, testear, desarrollar</p>
+</li>
+<li>
+<p>Implementar</p>
+</li>
+<li>
+<p>Portabilidad</p>
+</li>
+<li>
+<p>Configurabilidad</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -2368,7 +2464,7 @@ Created by Dr. Peter Hruschka &amp; Dr. Gernot Starke.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-13 12:01:58 CET
+Last updated 2019-04-03 12:18:39 CEST
 </div>
 </div>
 </body>
