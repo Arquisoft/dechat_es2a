@@ -1,9 +1,0 @@
-[[section-concepts]]
-== Conceptos transversales
-
-
-
-.Contenido
-
-Iremos desarrollando esta parte de la documentación a medida que se vaya desarrollando el proyecto del chat descentralizado.
-

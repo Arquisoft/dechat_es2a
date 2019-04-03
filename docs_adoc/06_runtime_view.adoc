@@ -1,6 +1,0 @@
-[[section-runtime-view]]
-== Runtime View
-
-
-
-*Este apartado se completará a medida que avance el proyecto
