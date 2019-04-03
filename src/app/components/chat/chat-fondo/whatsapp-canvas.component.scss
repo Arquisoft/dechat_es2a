@@ -1,0 +1,30 @@
+@import "../../../sass/variables";
+@import "../../../../node_modules/@angular-mdc/theme/material";
+
+.mdc-layout-grid {
+  padding-top: 20px;
+}
+
+.whatsapp-canvas-wrapper {
+  overflow: hidden;
+  min-height: $mdc-theme-whatsapp-canvas-min-height;
+  padding: 0;
+  background-color: $mdc-theme-background;
+  border-radius: $mdc-theme-whatsapp-border-radius;
+
+  mdc-toolbar {
+    border-radius: $mdc-theme-whatsapp-border-radius;
+
+    .material-icons {
+      @include mdc-icon-button-ink-color(lighten($mdc-theme-secondary, 20));
+    }
+  }
+}
+
+section[role=chats] {
+  border-right: 1px solid darken($mdc-theme-primary, 5);
+}
+
+section[role=messages] {
+  background-color: $mdc-theme-whatsapp-intro-background;
+}
