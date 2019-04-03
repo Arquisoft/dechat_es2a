@@ -15,6 +15,12 @@
 
   <h1>Dechat_ES2a</h1>
   <a [routerLink]="['../components/amigos-list']">Lista de amigos para chatear</a>
+  
+  <!-- LOADING IMAGE -->
+  <div class="loading-image" *ngIf="loadingProfile">
+    <i class="fas fa-circle-notch fa-4x fa-spin"></i>
+  </div>
+
   <!-- LOADING IMAGE -->
   <div class="loading-image" *ngIf="loadingProfile">
     <i class="fas fa-circle-notch fa-4x fa-spin"></i>
@@ -67,13 +73,13 @@
         <div class="pure-u-1-1 pure-u-md-1-2 form-group">
           <button (click)="loadFriends()" class="wide-button profile-save-button"> Mis colegas!!! </button>
         </div>
-
-
-
-      </div>
-
-      <div class="profile-save-button-container">
-        <button type="submit" class="wide-button profile-save-button" [disabled]="!cardForm || cardForm.pristine">Save</button>
+      </div
+      
+      >
+      <div class="fields pure-g">
+        <div class="pure-u-1-1 pure-u-md-1-2 form-group">
+          <button (click)="irChat()"class="wide-button profile-save-button"> CHATEAR </button>
+        </div>
       </div>
     </form>
   </div>

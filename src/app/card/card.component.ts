@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {Router} from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { SolidProfile } from '../models/solid-profile.model';
 import { RdfService } from '../services/rdf.service';
 import { AuthService } from '../services/solid.auth.service';
+import { relative } from 'path';
 
 
 @Component({
@@ -21,7 +23,7 @@ export class CardComponent implements OnInit  {
 
   @ViewChild('f') cardForm: NgForm;
 
-  constructor(private rdf: RdfService,
+  constructor(private router: Router ,private rdf: RdfService,
     private route: ActivatedRoute, private auth: AuthService) {}
 
   ngOnInit() {
@@ -109,6 +111,8 @@ export class CardComponent implements OnInit  {
 
   }
 
-
+  irChat(){
+    this.router.navigate(['../components/chat/chat-fondo'],{relativeTo:this.route});
+  }
 
 }

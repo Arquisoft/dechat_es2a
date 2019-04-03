@@ -33,4 +33,5 @@ export class AmigosListComponent implements OnInit {
       this.amigos = list_friends;
     }
   }
+
 }

@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import "variables";
+@import "~@angular-mdc/theme/material";
+
+body {
+  margin: 0;
+  background-color: $mdc-theme-primary;
+
+  app-root {
+    &:after {
+      background-color: $mdc-theme-whatsapp-green;
+      position: fixed;
+      z-index: -1;
+      width: 100%;
+      height: 127px;
+      content: ' ';
+      top: 0;
+    }
+  }
+  
+  mdc-toolbar-section {
+    img {
+      border-radius: 50%;
+      height: 49px;
+      width: 49px;
+      padding-left: 4px;
+    }
+  }
+}
+

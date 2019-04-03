@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../../../classes/user';
+import {Router} from '@angular/router';
 import {FriendService} from '../../../services/friend.service';
 
 @Component({
@@ -8,15 +9,14 @@ import {FriendService} from '../../../services/friend.service';
   styleUrls: ['./whatsapp-canvas.component.scss']
 })
 export class WhatsappCanvasComponent implements OnInit {
-  public loggedUser: User;
-  public selectedFriend: User;
+  public loggedUser: User; public selectedFriend: User;
 
-  constructor(private _friendService: FriendService) {
+  constructor(private router: Router,private _friendService: FriendService) {
   }
 
   ngOnInit() {
-    this.loggedUser = this._friendService.loggedUser;
-    this._friendService.getSelectedFriendObservable().subscribe(friend => this.selectedFriend = friend);
+   // this.loggedUser = this._friendService.loggedUser;
+   // this._friendService.getSelectedFriendObservable().subscribe(friend => this.selectedFriend = friend);
   }
 
 }
