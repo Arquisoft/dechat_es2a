@@ -8,6 +8,7 @@ import {LoginComponent} from './login/login.component';
 import { CardComponent } from './card/card.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AmigosListComponent } from './components/amigos-list/amigos-list.component';
+import {WhatsappFriendListComponent} from './components/chat/chat-lista-amigos/whatsapp-friend-list.component';
 import { EnvioChatComponent } from './components/envio-chat/envio-chat.component';
 
 import { WhatsappCanvasComponent } from './components/chat/chat-fondo/whatsapp-canvas.component';
@@ -22,7 +23,6 @@ import { RegisterComponent } from './register/register.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-
 
 
 
@@ -77,7 +77,8 @@ const routes: Routes = [
     RegisterComponent,
     AmigosListComponent,
     EnvioChatComponent,
-    WhatsappCanvasComponent
+    WhatsappCanvasComponent,
+    WhatsappFriendListComponent
   ],
   imports: [
     BrowserModule,

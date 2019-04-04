@@ -6,7 +6,8 @@ import { SolidProfile } from '../models/solid-profile.model';
 import { RdfService } from '../services/rdf.service';
 import { AuthService } from '../services/solid.auth.service';
 import { relative } from 'path';
-
+import * as process from 'process';
+window['process'] = process;
 
 @Component({
   selector: 'app-card',
@@ -20,7 +21,6 @@ export class CardComponent implements OnInit  {
   loadingProfile: Boolean;
   amigos: Array<any>;
   fileClient: any;
-
   @ViewChild('f') cardForm: NgForm;
 
   constructor(private router: Router ,private rdf: RdfService,
@@ -30,6 +30,8 @@ export class CardComponent implements OnInit  {
     this.loadingProfile = true;
     this.loadProfile();
     this.fileClient = require('solid-file-client')
+    
+    //this.data  = require('@solid/query-ldflex');
 
   }
 

@@ -3,7 +3,6 @@ import {User} from '../classes/user';
 import {BehaviorSubject} from 'rxjs';
 import {Injectable} from '@angular/core';
 //import * as faker from 'faker';
-
 @Injectable()
 export class FriendService {
 
@@ -90,5 +89,10 @@ export class FriendService {
     setTimeout(function () {
      // to.addMessage(to, faker.hacker.phrase());
     }, 1500);
+  }
+
+  async getName(webId){
+    let proxy;
+    const { default: data } = require("@solid/query-ldflex")
   }
 }
