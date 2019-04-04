@@ -8,7 +8,9 @@
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
+      "schematics": {"@schematics/angular:component": {
+        "styleext": "scss"
+      }},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -23,7 +25,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
+              "src/sass/styles.scss",   
               "node_modules/@ng-select/ng-select/themes/default.theme.css",
               "node_modules/purecss/build/grids-core-min.css",
               "node_modules/purecss/build/grids-min.css",
@@ -133,5 +135,10 @@
       }
     }
   },
-  "defaultProject": "solid-app"
+  "defaultProject": "solid-app",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
