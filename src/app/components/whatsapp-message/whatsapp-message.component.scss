@@ -1,0 +1,40 @@
+@import "../../../sass/variables";
+
+:host {
+  margin: 10px 55px 10px 55px;
+  display: flex;
+  align-self: flex-start;
+  position: relative;
+  padding: 10px;
+  background-color: $mdc-theme-background;
+  border-radius: $mdc-theme-whatsapp-border-radius;
+  color: $mdc-theme-secondary;
+
+  &.whatsapp-message {
+
+    &-in {
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border-left-color: $mdc-theme-background;
+        border: 15px solid transparent;
+        border-right: 0;
+        border-top: 0;
+        margin-top: -16px;
+        margin-right: -12px;
+      }
+    }
+
+    &-out {
+      align-self: flex-end;
+      background-color: $mdc-theme-whatsapp-message-out;
+      &:after {
+        border-left-color: $mdc-theme-whatsapp-message-out;
+      }
+    }
+  }
+}

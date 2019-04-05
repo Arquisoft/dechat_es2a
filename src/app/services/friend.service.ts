@@ -2,7 +2,8 @@ import {FriendList} from '../classes/friend-list';
 import {User} from '../classes/user';
 import {BehaviorSubject} from 'rxjs';
 import {Injectable} from '@angular/core';
-//import * as faker from 'faker';
+import * as faker from 'faker';
+
 @Injectable()
 export class FriendService {
 
@@ -18,7 +19,7 @@ export class FriendService {
     this._friendListObservable = new BehaviorSubject(this._friendList);
     this._selectedFriend = null;
     this._selectedFriendObservable = new BehaviorSubject(null);
-    //this._loggedUser = this.createFakeUser();
+    this._loggedUser = this.createFakeUser();
     this._loggedUserObservable = new BehaviorSubject(this._loggedUser);
   }
 
@@ -72,27 +73,21 @@ export class FriendService {
 
   private getFakeFriendList() {
     return [
-      new FriendList(new User("patata","xddd"),null)
-     // new FriendList(this.createFakeUser(), null),
-    //  new FriendList(this.createFakeUser(), null),
-    //  new FriendList(this.createFakeUser(), null)
+      new FriendList(this.createFakeUser(), null),
+      new FriendList(this.createFakeUser(), null),
+      new FriendList(this.createFakeUser(), null)
     ];
   }
 
   private createFakeUser() {
- //   return new User(faker.name.findName(), faker.image.avatar());
+    return new User(faker.name.findName(), faker.image.avatar());
   }
 
   sendMessage(text: string, to: User) {
     to.addMessage(this.loggedUser, text);
 
     setTimeout(function () {
-     // to.addMessage(to, faker.hacker.phrase());
+      to.addMessage(to, faker.hacker.phrase());
     }, 1500);
-  }
-
-  async getName(webId){
-    let proxy;
-    const { default: data } = require("@solid/query-ldflex")
   }
 }

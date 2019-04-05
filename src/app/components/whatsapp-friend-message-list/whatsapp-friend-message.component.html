@@ -1,0 +1,25 @@
+<div class="whatsapp-chat-message-wrapper" [ngClass]="{ 'whatsapp-bg-animated' : friend }">
+
+  <div class="whatsapp-intro" *ngIf="!friend" align="center">
+    <div></div>
+    <h1 mdcHeadline4>Keep your phone connected</h1>
+    <p mdcCaption>
+      WhatsApp Web connects to your phone to sync messages. To reduce
+      data usage, connect your phone to Wi-Fi.
+    </p>
+  </div>
+
+  <div *ngIf="friend; then whatsappMessageList"></div>
+  <ng-template #whatsappMessageList>
+    <div class="whatsapp-messages-roll" #whatsappMessageRoll [scrollTop]="whatsappMessageRoll.scrollHeight">
+      <app-whatsapp-message [mdc-elevation]="2" *ngFor="let message of friend.messages" [message]="message" [ngClass]="getMessageSender(message)"></app-whatsapp-message>
+    </div>
+  </ng-template>
+
+  <div *ngIf="friend" class="mdc-elevation--z1 whatsapp-type-box">
+    <mdc-icon>insert_emoticon</mdc-icon>
+    <mdc-text-field #whatsappMessageText [dense]="true" [fullwidth]="true" label="Type your text"
+                    (keyup)="$event.keyCode == 13 && whatsappMessageText.value && sendMessage($event, whatsappMessageText.value);"></mdc-text-field>
+    <mdc-icon>send</mdc-icon>
+  </div>
+</div>

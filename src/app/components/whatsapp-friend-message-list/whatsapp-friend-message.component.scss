@@ -1,0 +1,80 @@
+@import "../../../sass/variables";
+@import "../../../../node_modules/@angular-mdc/theme/material";
+
+.whatsapp-chat-message-wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-end;
+  flex-direction: column;
+  padding: 10px;
+  height: $mdc-theme-whatsapp-canvas-min-height;
+  overflow: hidden;
+  border-bottom: 5px solid lighten(green, 35);
+
+  * {
+    z-index: 1;
+  }
+
+  .whatsapp-intro {
+    align-self: center;
+    align-content: center;
+    max-width: 350px;
+    color: $mdc-theme-secondary;
+
+    h1 {
+      font-weight: lighter;
+    }
+
+    div {
+      background-image: url('../../../assets/web/bg_intro.jpg');
+      height: 355px;
+      width: 356px;
+    }
+  }
+
+  .whatsapp-type-box {
+    display: flex;
+    align-items: center;
+    background-color: $mdc-theme-primary;
+    width: 100%;
+
+    .material-icons {
+      @include mdc-icon-button-ink-color(lighten($mdc-theme-secondary, 20));
+      padding: 0 15px 0 15px;
+    }
+
+    mdc-text-field {
+      padding-left: 25px;
+      background-color: $mdc-theme-background;
+    }
+  }
+
+  .whatsapp-messages-roll {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.whatsapp-bg-animated {
+  border-bottom: none;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../../../assets/web/bg.png") repeat;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    z-index: 0;
+  }
+}

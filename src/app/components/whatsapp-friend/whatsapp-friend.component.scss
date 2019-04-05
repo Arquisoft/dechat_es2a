@@ -1,0 +1,13 @@
+.mdc-list-item {
+  height: 72px;
+
+  .mdc-list-item__graphic {
+    height: 49px;
+    width: 49px;
+    img {
+      border-radius: 50%;
+      height: inherit;
+      width: inherit;
+    }
+  }
+}

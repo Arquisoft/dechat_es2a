@@ -1,0 +1,6 @@
+<li class="mdc-list-item" *ngIf="friend">
+  <span class="mdc-list-item__graphic"> <img src="{{ friend.friend.picture }}" alt=""></span>
+  <span class="mdc-list-item__text">{{ friend.friend.name }}</span>
+  <span class="mdc-list-item__meta" *ngIf="friend.lastMessage">{{ friend.lastMessage.time.toLocaleDateString('pt-BR') }}</span>
+</li>
+<mdc-list-divider></mdc-list-divider>

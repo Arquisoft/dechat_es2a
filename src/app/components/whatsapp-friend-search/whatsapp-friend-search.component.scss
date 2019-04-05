@@ -1,0 +1,17 @@
+@import "../../../sass/variables";
+
+.mdc-list-item {
+
+  mdc-text-field {
+    padding-left: 55px;
+
+    input::placeholder {
+      font-size: 5px !important;
+    }
+
+  }
+
+  &:first-of-type {
+    padding: 0;
+  }
+}
