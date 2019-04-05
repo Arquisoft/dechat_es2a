@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {ChangeDetectorRef, NgModule} from '@angular/core';
-
+import { RouterModule, Routes } from '@angular/router';
 import {AppComponent} from '../components/app/app.component';
 import {MaterialModule} from './material.module';
 import {WhatsappCanvasComponent} from '../components/whatsapp-canvas/whatsapp-canvas.component';
@@ -10,9 +10,29 @@ import {WhatsappFriendMessageComponent} from '../components/whatsapp-friend-mess
 import {WhatsappFriendSearchComponent} from '../components/whatsapp-friend-search/whatsapp-friend-search.component';
 import {FriendService} from '../services/friend.service';
 import {WhatsappMessageComponent} from '../components/whatsapp-message/whatsapp-message.component';
-import {LoginPopupComponent} from '../login/login-popup.component';
+import {LoginPopupComponent} from '../login-popup/login-popup.component';
+import {LoginComponent} from '../components/login/login.component';
+import { AuthService } from '../services/solid.auth.service';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+//----------------------------------------------------------------
 
+// Services
+import { AuthGuard } from '../services/auth.guard.service';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: LoginComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,13 +42,20 @@ import {LoginPopupComponent} from '../login/login-popup.component';
     WhatsappFriendMessageComponent,
     WhatsappFriendSearchComponent,
     WhatsappMessageComponent,
-    LoginPopupComponent
+    LoginPopupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    MaterialModule
+    FormsModule,
+    MaterialModule,
+    RouterModule.forRoot(routes),
+    ToastrModule.forRoot(),
+    NgSelectModule,
+    BrowserAnimationsModule ,
+
   ],
-  providers: [FriendService],
+  providers: [FriendService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
