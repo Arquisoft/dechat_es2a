@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Observable, from } from 'rxjs';
 import { RdfService } from './rdf.service';
 import { SolidProvider } from '../models/solid-provider.model';
+import auth from 'solid-auth-client';
 declare let solid: any;
 
 interface SolidSession {
@@ -34,7 +35,7 @@ export class AuthService {
    * This will check if current session is active to avoid security problems
   */
   isSessionActive = async () => {
-    this.session = from(solid.auth.currentSession());
+    this.session = from(auth.currentSession());
   }
 
   /**
@@ -44,12 +45,12 @@ export class AuthService {
    */
   solidLoginPopup = async () => {
     try {
-      await solid.auth.popupLogin({ popupUri: './login-popup'});
+      await auth.popupLogin({ popupUri: './login-popup'});
       // Check if session is valid to avoid redirect issues
       await this.isSessionActive();
 
       // popupLogin success redirect to profile
-      this.router.navigate(['/card']);
+     // this.router.navigate(['/card']);
     } catch (error) {
       console.log(`Error: ${error}`);
     }
@@ -60,7 +61,7 @@ export class AuthService {
   */
   solidSignOut = async () => {
     try {
-      await solid.auth.logout();
+      await auth.logout();
       // Remove localStorage
       localStorage.removeItem('solid-auth-client');
       // Redirect to login page

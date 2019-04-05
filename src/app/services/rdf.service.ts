@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SolidSession } from '../models/solid-session.model';
+import auth from 'solid-auth-client';
 declare let solid: any;
 declare let $rdf: any;
 //import * as $rdf from 'rdflib'
@@ -51,7 +52,7 @@ export class RdfService {
    * Fetches the session from Solid, and store results in localStorage
    */
   getSession = async() => {
-    this.session = await solid.auth.currentSession(localStorage);
+    this.session = await auth.currentSession(localStorage);
   }
 
   /**

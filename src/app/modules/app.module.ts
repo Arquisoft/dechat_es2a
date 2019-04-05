@@ -48,12 +48,11 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    MaterialModule,
     RouterModule.forRoot(routes),
-    ToastrModule.forRoot(),
     NgSelectModule,
-    BrowserAnimationsModule ,
-
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [FriendService,AuthService],
   bootstrap: [AppComponent]
