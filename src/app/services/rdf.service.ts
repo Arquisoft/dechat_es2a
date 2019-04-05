@@ -309,6 +309,7 @@ export class RdfService {
         image: this.getValueFromVcard('hasPhoto'),
         address: this.getAddress(),
         email: this.getEmail(),
+        name:this.getValueFromVcard('name')
       };
     } catch (error) {
       console.log(`Error fetching data: ${error}`);

@@ -1,12 +1,17 @@
 import {FriendList} from '../classes/friend-list';
 import {User} from '../classes/user';
 import {BehaviorSubject} from 'rxjs';
+import { Router } from '@angular/router';
 import {Injectable} from '@angular/core';
+import { RdfService } from './rdf.service';
+import { SolidSession } from '../models/solid-session.model';
+import { AuthService } from './solid.auth.service';
 import * as faker from 'faker';
-
-@Injectable()
+declare let $rdf: any;
+@Injectable({
+  providedIn: 'root',
+})
 export class FriendService {
-
   private _loggedUser: User;
   private _loggedUserObservable: BehaviorSubject<User>;
   private _selectedFriend: User;
@@ -14,12 +19,12 @@ export class FriendService {
   private _friendListObservable: BehaviorSubject<FriendList[]>;
   private _selectedFriendObservable: BehaviorSubject<User>;
 
-  constructor() {
+  constructor(private router: Router,private $rdf: RdfService,private auth: AuthService ) {
     this._friendList = this.getFakeFriendList();
     this._friendListObservable = new BehaviorSubject(this._friendList);
     this._selectedFriend = null;
     this._selectedFriendObservable = new BehaviorSubject(null);
-    this._loggedUser = this.createFakeUser();
+    this._loggedUser = this.createLoggedUser();
     this._loggedUserObservable = new BehaviorSubject(this._loggedUser);
   }
 
@@ -73,14 +78,19 @@ export class FriendService {
 
   private getFakeFriendList() {
     return [
-      new FriendList(this.createFakeUser(), null),
-      new FriendList(this.createFakeUser(), null),
-      new FriendList(this.createFakeUser(), null)
+      //new FriendList(this.createFakeUser(), null),
+     // new FriendList(this.createFakeUser(), null),
+     // new FriendList(this.createFakeUser(), null)
     ];
   }
 
+
+
   private createFakeUser() {
     return new User(faker.name.findName(), faker.image.avatar());
+  }
+  private createLoggedUser(){
+    return new User("", "");
   }
 
   sendMessage(text: string, to: User) {
