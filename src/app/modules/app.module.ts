@@ -31,6 +31,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'chat',
+    component: WhatsappCanvasComponent,
+    canActivate: [AuthGuard],
   }
 ];
 @NgModule({
