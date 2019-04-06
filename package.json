@@ -27,6 +27,7 @@
     "rdflib": "^0.20.0",
     "rxjs": "^6.0.0",
     "solid-auth-client": "^2.3.0",
+    "solid-file-client": "^0.4.9",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
