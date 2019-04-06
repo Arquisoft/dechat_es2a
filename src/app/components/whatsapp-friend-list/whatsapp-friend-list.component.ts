@@ -33,7 +33,7 @@ export class WhatsappFriendListComponent implements OnInit ,OnChanges{
       const name = this.getUserByUrl(friend.solidLink);
       this.createNewFolder('dechat2a', '/public/');
       this.createNewFolder(name, '/public/dechat2a/');
-    this._friendService.selectedFriend = friend;
+      this._friendService.selectedFriend = friend;
   }
 
   trackByUsers(index: number, friendList: FriendList): number { return friendList.friend.id; }

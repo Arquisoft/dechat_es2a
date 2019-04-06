@@ -50,6 +50,10 @@ export class User {
     this._messages.push(message);
   }
 
+  addMessageFull(sender: User, message:Message) {
+    this._messages.push(message);
+  }
+
   get messages(): Message[] {
     return this._messages;
   }
