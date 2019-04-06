@@ -70,6 +70,46 @@ private buildFolder(solidId) {
     this._friendService.sendMessage(message, this.friend);
     event.target.value = '';
   }
+/*
+  async escribir() {
+
+    let myUser = this.getUserByUrl(this.rdf.session.webId);
+    let user = this.getUserByUrl(this.friend.name);
+    var messageContent = (<HTMLInputElement>document.getElementById("usermsg")).value;
+    //(document.getElementById("usermsg") as HTMLInputElement).value = "";
+    console.log(messageContent);
+    //Sender WebID
+    let senderId = this.rdf.session.webId;
+    let senderPerson: Friend = {webid: senderId};
+
+    //Receiver WebId
+    let recipientPerson: Friend = {webid: this.ruta_seleccionada}
+
+
+    let messageToSend: message = {content: messageContent, date: new Date(Date.now()), sender: senderPerson, recipient: recipientPerson}
+    let stringToChange = '/profile/card#me';
+    let path = '/public/dechat2a/' + user + '/Conversation.txt';
+
+    senderId = senderId.replace(stringToChange, path);
+
+    let message = await this.readMessage(senderId);
+
+    this.ruta = senderId;
+
+    //For TXTPrinter
+    if (message != null) {
+        this.updateTTL(senderId, message + "\n" + new TXTPrinter().getTXTDataFromMessage(messageToSend));
+        if (this.messages.indexOf(message) !== -1) {
+            this.messages.push(message);
+            console.log("MESSAGES: " + this.messages);
+        }
+    } else {
+        this.updateTTL(senderId, new TXTPrinter().getTXTDataFromMessage(messageToSend));
+    }
+
+    (<HTMLInputElement>document.getElementById('usermsg')).value = '';
+    this.actualizar();
+}
 
   getMessageSender(message: Message) {
     let sender = 'whatsapp-message-out';
@@ -80,5 +120,5 @@ private buildFolder(solidId) {
 
     return sender;
   }
-
+*/
 }
