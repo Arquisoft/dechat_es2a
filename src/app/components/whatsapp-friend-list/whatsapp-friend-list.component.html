@@ -1,1 +1,6 @@
-<app-whatsapp-friend *ngFor="let friend of friends" [friend]="friend" (click)="selectFriend(friend.friend)"></app-whatsapp-friend>
+<app-whatsapp-friend  *ngIf="friends">
+    <app-whatsapp-friend *ngFor="let friend of friends; trackBy: trackByUsers"   [friend]="friend" (click)="selectFriend(friend.friend)">
+       
+           </app-whatsapp-friend>
+</app-whatsapp-friend>
+

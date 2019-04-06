@@ -21,7 +21,7 @@ export class FriendService {
 
   constructor(private router: Router,private $rdf: RdfService,private auth: AuthService ) {
     this._friendList = this.getFakeFriendList();
-    this._friendListObservable = new BehaviorSubject(this._friendList);
+    this._friendListObservable = new BehaviorSubject(null);
     this._selectedFriend = null;
     this._selectedFriendObservable = new BehaviorSubject(null);
     this._loggedUser = this.createLoggedUser();
@@ -40,8 +40,15 @@ export class FriendService {
     this._loggedUser = value;
   }
 
+  setFriendListObservable(){
+    this._friendListObservable = new BehaviorSubject(this._friendList);
+  }
   get loggedUserObservable(): BehaviorSubject<User> {
     return this._loggedUserObservable;
+  }
+
+  setFriendList(value:FriendList[]){
+    this._friendList=value;
   }
 
   set loggedUserObservable(value: BehaviorSubject<User>) {

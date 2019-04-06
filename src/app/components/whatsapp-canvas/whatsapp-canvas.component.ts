@@ -5,6 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { RdfService } from '../../services/rdf.service';
 import { AuthService } from '../../services/solid.auth.service';
 import { SolidProfile } from '../../models/solid-profile.model';
+import { FriendList } from 'src/app/classes/friend-list';
+declare let $rdf: any;
 @Component({
   selector: 'app-whatsapp-canvas',
   templateUrl: './whatsapp-canvas.component.html',
@@ -42,7 +44,6 @@ export class WhatsappCanvasComponent implements OnInit {
     } catch (error) {
       console.log(`Error: ${error}`);
     }
-    console.log(this.rdf.session.webId);
 
   }
 
@@ -52,12 +53,48 @@ export class WhatsappCanvasComponent implements OnInit {
       this._friendService.loggedUser.name=this.profile.name;
       this._friendService.loggedUser.picture=this.profileImage;
       this.loggedUser=this._friendService.loggedUser;
-
+      let lista =await this.getSolidFriends();
+      this._friendService.setFriendList(lista);
+      this._friendService.setFriendListObservable();
     } else {
       this.profileImage = '/assets/images/profile.png';
     }
   }
 
 
+  private async getSolidFriends(){
+   let listaAmigosRDF= this.rdf.getFriends();
+   let listaAmigosComponente =[];
+   try{
+    for (var amigo of listaAmigosRDF){
+      let contador =0;
+      await this.rdf.fetcher.load(amigo);
+    const store  = $rdf.graph();
+    let fetcher = $rdf.Fetcher;
+    fetcher=new $rdf.Fetcher(store);
+    const me = store.sym(amigo);
+    const profile = me.doc();       //i.e. store.sym(''https://example.com/alice/card#me')
+    const VCARD = $rdf.Namespace('http://www.w3.org/2006/vcard/ns#');
+    await fetcher.load(amigo).then(response => {
+      let name = store.any(me, VCARD('fn'));
+      let picture = store.any(me, VCARD('hasPhoto'));
+      let amigoAñadir=new User(name,picture);
+      amigoAñadir.solidLink=amigo;
+      amigoAñadir.id=contador;
+      listaAmigosComponente.push(new FriendList(amigoAñadir, null))
+      contador ++
+   }, err => {
+      console.log("Load failed " +  err);
+   });
+
+    }
+  }
+    catch (error) {
+      console.log(`Error: ${error}`);
+    }
+    console.log(listaAmigosComponente)
+      return listaAmigosComponente;
+  }
+  
     
 }
