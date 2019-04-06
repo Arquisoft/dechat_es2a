@@ -32,4 +32,5 @@ export class WhatsappFriendMessageComponent implements OnInit {
 
     return sender;
   }
+
 }
