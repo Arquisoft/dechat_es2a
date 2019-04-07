@@ -269,7 +269,7 @@ async getUserMessages(user,senderId){
 
   messages = this.order(messages);
   return messages;
-}
+} 
 
 private order(mess: Message[]) {
   let ordenado: Message[] = [];
