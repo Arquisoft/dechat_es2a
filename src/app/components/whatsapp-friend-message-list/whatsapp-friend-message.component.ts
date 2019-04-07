@@ -31,8 +31,11 @@ export class WhatsappFriendMessageComponent implements OnInit {
 
   getMessageSender(message: Message) {
     let sender = 'whatsapp-message-out';
-    if (message.sender.name === this._friendService.selectedFriend.name) {
-   // if (message.sender.name === this.friend.name) {
+   // if (message.sender.name === this._friendService.selectedFriend.name) {
+    if (message.sender.name === this.friend.name ) {
+      sender = 'whatsapp-message-in';
+    }
+    else if (message.sender === this._friendService.selectedFriend.solidLink){
       sender = 'whatsapp-message-in';
     }
 
