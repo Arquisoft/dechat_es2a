@@ -30,9 +30,9 @@ export class WhatsappFriendListComponent implements OnInit ,OnChanges{
   }
 
   selectFriend(friend: User) {
-      const name = this.getUserByUrl(friend.solidLink);
-      this.createNewFolder('dechat2a', '/public/');
-      this.createNewFolder(name, '/public/dechat2a/');
+    const name = this.getUserByUrl(friend.solidLink);
+     this.createNewFolder('dechat2a', '/public/');
+     this.createNewFolder(name, '/public/dechat2a/');
       this._friendService.selectedFriend = friend;
       this._friendService.actualizar(this._friendService.loggedUser.solidLink,friend.solidLink);
   }
@@ -138,16 +138,16 @@ private createNewFolder(name: string, ruta: string) {
   //crear la carpeta. Como ya estoy en sesion no abre nada pero si se abre la consola se ve
   // que se ejecuta correctamente.
 
-  this.buildFolder(solidId);
+    this.buildFolder(solidId);
 
 }
 
 private buildFolder(solidId) {
-  this.fileClient.readFolder(solidId).then(folder => {
+   this.fileClient.readFolder(solidId).then(folder => {
       console.log(`Read ${folder.name}, it has ${folder.files.length} files.`);
   }, err => {
       //Le paso la URL de la carpeta y se crea en el pod. SI ya esta creada no se si la sustituye o no hace nada
-      this.fileClient.createFolder(solidId).then(success => {
+       this.fileClient.createFolder(solidId).then(success => {
           console.log(`Created folder ${solidId}.`);
       }, err1 => console.log(err1));
 

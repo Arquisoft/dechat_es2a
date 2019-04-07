@@ -188,6 +188,7 @@ private async searchMessage(url) {
       return body;
   }, err => console.log(err));
 
+
 }
 async actualizar(user,senderId) {
  // console.log("Inicio Actualizar");
@@ -255,8 +256,9 @@ async getUserMessages(user,senderId){
   let senderIdFormated = senderId.replace(stringToChange, path);
 
   var content = await this.readMessage(senderIdFormated);
-
   var messageArray = content.split('\n');
+  
+
   messageArray.forEach(element => {
       console.log(element.content);
       if (element[0]) {
