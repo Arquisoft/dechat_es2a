@@ -190,22 +190,23 @@ private async searchMessage(url) {
 
 }
 async actualizar(user,senderId) {
-  let messages : Message[];
+  console.log("Inicio Actualizar");
+  let messages = [] as Message[];
   let userFormatted = this.getUserByUrl(user);
   let stringToChange = '/profile/card#me';
   let path = '/public/dechat2a/' + userFormatted + '/Conversation.txt';
   let senderIdFormated = senderId.replace(stringToChange, path);
 
   var content = await this.readMessage(senderIdFormated);
-
+  //OBTENGO MENSAGES DEL AMIGO
   var messageArray = content.split('\n');
   messageArray.forEach(element => {
       console.log(element.content);
       if (element[0]) {
           const messageArrayContent = element.split('###');
-          const messageToAdd: Message = new Message( messageArrayContent[3], messageArrayContent[2],messageArrayContent[0],messageArrayContent[1])
+          const messageToAdd: Message = new Message( messageArrayContent[3], messageArrayContent[2],this._selectedFriend,this.loggedUser)
         // console.log(messageToAdd);
-          //messages.push(messageToAdd);
+          messages.push(messageToAdd);
       }
   });
 
@@ -221,6 +222,7 @@ async actualizar(user,senderId) {
 
   console.log(content);
 
+    //OBTENGO MENSAGES MIOS
   var messageArray = content.split('\n');
   messageArray.forEach(element => {
       console.log(element.content);
@@ -232,14 +234,67 @@ async actualizar(user,senderId) {
           messages.push(messageToAdd);
       }
   });
-  for(let x of messages){
-  this.selectedFriend.addMessageFull(this.selectedFriend,x)
+  if (this.selectedFriend.messages.length==0){
+    for(let x of messages){
+      this.selectedFriend.addMessageFull(this.selectedFriend,x)
   }
+ } else if(this.selectedFriend.messages.length!=messages.length) {
+    for(let i=this.selectedFriend.messages.length;i<messages.length;i++){
+      this.selectedFriend.messages.push(messages[i]);
+    }
   //this.messages = this.order(this.messages);
 }
-
-
 }
+
+
+async getUserMessages(user,senderId){
+  let messages : Message[];
+  let userFormatted = this.getUserByUrl(user);
+  let stringToChange = '/profile/card#me';
+  let path = '/public/dechat2a/' + userFormatted + '/Conversation.txt';
+  let senderIdFormated = senderId.replace(stringToChange, path);
+
+  var content = await this.readMessage(senderIdFormated);
+
+  var messageArray = content.split('\n');
+  messageArray.forEach(element => {
+      console.log(element.content);
+      if (element[0]) {
+          const messageArrayContent = element.split('###');
+          const messageToAdd: Message = new Message( messageArrayContent[3], messageArrayContent[2],this.loggedUser,this._selectedFriend)
+        // console.log(messageToAdd);
+          messages.push(messageToAdd);
+      }
+  });
+
+  messages = this.order(messages);
+  return messages;
+}
+
+private order(mess: Message[]) {
+  let ordenado: Message[] = [];
+  let aux = mess;
+  while (mess.length > 0) {
+      let idx = this.menor(aux);
+      ordenado.push(aux[idx]);
+      aux.splice(idx, 1);
+  }
+  return ordenado;
+}
+
+private menor(aux: Message[]) {
+  var idx = 0;
+  var minor: Message = aux[idx];
+  for (let i = 0; i < aux.length; i++) {
+      if (aux[i].time < minor.time) {
+          idx = i;
+          minor = aux[idx];
+      }
+  }
+  return idx;
+}
+}
+
 class TXTPrinter {
   public getTXTDataFromMessage(message: Message) {
       return message.sender.solidLink + "###" +

@@ -4,7 +4,6 @@ import {FriendService} from '../../services/friend.service';
 import {Message} from '../../classes/message';
 import { RdfService } from '../../services/rdf.service';
 import { AuthService } from '../../services/solid.auth.service';
-declare let $rdf: any;
 
 @Component({
   selector: 'app-whatsapp-friend-message-list',
@@ -13,14 +12,15 @@ declare let $rdf: any;
 })
 export class WhatsappFriendMessageComponent implements OnInit {
   public friend: User;
-
-  fileClient: any;
-
+  private id:any;
   constructor(private _friendService: FriendService,private rdf: RdfService) {
   }
 
   ngOnInit() {
     this._friendService.getSelectedFriendObservable().subscribe(friend => this.friend = friend);
+    this.id = setInterval(() => {
+      this._friendService.actualizar(this.friend.picture,this._friendService.loggedUser.solidLink,) 
+    }, 5000);
   }
 
   sendMessage(event, message: string) {
@@ -37,6 +37,12 @@ export class WhatsappFriendMessageComponent implements OnInit {
     }
 
     return sender;
+  }
+
+  ngOnDestroy() {
+    if (this.id) {
+      clearInterval(this.id);
+    }
   }
 
 }
