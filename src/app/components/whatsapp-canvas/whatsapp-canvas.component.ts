@@ -53,6 +53,7 @@ export class WhatsappCanvasComponent implements OnInit {
       this._friendService.loggedUser.name=this.profile.name;
       this._friendService.loggedUser.picture=this.profileImage;
       this._friendService.loggedUser.solidLink=this.rdf.session.webId;
+      this._friendService.loggedUser.name=this.profile.name;
       this.loggedUser=this._friendService.loggedUser;
     } else {
       this.profileImage = '/assets/images/profile.png';

@@ -19,7 +19,7 @@ export class WhatsappFriendMessageComponent implements OnInit {
   ngOnInit() {
     this._friendService.getSelectedFriendObservable().subscribe(friend => this.friend = friend);
     this.id = setInterval(() => {
-      this._friendService.actualizar(this.friend.picture,this._friendService.loggedUser.solidLink,) 
+      this._friendService.actualizar(this.friend.solidLink,this._friendService.loggedUser.solidLink,) 
     }, 5000);
   }
 
@@ -31,8 +31,8 @@ export class WhatsappFriendMessageComponent implements OnInit {
 
   getMessageSender(message: Message) {
     let sender = 'whatsapp-message-out';
-
-    if (message.sender.name === this.friend.name) {
+    if (message.sender.name === this._friendService.selectedFriend.name) {
+   // if (message.sender.name === this.friend.name) {
       sender = 'whatsapp-message-in';
     }
 

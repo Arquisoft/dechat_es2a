@@ -190,7 +190,7 @@ private async searchMessage(url) {
 
 }
 async actualizar(user,senderId) {
-  console.log("Inicio Actualizar");
+ // console.log("Inicio Actualizar");
   let messages = [] as Message[];
   let userFormatted = this.getUserByUrl(user);
   let stringToChange = '/profile/card#me';
@@ -201,7 +201,7 @@ async actualizar(user,senderId) {
   //OBTENGO MENSAGES DEL AMIGO
   var messageArray = content.split('\n');
   messageArray.forEach(element => {
-      console.log(element.content);
+      //console.log(element);
       if (element[0]) {
           const messageArrayContent = element.split('###');
           const messageToAdd: Message = new Message( messageArrayContent[3], messageArrayContent[2],this._selectedFriend,this.loggedUser)
@@ -215,25 +215,26 @@ async actualizar(user,senderId) {
   let url = "https://" + urlArray[2] + "/public/dechat2a/" + this.getUserByUrl(senderId) + "/Conversation.txt";
 
 
-  console.log("URL: " + url);
+ // console.log("URL: " + url);
 
   var content = await this.readMessage(url);
 
 
-  console.log(content);
+  //console.log(content);
 
     //OBTENGO MENSAGES MIOS
   var messageArray = content.split('\n');
   messageArray.forEach(element => {
-      console.log(element.content);
+     // console.log(element.content);
       if (element[0]) {
           const messageArrayContent = element.split('###');
           const messageToAdd:Message = new Message( messageArrayContent[3], messageArrayContent[2],messageArrayContent[0]
             ,messageArrayContent[1])
-          console.log(messageToAdd);
+         // console.log(messageToAdd);
           messages.push(messageToAdd);
       }
   });
+  messages = this.order(messages);
   if (this.selectedFriend.messages.length==0){
     for(let x of messages){
       this.selectedFriend.addMessageFull(this.selectedFriend,x)
@@ -242,7 +243,6 @@ async actualizar(user,senderId) {
     for(let i=this.selectedFriend.messages.length;i<messages.length;i++){
       this.selectedFriend.messages.push(messages[i]);
     }
-  //this.messages = this.order(this.messages);
 }
 }
 
@@ -272,6 +272,7 @@ async getUserMessages(user,senderId){
 } 
 
 private order(mess: Message[]) {
+  /*
   let ordenado: Message[] = [];
   let aux = mess;
   while (mess.length > 0) {
@@ -280,6 +281,13 @@ private order(mess: Message[]) {
       aux.splice(idx, 1);
   }
   return ordenado;
+  */
+ mess.sort(function(a,b){
+  var dateA = new Date(a.time);
+  var dateB = new Date(b.time);
+  return dateA.getTime() - dateB.getTime();
+ })
+ return mess;
 }
 
 private menor(aux: Message[]) {
