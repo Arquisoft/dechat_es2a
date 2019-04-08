@@ -6,7 +6,7 @@
 
 Se incluye una imagen para hacer referencia a todo lo que se va a explicar.
  
-image::images/08-Crosscutting-Concepts-Structure-EN.png[Estructura]
+image::08-Crosscutting-Concepts-Structure-EN.png[Estructura]
 
 * Modelo de dominio : Es un modelo conceptual de todos los temas relacionados con un problema específico. En nuestro caso, nuestro modelo de dominio abarca tres cosas :
 

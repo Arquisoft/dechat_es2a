@@ -8,7 +8,7 @@ sistema. Las hojas de este árbol son los escenarios de calidad que deberán ver
 cumplimiento de los criterios de calidad establecidos. Los nombres de estas hojas se corresponden por tanto con los de
 los escenarios de calidad del punto siguiente.
 
-image::images/10_MindMap_Calidad_V2.jpg[Arbol de calidad]
+image::10_MindMap_Calidad_V2.jpg[Arbol de calidad]
 
 == B) Escenarios de calidad
 
