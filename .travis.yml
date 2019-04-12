@@ -1,5 +1,11 @@
 language: node_js
 node_js:
-  - "stable"
+  - "10.15"
+before_script:
+  - npm install -g @angular/cli
+  - npm install --save howler
+script: 
+  - ng build --prod
 after_success:
-  - npm run coverage
+  - node_modules\.bin\cucumber-js src\test\asw\features -r src\test\asw\steps
+  - bash <(curl -s https://codecov.io/bash)
