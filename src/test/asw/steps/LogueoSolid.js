@@ -11,7 +11,7 @@ When('Pagina inicial de logueo {string}', function (site) {
 When('Elijo solid community y hago click en go', function() {
 	var selectDropdownbyNum = function ( element, eleccion ) {
     if (eleccion){
-      var elijo = element.findElements(by.tagName('name'))   
+      var elijo = element.findElements(by.tagName('username'))   
         .then(function(elijo){
             elijo[eleccion].click();
         });
