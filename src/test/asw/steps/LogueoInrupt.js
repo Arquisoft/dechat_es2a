@@ -11,7 +11,7 @@ When('Pagina inicial {string}', function (site) {
 When('Selecciono Inrupt y Go', function() {
     var selectDropdownbyNum = function ( element, eleccion ) {
     if (eleccion){
-      var elijo = element.findElements(by.tagName('name'))   
+      var elijo = element.findElements(by.tagName('username'))   
         .then(function(options){
           elijo[eleccion].click();
         });

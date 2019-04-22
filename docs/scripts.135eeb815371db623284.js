@@ -1,0 +1,1 @@
+var Faker=require("./lib"),faker=new Faker({locales:require("./lib/locales")});module.exports=faker;
