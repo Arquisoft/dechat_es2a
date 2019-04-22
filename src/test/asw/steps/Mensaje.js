@@ -15,13 +15,13 @@ const expect = chai.use(chaiAsPromised).expect;
 
 Given('The init app', () => {
   AppPage.navigateTo().then(() => {
-    LoginPage.login(' https://uo257915.solid.community/profile/card#me', password);
+    LoginPage.login(' https://pruebaes2a.solid.community/profile/card#me', '!Pruebaes2a');
   });
 });
 
 Given('An open conversation', () => {
   AppPage.navigateTo().then(() => {
-    LoginPage.login(' https://uo257915.solid.community/profile/card#me.', password).then(() => {
+    LoginPage.login(' https://pruebaes2a.solid.community/profile/card#me', '!Pruebaes2a').then(() => {
       ContactPage.clickContact('Testerino');
     });
   });
