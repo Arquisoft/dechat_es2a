@@ -96,7 +96,7 @@ export class WhatsappFriendListComponent implements OnInit ,OnChanges{
         name = nameStore.value
       }
       if (pictureStore == null){
-           image = '/assets/images/profile.png';
+           image = 'assets/images/profile.png';
       }
       else{
         image =pictureStore.value
