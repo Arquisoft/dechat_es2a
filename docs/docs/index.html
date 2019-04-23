@@ -1,0 +1,2317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.8">
+<title>deChat - Decentralized Chat es 2a</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment @import statement to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite::before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+:not(pre)>code.nobreak{word-wrap:normal}
+:not(pre)>code.nowrap{white-space:nowrap}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin:0 0 1.25em;padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
+table.tableblock{max-width:100%;border-collapse:separate}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot,table.frame-ends{border-width:1px 0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+</head>
+<body class="book">
+<div id="header">
+<h1><span class="image"><img src="LogoASW.png" alt="arc42"></span> deChat - Decentralized Chat es 2a</h1>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<style>
+.arc42help {font-size:small; width: 14px; height: 16px; overflow: hidden; position: absolute; right: 0px; padding: 2px 0px 3px 2px;}
+.arc42help::before {content: "?";}
+.arc42help:hover {width:auto; height: auto; z-index: 100; padding: 10px;}
+.arc42help:hover::before {content: "";}
+@media print {
+	.arc42help {display:hidden;}
+}
+</style>
+<hr>
+<div class="sidebarblock arc42help">
+<div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This version of the template contains some help and explanations.
+It is used for familiarization with arc42 and the understanding of the concepts.
+For documentation of your own system you use better the <em>plain</em> version.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="section-introduction-and-goals">1. Introducción y metas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nos hemos propuesto desarrollar un chat descentralizado, siguiendo las caracteristicas de SOLID.
+Buscaremos desarrollar el proyecto para que tenga un sistema con una arquitectura descentralizada, que separe el amacenamiento de datos de la aplicación que estamos desarrollando. También, tenemos como objetivo que los usuarios puedan almacenar los datos de sus chats en sus pods.
+Los usuarios de la aplicación, pueden enviarse fotos, vídeos u otros archivos para comunicarse con sus amigos, u otras personas a través del chat. Estas conversaciones, van a poder ser realizadas de manera individual, o de manera grupal, en la que estén incluidos varios participantes.
+Un usuario de la aplicación, recibirá las notificaciones de la aplicación, cuando otro usuario o usuarios quieran comunicarse con él.</p>
+</div>
+<div class="paragraph">
+<p>La aplicación, está pensada para todas aquellas personas que quieran mantener conversaciones sin que esa información quede almacenada en los servidores de la empresa proveedora de la aplicación.</p>
+</div>
+<div class="sect2">
+<h3 id="_vista_de_requisitos">1.1. Vista de requisitos</h3>
+<div class="ulist">
+<div class="title">Funcionales</div>
+<ul>
+<li>
+<p>Los usuarios que utilicen la aplicación deberán de poseer un pod de SOLID.</p>
+</li>
+<li>
+<p>El sistema deberá de notificar al usuario los mensajes que éste reciba.</p>
+</li>
+<li>
+<p>El sistema guardará los mensajes encriptados (no en texto plano) en el pod del usuario correspondiente.</p>
+</li>
+<li>
+<p>Para recibir los mensajes los usuarios deberán de estar conectados y autentificados en SOLID.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">No funcionales</div>
+<ul>
+<li>
+<p>Facilidad de aprendizaje para interaccionar con la aplicación por parte de los usuarios novatos en un corto espacio de tiempo.</p>
+</li>
+<li>
+<p>El usuario pueda utilizar la aplicación con un tiempo de envío de mensajes óptimo (especificar en versiones posteriores).</p>
+</li>
+<li>
+<p>No poseer de una base central de datos, que comprometa la información de los usuarios que la usen.</p>
+</li>
+<li>
+<p>Buscar la seguridad, sin tener puntos vulnerables:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>SQL Injection.</p>
+</li>
+<li>
+<p>Command Injection.</p>
+</li>
+<li>
+<p>Fuga de información.</p>
+</li>
+<li>
+<p>Puertas traseras.</p>
+</li>
+<li>
+<p>Man in the middle.</p>
+</li>
+<li>
+<p>Cross-site request forgery.</p>
+</li>
+<li>
+<p>Mensajes encriptados utilizando el algoritmo de encriptación MD5/SHA1Sum.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Nivel de accesibilidad y usabilidad siguiendo las recomendaciones de w3c.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_atributos_de_calidad">1.2. Atributos de calidad</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Accesibilidad</strong>: diseño de una aplicación accesible para personas con discapacidades</p>
+</li>
+<li>
+<p><strong>Disponibilidad</strong>: diseño de una aplicación que asegure un cierto grado absoluto de continuidad operacional durante un periodo de duración dado.</p>
+</li>
+<li>
+<p><strong>Modificabilidad</strong>: diseño de una aplicación con un software mantenible en el tiempo.</p>
+</li>
+<li>
+<p><strong>Rendimiento</strong>: capacidad del sistema a realizar operaciones sin un uso excesivo de recursos (memoria, datos, etc).</p>
+</li>
+<li>
+<p><strong>Seguridad</strong>: diseño de una aplicación que no sea vulnerable a:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>SQL Injection.</p>
+</li>
+<li>
+<p>Comand Injection.</p>
+</li>
+<li>
+<p>Fuga de información.</p>
+</li>
+<li>
+<p>Puertas traseras.</p>
+</li>
+<li>
+<p>Man in the middle.</p>
+</li>
+<li>
+<p>Cross-site request forgery.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Testeabilidad</strong>: diseño de una aplicación que sea capaz de pasar un software mínimo de pruebas para comprobar el correcto funcionamiento de esta.</p>
+</li>
+<li>
+<p><strong>Usabilidad</strong>: diseño de una aplicación que sea fácil de usar por parte de los usuarios que interactúen con ella.</p>
+</li>
+<li>
+<p><strong>Escalabilidad</strong>: capacidad de la apliación para albergar un mayor volumen de datos.</p>
+</li>
+<li>
+<p><strong>Interoperabilidad</strong>: capacidad de la aplicación para interactuar y coexistir con otros sistemas.</p>
+</li>
+<li>
+<p><strong>Portabilidad</strong>: característica que posee un software para ejecutarse en diferentes plataformas.</p>
+</li>
+<li>
+<p><strong>Integridad</strong>: diseño de una aplicación que mantenga la información exacta a como fue generada sin ser editada por usuarios o procesos no autizados a ello.</p>
+</li>
+<li>
+<p><strong>Consistencia</strong>: diseño de una aplicación que mantenga sus datos correctos en todo momento.</p>
+</li>
+<li>
+<p><strong>Robustez</strong>: capacidad de la aplicación para actuar y sobreponerse a errores no esperados en tiempo de ejecución.</p>
+</li>
+<li>
+<p><strong>Modular</strong>: diseño de una aplicación mediante subdivisiones de esta, independientes unas de otras.</p>
+</li>
+<li>
+<p><strong>Trazable</strong>: capacidad de la aplicación a seguir el rastro a las actividades realizadas en ella en todas las etapas de su ciclo de vida.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Prioridad de los atributos de calidad en el proyecto</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Prioridad</th>
+<th class="tableblock halign-left valign-top">Atributo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disponibilidad</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Seguridad</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Consistencia</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robustez</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integridad</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modificabilidad</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accesibilidad</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Usabilidad</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trazable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rendimiento</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Testeabilidad</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modular</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Escalabilidad</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interoperabilidad</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Portabilidad</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_stakeholders">1.3. Stakeholders</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Stakeholders</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Role/Name</th>
+<th class="tableblock halign-left valign-top">Expectations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profesorado de la asignatura</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Seguir un proceso de desarrollo de la aplicación de acuerdo a lo visto en la asignatura, así como un correcto diseño y arquitectura del producto final.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOLID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Realizar un chat descentralizado de acuerdo a la tecnología SOLID.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Equipo de desarrollo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Realizar el trabajo asignado siguiendo los requisitos establecidos en la documentación siguiendo una metodología ágil de acuerdo a lo aprendido en la asignatura.</p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="section-architecture-constraints">2. Restricciones de la Arquitectura</h2>
+<div class="sectionbody">
+<table class="tableblock frame-topbot grid-all stretch">
+<caption class="title">Table 3. Restricciones técnicas</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Restricción</th>
+<th class="tableblock halign-left valign-top">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOLID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toda la información intercambiada en la aplicación se almacenará en PODs personales mediante un proceso descentralizado.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Angular JS/ Typescript</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Se acopla muy bien a un proyecto SOLID. Además, se trata de un framework consolidado que nos ofrece múltiples funcionalidades respaldadas por una gran comunidad.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arc42</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Se nos ha impuesto utilizar esta plantilla para documentar el proyecto. Es un estándar muy utilizado, principalmente en Europa. Este documento ha de mantenerse claro y simple en todo momento.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-topbot grid-all stretch">
+<caption class="title">Table 4. Restricciones organizativas</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Restricción</th>
+<th class="tableblock halign-left valign-top">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Periodo de desarrollo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">El proyecto se llevará a cabo entre los meses de enero y mayo.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Github</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Debemos usar este conocido controlador de versiones. Nos facilita en gran medida el trabajo en equipo y la organización del proyecto.</p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="section-system-scope-and-context">3. Alcance y Contexto del Sistema</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_contexto_de_negocio">3.1. Contexto de Negocio</h3>
+<div class="paragraph">
+<div class="title">Diagrama</div>
+<p><span class="image"><img src="./images/03_Diagrama_Negocio_ES.png" alt="Diagrama de negocio de la aplicación"></span></p>
+</div>
+<div class="paragraph">
+<div class="title">Explicación</div>
+<p>En la aplicación de chat descentralizado el usuario accedera a ella mediante su webID que sirve como elemento identificador
+en la comunidad de SOLID o similar supone un cambio respecto a otros autentificadores ya que se realiza mediante URL en este caso.
+El usuario podra intercambiar mensajes de texto e imágenes con otros usuarios que tengan registrados como amigos presentes en la comunidad.
+Esos mensajes quedaran almacenados en el POD de cada usuario de modo que ellos sean los únicos propietarios de estos.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_contexto_técnico">3.2. Contexto Técnico</h3>
+<div class="paragraph">
+<div class="title">Diagrama</div>
+<p><span class="image"><img src="./images/03_Diagrama_Tecnico_ES.png" alt="Diagrama técnico de la aplicación"></span></p>
+</div>
+<div class="paragraph">
+<div class="title">Explicación</div>
+<p>En este diagrama aparecen además del usuario, los profesores que corregiran el proyecto y los miembros de SOLID que valorarán la aplicación,
+de modo que aumentan el número de stakeholders implicados en el proceso.
+El login mediante SOLID hara que se cree en el POD de cada usuario una carpeta donde por cada conversación con un amigo se cree otra subcarpeta
+donde se va a guardar toda la información de la conversación e imágenes que el usuario reciba o desee compartir. Este es el
+principal objetivo que se busca para competir contra grandes bases de datos centralizadas, las cuales en nuestro proyecto
+vamos a evitar con este alternativa.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="section-solution-strategy">4. Solution Strategy</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_tecnologia">4.1. Tecnologia</h3>
+<div class="sect3">
+<h4 id="_backend">4.1.1. Backend</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>NodeJS</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Dado que la aplicación a desarrollar empleará Solid para funcionar, es necesario realizar la instalación de un servidor
+que de soporte a dicha tecnología. El servidor de referencia para esta tecnología esta implementado sobre Nodo, con lo
+que necesitaremos emplear esta tecnología.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>npm</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Npm es un gestor de paquetes para node, que permite instalar software y librerías que deban funcionar sobre esta
+tecnología. El uso de esta herramienta nos simplificará la instalación del servidor Solid.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>SPARQL</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sparql se trata de un lenguaje estandarizado de grafos RDF normalizado por el  World Wide Web Consortium, con ello
+una tecnologia clave para el desarrolo de web semantica, por lo que sera la semántica que usemos con el fin de manejar
+la recuperacion de sentencias y el mantenimiento de datos.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_frontend">4.1.2. Frontend</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Angular</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Dado que la aplicación a desarrollar deberá ser distribuida, y deberá ser ejecutada en un entorno web, necesitamos un
+framework de desarrollo que permita crear aplicaciones para ser ejecutadas sobre navegadores web. De las distintas
+opciones disponibles para esta tarea, angular es una de las más utilizadas. Cuenta con una buena documentación, una base
+importante de desarrolladores y nos permite programar en TypeScript, que al ser un lenguaje con tipado estatico
+consideramos que facilitará la escritura del código al eliminar errores de ejecución.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_herramientas_de_desarrollo">4.1.3. Herramientas de desarrollo</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>WebStorm</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Se trata de un Entorno de Desarrollo Integrado completo, que da soporte para todas las tecnologías con las que se
+trabajará en el desarrollo del proyecto y para el que ya contamos con licencia.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_obtencion_de_objetivos_de_calidad">4.2. Obtencion de objetivos de calidad</h3>
+<div class="sect3">
+<h4 id="_seguridad">4.2.1. Seguridad</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Inyeccion SQL</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Al trabajar desde SPARQL no hay una forma 100% efectiva de evitarla, sin embargo seguiremos pautas de limitar el uso de
+metacaracteres permitiendo a los usuarios solo el uso de estos valores en variables de las propias querys.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fuga de Informacion</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Aunque no se haya decidido una tecnologia o protocolo concreto a este punto, las prácticas más adecuadas para prevenir este
+fallo que se usaran son el uso de logs para observar el trafico de la aplicacion y lozalizar estos abusos, el control de la
+información a la que lo usuarios tienen acceso y el cifrado de informacion importante.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Man in the Middle</p>
+<div class="literalblock">
+<div class="content">
+<pre>Con el fin de evitar esta brecha de seguridad los criterios mas aceptados son el uso de claves publicas, secretas o las
+anteriormente mencionadas contraseñas con el fin de evitar el filtraje de datos entre usuarios, no obstante no descartamos el
+uso de otros criterios de validacion para evitar el error.</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="section-building-block-view">5. Building Block View</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="./images/05_building_blocks-EN.png" alt="Modulos del sistema">
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="section-runtime-view">6. Runtime View</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Estos diagramas muestran como se realizará el logueo con inicio de sesión y el envío de mensajes.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/InicioSesion.PNG" alt="Inicio de Sesion">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/EnviarMensaje.PNG" alt="Enviar Mensaje">
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="section-deployment-view">7. Deployment View</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Se muestra un diagrama donde se explica el camino que recorre un mensaje por la infraestructura desde que lo envia un usuario hasta que llega a su amigo.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/07-diagrama.PNG" alt="Vista de la infraestructura">
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="section-concepts">8. Conceptos transversales</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<div class="title">Contenido</div>
+<p>Se incluye una imagen para hacer referencia a todo lo que se va a explicar.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/08-Crosscutting-Concepts-Structure-EN.png" alt="Estructura">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Modelo de dominio : Es un modelo conceptual de todos los temas relacionados con un problema específico. En nuestro caso, nuestro modelo de dominio abarca tres cosas :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Mensajes</p>
+</li>
+<li>
+<p>Emisor del mensaje</p>
+</li>
+<li>
+<p>Receptor del mensaje</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Patrones : Es un esquema de organización estructural esencial para un sistema de software, que consta de subsistemas, sus responsabilidades e interrelaciones. Nosotros usamos:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>MVVM(modelo-vista-vista-modelo)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Logging : Es necesario tener una cuenta de Solid para poder loguearte.</p>
+</li>
+<li>
+<p>Persistencia : Al utilizar ACL y WebRTC la persistencia de los datos es automatizada por Solid.</p>
+</li>
+<li>
+<p>Experiencia del usuario : Conocimientos que tenga el usuario de haber interaccionado previamente con el sistema o similiar, que tuviera unas características parecidas.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Interfaz de usuario</p>
+</li>
+<li>
+<p>Ergonómicos</p>
+</li>
+<li>
+<p>Internacionalización</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Seguridad : La aplicación debe ser segura para no tener robos de información ni daños al sistema.</p>
+</li>
+<li>
+<p>Conceptos de desarrollo : Conjunto de actividades que se van a desarrollar a lo largo del proyecto:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Contruir, testear, desarrollar</p>
+</li>
+<li>
+<p>Implementar</p>
+</li>
+<li>
+<p>Portabilidad</p>
+</li>
+<li>
+<p>Configurabilidad</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="section-design-decisions">9. Decisiones de Diseño</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_tecnología">9.1. Tecnología</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>NodeJS y Angular</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>El usar estas tecnologías fue una decisión muy difícil para el equipo ya que
+nunca las habiamos usado previamente en la carrera y nos va a suponer una dificultad añadida
+el tener que familiarizarnos con estos frameworks.</p>
+</div>
+<div class="paragraph">
+<p>Los escogimos porque dentro de las opciones disponibles (Angular o React) para hacer aplicaciones con Solid,
+Angular nos parecio la más adecuada para este proyecto en concreto. Además Angular tiene buena documentación y
+varios proyectos de ejemplo con todos los pasos para aprender como funciona rapidamente.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>TypeScript</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Este lenguaje es el más usado con Angular para el desarrollo de aplicaciones. Tenemos ligeros conocimientos
+de este lenguaje (basicamente, es un JavaScript con comprobación estática de tipos).</p>
+</div>
+<div class="paragraph">
+<p>Tenemos conocimientos de JavaScript ya que lo habiamos dado en una asignatura previamente pero aun así nos supondra
+más trabajo el aprender todo lo que puede ofrecer este lenguaje.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>SPARQL</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Para obtener informacion de los PODS y enviar información a los mismos es necesario usar este lenguaje estandarizado para
+consulta de grafos. La sintaxis es muy similar a otros lenguajes de bases de datos pero el no tener muchos conocimientos de
+como funciona internamente los PODS de Solid va a hacer que usar este lenguaje suponga otro reto más para el equipo.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_arquitectonicas">9.2. Arquitectonicas</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Patrones</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Aun estamos aprendiendo a utilizar las tecnologías mencionadas en el anterior apartado aun no sabemos con certeza los patrones
+que vamos a emplear en el diseño del código para poder mejorar el rendimiento de nuestra aplicación y hacer que sea mantenible y
+ampliable.
+Probablemente separaremos nuestro código en tres capas diferentes para desacoplar las funcionalidades entre las diferentes clases
+de nuestro proyecto y que una sola clase no mezcle puntos de funcionamiento de más( será capa de presentación, de negocio y de datos).
+Para esta labor de separar en capas emplearemos el MVC(modelo-vista-controlador) además de buscar mejorar nuestra interfaz de usuario
+gracias a este patrón, además de poder reutilizar el código lo cual nos hará ganar tiempo el cual escasea
+para este proyecto. En función que avancen las semanas añadiremos más patrones a esta sección.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_prioridades">9.3. Prioridades</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Funcionalidad</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Hemos decidido basar nuestros esfuerzos en la fase de código en hacer que la aplicación sea funcional aunque la misma sea muy básisca.
+Nuestro razonamiento para ello es que cuanto antes consigamos mandar información entre PODS (mensaje de texto entre dos usuarios)
+antes podemos ampliar la aplicación con funcionalidad más compleja (mandar imágenes, chats grupales, etc..).</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Interfaz de usuarios</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Cuando completemos la anterior prioridad nos centraremos en hacer una interfaz de usuario amigable, fácil de usar y sencilla.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Disponibilidad</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Procuraremos ante fallos en el sistema notificar de la manera más adecuada a los usuarios para evitar que se alarmen ante estas situaciones,
+además de mostrar ayudas que faciliten la comprensión de la interfaz de usuario cuando se la encuentran por primera vez.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Rendimiento</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Una vez se consiga una aplicación bonita a ojos del usuario y sin errores graves en funcionamiento buscaremos la mayor velocidad posible en la ejecución
+de las distintas opciones que nuestra aplicación ofrezca. No estamos seguros si en el tiempo que disponemos para el
+proyecto conseguiremos maximizar la optimización del mismo.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Seguridad</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>La principal arma para la seguridad se basa en lo más principal de este proyecto que consiste en que cada usuario sea dueño de sus datos
+al estar contenidos en el POD personal de cada uno. Aún así existen riesgos de ataques como por ejemplo Man in the middle, que si nos sobra tiempo
+intentaremos encontrar la manera de solventar.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<h1 id="section-quality-scenarios" class="sect0">Quality Requirements</h1>
+<div class="sect1">
+<h2 id="_a_árbol_de_calidad">10. A) Árbol de calidad</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A continuación se incluye el arbol con los criterios de calidad que deberán ser tenidos en cuenta en la realización del
+sistema. Las hojas de este árbol son los escenarios de calidad que deberán verificarse para asegurar el correcto
+cumplimiento de los criterios de calidad establecidos. Los nombres de estas hojas se corresponden por tanto con los de
+los escenarios de calidad del punto siguiente.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/10_MindMap_Calidad_V2.jpg" alt="Arbol de calidad">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_b_escenarios_de_calidad">11. B) Escenarios de calidad</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>En este punto describimos los distintos escenarios de calidad que se deberán comprobar durante el desarrollo del sistema
+parar asegurar la calidad del mismo.</p>
+</div>
+<div class="sect2">
+<h3 id="_escenario_1_pruebas_de_accesibilidad_con_usuarios">11.1. Escenario 1: Pruebas de accesibilidad con usuarios</h3>
+<div class="sect3">
+<h4 id="_1_estímulo">11.1.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Uso normal de la aplicación para verificar su accesibilidad.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo">11.1.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>10 usuarios distintos con discapacidad.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno">11.1.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema funcionando en condiciones normales.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema">11.1.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Cliente Chat descentralizado</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema">11.1.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>El sistema debe permitir a los usuarios utilizar de manera satisfactoria todas sus funcionalidades.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta">11.1.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Los usuarios evaluarán su experiencia asignando una nota de 0 a 10.
+Para validar correctamente el sistema deberá obtenerse una nota superior a 5.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_2_guía_de_accesibilidad_wai">11.2. Escenario 2: Guía de accesibilidad (WAI)</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_2">11.2.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Analisis de cumplimiento de las normas de accesibilidad definidas por la Web Accesibility Initiative del W3C.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_2">11.2.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Experto en accesibilidad.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_2">11.2.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema funcionando en condiciones normales.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_2">11.2.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Cliente Chat descentralizado</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_2">11.2.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Documento de conformidad de la accesibilidad definido en WCAG 2.1.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_2">11.2.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>El documento debe indicar el cumplimiento de todos puntos de accesibilidad requeridos.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_3_acceso_con_teclado">11.3. Escenario 3: Acceso con teclado</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_3">11.3.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Utilización normal del sistema utilizando solamente un teclado para la entrada de datos.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_3">11.3.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Usuario normal del sistema.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_3">11.3.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema funcionando en condiciones normales.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_3">11.3.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Cliente Chat descentralizado</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_3">11.3.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>El sistema debe permitir la realización de todas las tareas implementadas en el mismo.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_3">11.3.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Todas las tareas deben poder realizar satisfactoriamente.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_4_pruebas_unitarias">11.4. Escenario 4: Pruebas unitarias</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_4">11.4.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Comprobación del funcionamiento de los componentes individuales que forman la aplicación.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_4">11.4.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Desarrollador.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_4">11.4.3. 3) Entorno</h4>
+<div class="paragraph">
+<p>Sistema en desarrollo.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_4">11.4.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Cliente Chat descentralizado y Servidor</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_4">11.4.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>El sistema generará un informe indicando si los test desarrollados se ejecutan correctamente.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_4">11.4.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Todos los test desarrollados deben ser correctos.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_5_pruebas_de_integración">11.5. Escenario 5: Pruebas de integración</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_5">11.5.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Comprobación del funcionamiento del sistema completo.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_5">11.5.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Desarrollador.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_5">11.5.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema en funcionamiento normal.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_5">11.5.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Cliente Chat descentralizado y Servidor</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_5">11.5.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>El sistema generará un informe indicando si los test desarrollados se ejecutan correctamente.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_5">11.5.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Todos los test desarrollados deben ser correctos.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_6_prueba_en_navegadores">11.6. Escenario 6: Prueba en navegadores</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_6">11.6.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Ejecución de la aplicación en los 3 navegadores más utilizados (Firefox, Chrome y Edge).</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_6">11.6.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Encargado de pruebas.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_6">11.6.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema en funcionamiento normal.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_6">11.6.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Cliente Chat descentralizado</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_6">11.6.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>El sistema se ejecutará normalmente en todos los navegadores.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_6">11.6.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Toda la funcionalidad implementada puede ejecutarse en todos los navegadores.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_7_prueba_en_sistemas_operativos">11.7. Escenario 7: Prueba en sistemas operativos</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_7">11.7.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Ejecución de la aplicación en Windows, MacOS, Linux, Android y IPhone.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_7">11.7.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Encargado de pruebas.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_7">11.7.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema en funcionamiento normal.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_7">11.7.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Cliente Chat descentralizado</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_7">11.7.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>El sistema se ejecutará normalmente en todos los sistemas operativos.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_7">11.7.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Toda la funcionalidad implementada puede ejecutarse en todos los sistemas operativos.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_8_prueba_en_entornos_de_red">11.8. Escenario 8: Prueba en entornos de red</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_8">11.8.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Ejecución de la aplicación con distintas configuraciones de red:
+Conexión en red local, conexión a traves de internet y red móvil.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_8">11.8.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Encargado de pruebas.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_8">11.8.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema en funcionamiento normal.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_8">11.8.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Cliente Chat descentralizado</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_8">11.8.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>El sistema permitirá la comunicación en todos los sistemas de red analizados.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_8">11.8.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Hay comunicación en todos los sistemas de red analizados.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_9_añadir_funcionalidad">11.9. Escenario 9: Añadir funcionalidad</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_9">11.9.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Se requiere la implementación de una nueva funcionalidad en la aplicación.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_9">11.9.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Desarrollador</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_9">11.9.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema en desarrollo.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_9">11.9.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Cliente Chat descentralizado y Servidor</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_9">11.9.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Se añadirá en el sistema una nueva funcionalidad en un tiempo determinado.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_9">11.9.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Tiempo empleado, que deberá ser inferior a 8 horas para una modificación de baja complejidad.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_10_pruebas_de_usabilidad_con_usuarios">11.10. Escenario 10: Pruebas de usabilidad con usuarios</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_10">11.10.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Uso normal de la aplicación para verificar su usabilidad.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_10">11.10.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>10 usuarios con distintos perfiles.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_10">11.10.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema funcionando en condiciones normales.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_10">11.10.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Cliente Chat descentralizado</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_10">11.10.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>El sistema debe permitir a los usuarios utilizar de manera satisfactoria todas
+sus funcionalidades sin que estos duden y en un tiempo bajo.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_10">11.10.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>El tiempo empleado para la realización de cada tarea de la prueba será inferior a 1 minuto.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_11_encuesta_de_usabilidad">11.11. Escenario 11: Encuesta de usabilidad</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_11">11.11.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Los usuarios que realizan las pruebas de usabilidad se encuestan sobre la facilidad de uso de la misma.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_11">11.11.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>10 usuarios con distintos perfiles.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_11">11.11.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema funcionando en condiciones normales.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_11">11.11.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Cliente Chat descentralizado</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_11">11.11.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Puntuación numérica (entre 0 y 10) que indique el grado de aceptación de la interfaz
+de la aplicación por los usuarios que la prueban.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_11">11.11.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>La puntuación obtenida deberá ser superior a 5.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_12_cifrado_de_información">11.12. Escenario 12: Cifrado de información</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_12">11.12.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Durante un uso normal del sistema, el cliente y el servidor intercambian información.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_12">11.12.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Encargado de pruebas.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_12">11.12.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema funcionando en condiciones normales.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_12">11.12.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Servidor</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_12">11.12.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Los paquetes intercambiados deberán aparecer cifrados.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_12">11.12.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>No debe aparecer ningún no cifrado.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_13_autenticación_de_clientes">11.13. Escenario 13: Autenticación de clientes</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_13">11.13.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Conexión de un nuevo cliente al servidor.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_13">11.13.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Encargado de pruebas.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_13">11.13.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema funcionando en condiciones normales.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_13">11.13.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Servidor</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_13">11.13.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Se permite la conexión la aplicación cliente desarrollada solamente.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_13">11.13.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>No se permite la conexión al servidor a otras aplicaciones.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_14_autenticación_de_usuarios">11.14. Escenario 14: Autenticación de usuarios</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_14">11.14.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Un usuario accede al sistema.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_14">11.14.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Encargado de pruebas.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_14">11.14.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema funcionando en condiciones normales.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_14">11.14.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Servidor</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_14">11.14.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Se comprueban las credenciales del usuario que accede al sistema.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_14">11.14.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Se deniegan las conexiones de usuarios que no empleen credenciales válidas.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_15_prueba_con_múltiples_usuarios_simultaneos">11.15. Escenario 15: Prueba con múltiples usuarios simultaneos</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_15">11.15.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Acceso concurrente al sistema de multiples usuarios.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_15">11.15.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>10 usuarios acceden concurrentemente.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_15">11.15.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema funcionando en condiciones normales.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_15">11.15.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Servidor</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_15">11.15.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>El sistema atiende a las peticiones realizadas en un tiempo determinado.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_15">11.15.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>El tiempo de respuesta para las peticiones será inferior a 10 segundos en todos los accesos.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_16_uptime_del_servidor">11.16. Escenario 16: Uptime del servidor</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_16">11.16.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Comprobación del uptime del servidor cuando este se encuentre en producción.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_16">11.16.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Encargado de mantenimiento.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_16">11.16.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema funcionando en condiciones normales y en un entorno de producción.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_16">11.16.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Servidor</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_16">11.16.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Tiempo que el sistema no estará caido, y responderá a todas las peticiones enviadas
+por las aplicaciones cliente.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_16">11.16.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>El tiempo que el servidor permanezca caido será inferior al 0.01% del total.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_17_pruebas_beta">11.17. Escenario 17: Pruebas Beta</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_17">11.17.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Multiples usuarios utilizando la aplicacion con el fin de forzarla allá donde podrian darse errores.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_17">11.17.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Usuarios seleccionados para realizar las pruebas.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_17">11.17.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema funcionando en condiciones normales.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_17">11.17.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Servidor.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_17">11.17.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Los usuarios en esas condiciones de uso no deberian encontrar ningun error o
+o retraso con el desarrollo de la prueba.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_17">11.17.6. 6) Medida de la respuesta</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_18_pruebas_de_integración">11.18. Escenario 18: Pruebas de Integración</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_18">11.18.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Probar una nueva pieza de código previamente a su integracion al
+grueso y posterior a este.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_18">11.18.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Encargado de pruebas.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_18">11.18.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Fragmento de Codigo del que se espera su integración.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_18">11.18.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Servidor.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_18">11.18.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>El fragmento debe de responder correctamente a estas pruebas y posteriormente
+la aplicación pasar las pruebas unitarias.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_18">11.18.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>No debe ocurrir ningún error a la hora de implementarlo todo.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_19_prueba_multiples_usuarios_atacando_la_base_de_datos">11.19. Escenario 19: Prueba Multiples Usuarios atacando la base de datos</h3>
+<div class="sect3">
+<h4 id="_1_estímulo_19">11.19.1. 1) Estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Multiples Usuarios modificando la informacion interna de la aplicacion.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_fuente_del_estímulo_19">11.19.2. 2) Fuente del estímulo</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Multiples usuarios modificando la informacion guardada por la base de datos.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_entorno_19">11.19.3. 3) Entorno</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Sistema funcionando en condiciones normales.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_artefactos_del_sistema_19">11.19.4. 4) Artefactos del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Servidor.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_respuesta_del_sistema_19">11.19.5. 5) Respuesta del sistema</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Los cambios han de persistir en el sistema correctamente con los cambios
+hechos en el orden adecuado y el resultado final sea el correcto.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_medida_de_la_respuesta_19">11.19.6. 6) Medida de la respuesta</h4>
+<div class="literalblock">
+<div class="content">
+<pre>Datos esperados al acabar las transacciones.</pre>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="section-technical-risks">12. Riesgos y deuda técnica</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Esta es la primera vez que trabajamos con el lenguaje Angular, con RDF&#8217;s y con una arquitectura como la de SOLID, la cual no está integrada de manera sencilla con los lenguajes de programación que hemos ido usando a lo largo del grado de manera más asidua, sin tener así mismo abundante documentación por la red.</p>
+</div>
+<div class="paragraph">
+<p>Por otro lado, el equipo no dispone de conocimiento en lo relacionado a la seguridad por la red ni acerca de la legislación relativa al almacenamiento de información sensible y de las precauciones que se deben de tomar en ese caso.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Déficit de conocimiento</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Angular</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RDF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPARQL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Solid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Seguridad en la red</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Legislación para los datos sensibles</p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="section-glossary">13. Glossary</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term</th>
+<th class="tableblock halign-left valign-top">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cross-site request forgery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tipo de exploit malicioso de un sitio web en el que comandos no autorizados son transmitidos por un usuario en el cual el sitio web confía.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Personal Online Data, es el espacio en el que se almacenan tus datos, imágenes, etc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOLID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deriva de Social Linked Data, es un conjunto de convenciones y herramientas para construir aplicaciones sociales descentralizadas.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WebID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Método estándar de identificación para comunicaciones HTTP.</p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p><strong>About arc42</strong></p>
+</div>
+<div class="paragraph lead">
+<p>arc42, the Template for documentation of
+software and system architecture.</p>
+</div>
+<div class="paragraph">
+<p>By Dr. Gernot Starke, Dr. Peter Hruschka and contributors.</p>
+</div>
+<div class="paragraph">
+<p>Template Revision: 7.0 EN (based on asciidoc), January 2017</p>
+</div>
+<div class="paragraph">
+<p>&#169;
+We acknowledge that this document uses material from the
+arc 42 architecture template, <a href="http://www.arc42.de" class="bare">http://www.arc42.de</a>.
+Created by Dr. Peter Hruschka &amp; Dr. Gernot Starke.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2019-04-23 10:32:21 +0200
+</div>
+</div>
+</body>
+</html>
