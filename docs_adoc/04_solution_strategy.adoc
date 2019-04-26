@@ -11,7 +11,7 @@ Dado que la aplicación a desarrollar empleará Solid para funcionar, es necesar
 que de soporte a dicha tecnología. El servidor de referencia para esta tecnología esta implementado sobre Nodo, con lo
 que necesitaremos emplear esta tecnología.
 
-* npm
+* NPM
 
 Npm es un gestor de paquetes para node, que permite instalar software y librerías que deban funcionar sobre esta
 tecnología. El uso de esta herramienta nos simplificará la instalación del servidor Solid.
@@ -21,6 +21,10 @@ tecnología. El uso de esta herramienta nos simplificará la instalación del se
 Sparql se trata de un lenguaje estandarizado de grafos RDF normalizado por el  World Wide Web Consortium, con ello 
 una tecnologia clave para el desarrolo de web semantica, por lo que sera la semántica que usemos con el fin de manejar
 la recuperacion de sentencias y el mantenimiento de datos.
+
+* CUCUMBER
+
+Cucumber es una herramienta de software utilizada por los programadores de computadoras para probar otro software. Ejecuta pruebas de aceptación automatizadas escritas en un estilo de desarrollo impulsado por el comportamiento 
 
 
 ==== Frontend

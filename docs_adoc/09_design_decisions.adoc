@@ -28,6 +28,10 @@ Para obtener informacion de los PODS y enviar información a los mismos es neces
 consulta de grafos. La sintaxis es muy similar a otros lenguajes de bases de datos pero el no tener muchos conocimientos de
 como funciona internamente los PODS de Solid va a hacer que usar este lenguaje suponga otro reto más para el equipo.
 
+* CUCUMBER
+
+Se usa para la realización de las pruebas de la aplicación.
+
 === Arquitectonicas
 * Patrones
 
