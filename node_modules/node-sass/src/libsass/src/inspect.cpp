@@ -1057,7 +1057,7 @@ namespace Sass {
       case Complex_Selector::REFERENCE:
         append_mandatory_space();
         append_string("/");
-        if (c->reference()) c->reference()->perform(this);
+        c->reference()->perform(this);
         append_string("/");
         append_mandatory_space();
       break;
