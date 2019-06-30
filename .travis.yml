@@ -1,24 +1,12 @@
 language: node_js
 node_js:
-  - "stable"
-apt:
-  sources:
-    - google-chrome
-  packages:
-    - google-chrome-stable
-    - google-chrome-beta
-  before_install:
-    - export CHROME_BIN=chromium-browser
-    - export DISPLAY=:99.0
-install:
-  - npm install -g codecov
+  - "10.15"
 before_script:
   - npm install -g @angular/cli
   - npm install --save howler
 script: 
   - ng build --prod
-  - ng test --single-run --code-coverage
-after_success:
+after_script:
   - node_modules\.bin\cucumber-js src\test\asw\features -r src\test\asw\steps
-  - npm run codacy
+after_success:
   - bash <(curl -s https://codecov.io/bash)
