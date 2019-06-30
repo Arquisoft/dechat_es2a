@@ -4,4 +4,4 @@
 == Building Block View
 
 
-image::05_building_blocks-EN.png[Modulos del sistema]
+image::05_building_blocks-EN.jpg[Modulos del sistema]
