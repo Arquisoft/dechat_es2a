@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {User} from '../../classes/user';
-import {FriendService} from '../../services/friend.service';
-import {Message} from '../../classes/message';
+import { Component, OnInit } from '@angular/core';
+import { User } from '../../classes/user';
+import { FriendService } from '../../services/friend.service';
+import { Message } from '../../classes/message';
 import { RdfService } from '../../services/rdf.service';
 import { AuthService } from '../../services/solid.auth.service';
 
@@ -12,14 +12,14 @@ import { AuthService } from '../../services/solid.auth.service';
 })
 export class WhatsappFriendMessageComponent implements OnInit {
   public friend: User;
-  private id:any;
-  constructor(private _friendService: FriendService,private rdf: RdfService) {
+  private id: any;
+  constructor(private _friendService: FriendService, private rdf: RdfService) {
   }
 
   ngOnInit() {
     this._friendService.getSelectedFriendObservable().subscribe(friend => this.friend = friend);
     this.id = setInterval(() => {
-      this._friendService.actualizar(this.friend.solidLink,this._friendService.loggedUser.solidLink,) 
+      this._friendService.actualizar(this.friend.solidLink, this._friendService.loggedUser.solidLink);
     }, 5000);
   }
 
@@ -31,11 +31,11 @@ export class WhatsappFriendMessageComponent implements OnInit {
 
   getMessageSender(message: Message) {
     let sender = 'whatsapp-message-out';
-   // if (message.sender.name === this._friendService.selectedFriend.name) {
-    if (message.sender.name === this.friend.name ) {
+    // if (message.sender.name === this._friendService.selectedFriend.name) {
+    if (message.sender.name === this.friend.name) {
       sender = 'whatsapp-message-in';
     }
-    else if (message.sender === this._friendService.selectedFriend.solidLink){
+    else if (message.sender === this._friendService.selectedFriend.solidLink) {
       sender = 'whatsapp-message-in';
     }
 

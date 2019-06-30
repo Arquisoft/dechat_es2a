@@ -15,5 +15,5 @@ export interface SolidProfile {
     phone: string;
     role: string;
     organization?: string;
-    name:string;
+    name: string;
 }

@@ -1,4 +1,4 @@
-    
+
 /**
  * Represents an IDP
  */

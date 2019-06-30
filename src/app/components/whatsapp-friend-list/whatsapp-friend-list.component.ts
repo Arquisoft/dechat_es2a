@@ -61,7 +61,7 @@ export class WhatsappFriendListComponent implements OnInit, OnChanges {
   }
 
   private async loadUserData() {
-    let lista = await this.getSolidFriends();
+    const lista = await this.getSolidFriends();
     this._friendService.setFriendList(lista);
     this._friendService.setFriendListObservable();
     this._friendService.getFriendListObservable().subscribe(friends => {
@@ -71,21 +71,21 @@ export class WhatsappFriendListComponent implements OnInit, OnChanges {
 
 
   private async getSolidFriends() {
-    let listaAmigosRDF = this.rdf.getFriends();
-    let listaAmigosComponente = [];
+    const listaAmigosRDF = this.rdf.getFriends();
+    const listaAmigosComponente = [];
     try {
-      for (var amigo of listaAmigosRDF) {
+      for (const amigo of listaAmigosRDF) {
         let contador = 0;
         await this.rdf.fetcher.load(amigo);
         const store = $rdf.graph();
         let fetcher = $rdf.Fetcher;
         fetcher = new $rdf.Fetcher(store);
         const me = store.sym(amigo);
-        const profile = me.doc();       //i.e. store.sym(''https://example.com/alice/card#me')
+        const profile = me.doc();       // i.e. store.sym(''https://example.com/alice/card#me')
         const VCARD = $rdf.Namespace('http://www.w3.org/2006/vcard/ns#');
         await fetcher.load(amigo).then(response => {
-          let nameStore = store.any(me, VCARD('fn'));
-          let pictureStore = store.any(me, VCARD('hasPhoto'));
+          const nameStore = store.any(me, VCARD('fn'));
+          const pictureStore = store.any(me, VCARD('hasPhoto'));
           let name;
           let image;
 
@@ -93,7 +93,7 @@ export class WhatsappFriendListComponent implements OnInit, OnChanges {
             name = amigo;
           }
           else {
-            name = nameStore.value
+            name = nameStore.value;
           }
           if (pictureStore == null) {
             image = 'assets/images/profile.png';
@@ -104,7 +104,7 @@ export class WhatsappFriendListComponent implements OnInit, OnChanges {
           let amigoAñadir = new User(name, image);
           amigoAñadir.solidLink = amigo;
           amigoAñadir.id = contador;
-          listaAmigosComponente.push(new FriendList(amigoAñadir, null))
+          listaAmigosComponente.push(new FriendList(amigoAñadir, null));
           contador++
         }, err => {
           console.log("Load failed " + err);
@@ -127,15 +127,15 @@ export class WhatsappFriendListComponent implements OnInit, OnChanges {
   }
 
   private createNewFolder(name: string, ruta: string) {
-    //Para crear la carpeta necesito una ruta que incluya el nombre de la misma.
-    //Obtengo el ID del usuario y sustituyo  lo irrelevante por la ruta de public/NombreCarpeta
+    // Para crear la carpeta necesito una ruta que incluya el nombre de la misma.
+    // Obtengo el ID del usuario y sustituyo  lo irrelevante por la ruta de public/NombreCarpeta
     let solidId = this.rdf.session.webId;
     let stringToChange = '/profile/card#me';
     let path = ruta + name;
     solidId = solidId.replace(stringToChange, path);
 
-    //Necesito logearme en el cliente para que me de permiso, sino me dara un error al intentar
-    //crear la carpeta. Como ya estoy en sesion no abre nada pero si se abre la consola se ve
+    // Necesito logearme en el cliente para que me de permiso, sino me dara un error al intentar
+    // crear la carpeta. Como ya estoy en sesion no abre nada pero si se abre la consola se ve
     // que se ejecuta correctamente.
 
     this.buildFolder(solidId);
@@ -146,7 +146,7 @@ export class WhatsappFriendListComponent implements OnInit, OnChanges {
     this.fileClient.readFolder(solidId).then(folder => {
       console.log(`Read ${folder.name}, it has ${folder.files.length} files.`);
     }, err => {
-      //Le paso la URL de la carpeta y se crea en el pod. SI ya esta creada no se si la sustituye o no hace nada
+      // Le paso la URL de la carpeta y se crea en el pod. SI ya esta creada no se si la sustituye o no hace nada
       this.fileClient.createFolder(solidId).then(success => {
         console.log(`Created folder ${solidId}.`);
       }, err1 => console.log("Casca aqui"));

@@ -7,18 +7,18 @@ const {
 
 import { browser, by, element } from 'protractor';
 
-let chai = require('chai').use(require('chai-as-promised'));
-let expect = chai.expect;
+const chai = require('chai').use(require('chai-as-promised'));
+const expect = chai.expect;
 
 When('Estoy en la pagina inicial de logueo {string}', function (string) {
   return browser.get(string);
 });
 When('Selecciono para iniciar como Inrupt y y pincho en Go', function () {
-  var providerLink = element(by.className('ng-input'));
+  const providerLink = element(by.className('ng-input'));
   providerLink.click();
-  var span = element.all(by.className('ng-option')).first();
+  const span = element.all(by.className('ng-option')).first();
   span.click();
-  var link = element.all(by.className('wide-button')).first();
+  const link = element.all(by.className('wide-button')).first();
   return link.click();
 
 });

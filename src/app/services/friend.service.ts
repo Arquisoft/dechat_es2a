@@ -1,9 +1,9 @@
-import {FriendList} from '../classes/friend-list';
-import {User} from '../classes/user';
-import {Message} from '../classes/message';
-import {BehaviorSubject} from 'rxjs';
+import { FriendList } from '../classes/friend-list';
+import { User } from '../classes/user';
+import { Message } from '../classes/message';
+import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { RdfService } from './rdf.service';
 import { SolidSession } from '../models/solid-session.model';
 import { AuthService } from './solid.auth.service';
@@ -19,9 +19,10 @@ export class FriendService {
   private _friendList: FriendList[];
   private _friendListObservable: BehaviorSubject<FriendList[]>;
   private _selectedFriendObservable: BehaviorSubject<User>;
-  private fileClient:any;
 
-  constructor(private router: Router,private $rdf: RdfService,private auth: AuthService ) {
+  private fileClient: any;
+
+  constructor(private router: Router, private $rdf: RdfService, private auth: AuthService) {
     this.fileClient = require('solid-file-client');
     this._friendList = this.getFakeFriendList();
     this._friendListObservable = new BehaviorSubject(null);
@@ -43,15 +44,15 @@ export class FriendService {
     this._loggedUser = value;
   }
 
-  setFriendListObservable(){
+  setFriendListObservable() {
     this._friendListObservable = new BehaviorSubject(this._friendList);
   }
   get loggedUserObservable(): BehaviorSubject<User> {
     return this._loggedUserObservable;
   }
 
-  setFriendList(value:FriendList[]){
-    this._friendList=value;
+  setFriendList(value: FriendList[]) {
+    this._friendList = value;
   }
 
   set loggedUserObservable(value: BehaviorSubject<User>) {
@@ -88,9 +89,9 @@ export class FriendService {
 
   private getFakeFriendList() {
     return [
-     // new FriendList(this.createFakeUser(), null),
-      //new FriendList(this.createFakeUser(), null),
-      //new FriendList(this.createFakeUser(), null)
+      // new FriendList(this.createFakeUser(), null),
+      // new FriendList(this.createFakeUser(), null),
+      // new FriendList(this.createFakeUser(), null)
     ];
   }
 
@@ -99,217 +100,216 @@ export class FriendService {
   private createFakeUser() {
     return new User(faker.name.findName(), faker.image.avatar());
   }
-  private createLoggedUser(){
+  private createLoggedUser() {
     return new User("", "");
   }
 
-  async sendMessage(text: string, to: User) { 
-
+  async sendMessage(text: string, to: User) {
     to.addMessage(this.loggedUser, text);
-     await this.escribir(text,to);
-     /*
-     setTimeout(function () {
-      to.addMessage(to, faker.hacker.phrase());
-    }, 1500);
-    */
+    await this.escribir(text, to);
+    /*
+    setTimeout(function () {
+     to.addMessage(to, faker.hacker.phrase());
+   }, 1500);
+   */
   }
 
 
   async escribir(text: string, to: User) {
-    let myUser = this.getUserByUrl(this.loggedUser.solidLink);
-    let user = this.getUserByUrl(to.solidLink);
-    var messageContent = text;
-    //(document.getElementById("usermsg") as HTMLInputElement).value = "";
+    const myUser = this.getUserByUrl(this.loggedUser.solidLink);
+    const user = this.getUserByUrl(to.solidLink);
+    const messageContent = text;
+    // (document.getElementById("usermsg") as HTMLInputElement).value = "";
     console.log(messageContent);
 
-    //Sender WebID
-    //let senderPerson: User = {webid: this.loggedUser.solidLink};
-    let senderPerson: User = this.loggedUser;
-    //Receiver WebId
-    //let recipientPerson: User = {webid: this.ruta_seleccionada}
-    let recipientPerson : User = to;
-    let messageToSend: Message = new Message(Date(),text,senderPerson,recipientPerson);
+    // Sender WebID
+    // let senderPerson: User = {webid: this.loggedUser.solidLink};
+    const senderPerson: User = this.loggedUser;
+    // Receiver WebId
+    // let recipientPerson: User = {webid: this.ruta_seleccionada}
+    const recipientPerson: User = to;
+    const messageToSend: Message = new Message(Date(), text, senderPerson, recipientPerson);
     let stringToChange = '/profile/card#me';
-    let path = '/public/dechat2a/' + user + '/Conversation.txt';
+    const path = '/public/dechat2a/' + user + '/Conversation.txt';
 
     let senderId = this.loggedUser.solidLink;
     senderId = senderId.replace(stringToChange, path);
 
-    let message = await this.readMessage(senderId);
+    const message = await this.readMessage(senderId);
 
-   // this.ruta = senderId;
+    // this.ruta = senderId;
 
-    //For TXTPrinter
-    let messages= [];
+    // For TXTPrinter
+    const messages = [];
     if (message != null) {
-        this.updateTTL(senderId, message + "\n" + new TXTPrinter().getTXTDataFromMessage(messageToSend));
-        if (messages.indexOf(message) !== -1) {
-            messages.push(message);
-            console.log("MESSAGES: " + messages);
-        }
+      this.updateTTL(senderId, message + "\n" + new TXTPrinter().getTXTDataFromMessage(messageToSend));
+      if (messages.indexOf(message) !== -1) {
+        messages.push(message);
+        console.log("MESSAGES: " + messages);
+      }
     } else {
-        this.updateTTL(senderId, new TXTPrinter().getTXTDataFromMessage(messageToSend));
+      this.updateTTL(senderId, new TXTPrinter().getTXTDataFromMessage(messageToSend));
     }
 
-    //(<HTMLInputElement>document.getElementById('usermsg')).value = '';
-     this.actualizar(to.solidLink,this.loggedUser.solidLink);
-    
-}
+    // (<HTMLInputElement>document.getElementById('usermsg')).value = '';
+    this.actualizar(to.solidLink, this.loggedUser.solidLink);
 
-private updateTTL(url, newContent, contentType?) {
-  if (contentType) {
-      this.fileClient.updateFile(url, newContent, contentType).then(success => {
-          console.log(`Updated ${url}.`)
-      }, err => console.log(err));
-  } else {
-      this.fileClient.updateFile(url, newContent).then(success => {
-          console.log(`Updated ${url}.`)
-      }, err => console.log(err));
   }
-}
 
-private getUserByUrl(ruta: string): string {
-  let sinhttp;
-  sinhttp = ruta.replace('https://', '');
-  const user = sinhttp.split('.')[0];
-  return user;
-}
+  private updateTTL(url, newContent, contentType?) {
+    if (contentType) {
+      this.fileClient.updateFile(url, newContent, contentType).then(success => {
+        console.log(`Updated ${url}.`)
+      }, err => console.log(err));
+    } else {
+      this.fileClient.updateFile(url, newContent).then(success => {
+        console.log(`Updated ${url}.`)
+      }, err => console.log(err));
+    }
+  }
 
-private async readMessage(url) {
- // this.ruta = url;
-  var message = await this.searchMessage(url)
-  return message;
-}
+  private getUserByUrl(ruta: string): string {
+    let sinhttp;
+    sinhttp = ruta.replace('https://', '');
+    const user = sinhttp.split('.')[0];
+    return user;
+  }
 
-private async searchMessage(url) {
-  console.log("URL: " + url);
-  return await this.fileClient.readFile(url).then(body => {
+  private async readMessage(url) {
+    // this.ruta = url;
+    var message = await this.searchMessage(url)
+    return message;
+  }
+
+  private async searchMessage(url) {
+    console.log("URL: " + url);
+    return await this.fileClient.readFile(url).then(body => {
       console.log(`File	content is : ${body}.`);
       return body;
-  }, err => console.log(err));
+    }, err => console.log(err));
 
 
-}
-async actualizar(user,senderId) {
- // console.log("Inicio Actualizar");
-  let messages = [] as Message[];
-  let userFormatted = this.getUserByUrl(user);
-  let stringToChange = '/profile/card#me';
-  let path = '/public/dechat2a/' + userFormatted + '/Conversation.txt';
-  let senderIdFormated = senderId.replace(stringToChange, path);
+  }
+  async actualizar(user, senderId) {
+    // console.log("Inicio Actualizar");
+    let messages = [] as Message[];
+    let userFormatted = this.getUserByUrl(user);
+    let stringToChange = '/profile/card#me';
+    let path = '/public/dechat2a/' + userFormatted + '/Conversation.txt';
+    let senderIdFormated = senderId.replace(stringToChange, path);
 
-  var content = await this.readMessage(senderIdFormated);
-  //OBTENGO MENSAGES DEL AMIGO
-  var messageArray = content.split('\n');
-  messageArray.forEach(element => {
+    var content = await this.readMessage(senderIdFormated);
+    //OBTENGO MENSAGES DEL AMIGO
+    var messageArray = content.split('\n');
+    messageArray.forEach(element => {
       //console.log(element);
       if (element[0]) {
-          const messageArrayContent = element.split('###');
-          const messageToAdd: Message = new Message( messageArrayContent[3], messageArrayContent[2],this._selectedFriend,this.loggedUser)
+        const messageArrayContent = element.split('###');
+        const messageToAdd: Message = new Message(messageArrayContent[3], messageArrayContent[2], this._selectedFriend, this.loggedUser)
         // console.log(messageToAdd);
-          messages.push(messageToAdd);
+        messages.push(messageToAdd);
       }
-  });
+    });
 
 
-  var urlArray = user.split("/");
-  let url = "https://" + urlArray[2] + "/public/dechat2a/" + this.getUserByUrl(senderId) + "/Conversation.txt";
+    var urlArray = user.split("/");
+    const url = "https://" + urlArray[2] + "/public/dechat2a/" + this.getUserByUrl(senderId) + "/Conversation.txt";
 
 
- // console.log("URL: " + url);
+    // console.log("URL: " + url);
 
-  var content = await this.readMessage(url);
+    var content = await this.readMessage(url);
 
 
-  //console.log(content);
+    //console.log(content);
 
     //OBTENGO MENSAGES MIOS
-  var messageArray = content.split('\n');
-  messageArray.forEach(element => {
-     // console.log(element.content);
+    var messageArray = content.split('\n');
+    messageArray.forEach(element => {
+      // console.log(element.content);
       if (element[0]) {
-          const messageArrayContent = element.split('###');
-          const messageToAdd:Message = new Message( messageArrayContent[3], messageArrayContent[2],messageArrayContent[0]
-            ,messageArrayContent[1])
-         // console.log(messageToAdd);
-          messages.push(messageToAdd);
+        const messageArrayContent = element.split('###');
+        const messageToAdd: Message = new Message(messageArrayContent[3], messageArrayContent[2], messageArrayContent[0]
+          , messageArrayContent[1])
+        // console.log(messageToAdd);
+        messages.push(messageToAdd);
       }
-  });
-  messages = this.order(messages);
-  if (this.selectedFriend.messages.length==0){
-    for(let x of messages){
-      this.selectedFriend.addMessageFull(this.selectedFriend,x)
-  }
- } else if(this.selectedFriend.messages.length!=messages.length) {
-    for(let i=this.selectedFriend.messages.length;i<messages.length;i++){
-      this.selectedFriend.messages.push(messages[i]);
+    });
+    messages = this.order(messages);
+    if (this.selectedFriend.messages.length == 0) {
+      for (let x of messages) {
+        this.selectedFriend.addMessageFull(this.selectedFriend, x)
+      }
+    } else if (this.selectedFriend.messages.length != messages.length) {
+      for (let i = this.selectedFriend.messages.length; i < messages.length; i++) {
+        this.selectedFriend.messages.push(messages[i]);
+      }
     }
-}
-}
+  }
 
 
-async getUserMessages(user,senderId){
-  let messages : Message[];
-  let userFormatted = this.getUserByUrl(user);
-  let stringToChange = '/profile/card#me';
-  let path = '/public/dechat2a/' + userFormatted + '/Conversation.txt';
-  let senderIdFormated = senderId.replace(stringToChange, path);
+  async getUserMessages(user, senderId) {
+    let messages: Message[];
+    let userFormatted = this.getUserByUrl(user);
+    let stringToChange = '/profile/card#me';
+    let path = '/public/dechat2a/' + userFormatted + '/Conversation.txt';
+    let senderIdFormated = senderId.replace(stringToChange, path);
 
-  var content = await this.readMessage(senderIdFormated);
-  var messageArray = content.split('\n');
-  
+    var content = await this.readMessage(senderIdFormated);
+    var messageArray = content.split('\n');
 
-  messageArray.forEach(element => {
+
+    messageArray.forEach(element => {
       console.log(element.content);
       if (element[0]) {
-          const messageArrayContent = element.split('###');
-          const messageToAdd: Message = new Message( messageArrayContent[3], messageArrayContent[2],this.loggedUser,this._selectedFriend)
+        const messageArrayContent = element.split('###');
+        const messageToAdd: Message = new Message(messageArrayContent[3], messageArrayContent[2], this.loggedUser, this._selectedFriend)
         // console.log(messageToAdd);
-          messages.push(messageToAdd);
+        messages.push(messageToAdd);
       }
-  });
+    });
 
-  messages = this.order(messages);
-  return messages;
-} 
-
-private order(mess: Message[]) {
-  /*
-  let ordenado: Message[] = [];
-  let aux = mess;
-  while (mess.length > 0) {
-      let idx = this.menor(aux);
-      ordenado.push(aux[idx]);
-      aux.splice(idx, 1);
+    messages = this.order(messages);
+    return messages;
   }
-  return ordenado;
-  */
- mess.sort(function(a,b){
-  var dateA = new Date(a.time);
-  var dateB = new Date(b.time);
-  return dateA.getTime() - dateB.getTime();
- })
- return mess;
-}
 
-private menor(aux: Message[]) {
-  var idx = 0;
-  var minor: Message = aux[idx];
-  for (let i = 0; i < aux.length; i++) {
+  private order(mess: Message[]) {
+    /*
+    let ordenado: Message[] = [];
+    let aux = mess;
+    while (mess.length > 0) {
+        let idx = this.menor(aux);
+        ordenado.push(aux[idx]);
+        aux.splice(idx, 1);
+    }
+    return ordenado;
+    */
+    mess.sort(function (a, b) {
+      var dateA = new Date(a.time);
+      var dateB = new Date(b.time);
+      return dateA.getTime() - dateB.getTime();
+    })
+    return mess;
+  }
+
+  private menor(aux: Message[]) {
+    var idx = 0;
+    var minor: Message = aux[idx];
+    for (let i = 0; i < aux.length; i++) {
       if (aux[i].time < minor.time) {
-          idx = i;
-          minor = aux[idx];
+        idx = i;
+        minor = aux[idx];
       }
+    }
+    return idx;
   }
-  return idx;
-}
 }
 
 class TXTPrinter {
   public getTXTDataFromMessage(message: Message) {
-      return message.sender.solidLink + "###" +
-          message.receiver.solidLink + "###" +
-          message.text + "###" +
-          message.time + "\n";
+    return message.sender.solidLink + "###" +
+      message.receiver.solidLink + "###" +
+      message.text + "###" +
+      message.time + "\n";
   }
 }

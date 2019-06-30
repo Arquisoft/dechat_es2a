@@ -1,4 +1,4 @@
-import {Message} from './message';
+import { Message } from './message';
 
 export class User {
   private _name;
@@ -10,7 +10,7 @@ export class User {
   constructor(name, picture) {
     this._name = name;
     this._picture = picture;
-    this._solidLink="";
+    this._solidLink = "";
     this.messages = [];
   }
 
@@ -22,7 +22,7 @@ export class User {
     this._name = value;
   }
 
-  
+
   get id() {
     return this.id;
   }
@@ -34,11 +34,11 @@ export class User {
   get picture() {
     return this._picture;
   }
-  get solidLink(){
+  get solidLink() {
     return this._solidLink;
   }
-  set solidLink(value){
-    this._solidLink=value;
+  set solidLink(value) {
+    this._solidLink = value;
   }
 
   set picture(value) {
@@ -50,7 +50,7 @@ export class User {
     this._messages.push(message);
   }
 
-  addMessageFull(sender: User, message:Message) {
+  addMessageFull(sender: User, message: Message) {
     this._messages.push(message);
   }
 

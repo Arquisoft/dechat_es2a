@@ -45,7 +45,7 @@ export class AuthService {
    */
   solidLoginPopup = async () => {
     try {
-      await auth.popupLogin({ popupUri: './login-popup'});
+      await auth.popupLogin({ popupUri: './login-popup' });
       // Check if session is valid to avoid redirect issues
       await this.isSessionActive();
 

@@ -1,0 +1,65 @@
+[[section-solution-strategy]]
+== Solution Strategy
+
+=== Tecnologia
+
+==== Backend
+
+* NodeJS
+
+Dado que la aplicación a desarrollar empleará Solid para funcionar, es necesario realizar la instalación de un servidor
+que de soporte a dicha tecnología. El servidor de referencia para esta tecnología esta implementado sobre Nodo, con lo
+que necesitaremos emplear esta tecnología.
+
+* NPM
+
+Npm es un gestor de paquetes para node, que permite instalar software y librerías que deban funcionar sobre esta
+tecnología. El uso de esta herramienta nos simplificará la instalación del servidor Solid.
+
+* SPARQL
+
+Sparql se trata de un lenguaje estandarizado de grafos RDF normalizado por el  World Wide Web Consortium, con ello 
+una tecnologia clave para el desarrolo de web semantica, por lo que sera la semántica que usemos con el fin de manejar
+la recuperacion de sentencias y el mantenimiento de datos.
+
+* CUCUMBER
+
+Cucumber es una herramienta de software utilizada por los programadores de computadoras para probar otro software. Ejecuta pruebas de aceptación automatizadas escritas en un estilo de desarrollo impulsado por el comportamiento 
+
+
+==== Frontend
+
+* Angular
+
+Dado que la aplicación a desarrollar deberá ser distribuida, y deberá ser ejecutada en un entorno web, necesitamos un
+framework de desarrollo que permita crear aplicaciones para ser ejecutadas sobre navegadores web. De las distintas
+opciones disponibles para esta tarea, angular es una de las más utilizadas. Cuenta con una buena documentación, una base
+importante de desarrolladores y nos permite programar en TypeScript, que al ser un lenguaje con tipado estatico
+consideramos que facilitará la escritura del código al eliminar errores de ejecución.
+
+==== Herramientas de desarrollo
+
+* WebStorm
+
+Se trata de un Entorno de Desarrollo Integrado completo, que da soporte para todas las tecnologías con las que se
+trabajará en el desarrollo del proyecto y para el que ya contamos con licencia.
+
+=== Obtencion de objetivos de calidad
+
+==== Seguridad
+* Inyeccion SQL
+
+Al trabajar desde SPARQL no hay una forma 100% efectiva de evitarla, sin embargo seguiremos pautas de limitar el uso de 
+metacaracteres permitiendo a los usuarios solo el uso de estos valores en variables de las propias querys.
+
+* Fuga de Informacion
+
+Aunque no se haya decidido una tecnologia o protocolo concreto a este punto, las prácticas más adecuadas para prevenir este
+fallo que se usaran son el uso de logs para observar el trafico de la aplicacion y lozalizar estos abusos, el control de la
+información a la que lo usuarios tienen acceso y el cifrado de informacion importante.
+
+* Man in the Middle
+
+ Con el fin de evitar esta brecha de seguridad los criterios mas aceptados son el uso de claves publicas, secretas o las 
+ anteriormente mencionadas contraseñas con el fin de evitar el filtraje de datos entre usuarios, no obstante no descartamos el 
+ uso de otros criterios de validacion para evitar el error.
