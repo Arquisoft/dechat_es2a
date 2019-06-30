@@ -1,9 +1,0 @@
-[[section-deployment-view]]
-
-
-== Deployment View
-
-
-Se muestra un diagrama donde se explica el camino que recorre un mensaje por la infraestructura desde que lo envia un usuario hasta que llega a su amigo.
-
-image::07-diagrama.PNG[Vista de la infraestructura]
