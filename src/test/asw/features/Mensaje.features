@@ -1,7 +1,0 @@
-Feature: Mensaje
-  El usuario va a enviar un Mensaje
-
-  Scenario: El usuario envia el mensaje 
-    El otro puede ver ese mensaje 
-    Se puede contestar tambien
-    Para enviar mensaje, pulsar en enviar

@@ -6,7 +6,6 @@ before_script:
   - npm install --save howler
 script: 
   - ng build --prod
-after_script:
-  - node_modules\.bin\cucumber-js src\test\asw\features -r src\test\asw\steps
+  - ng e2e
 after_success:
   - bash <(curl -s https://codecov.io/bash)
